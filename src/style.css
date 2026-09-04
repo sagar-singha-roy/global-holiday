@@ -296,7 +296,7 @@ h4,
 
 /* Generous breathing room between fixed navbar and subpage intro content */
 #main-content > :first-child:not(.hero-section) {
-  padding-top: calc(var(--header-height) + clamp(2.5rem, 4vw, 4rem));
+  padding-top: calc(var(--header-height) + clamp(1.25rem, 2.5vw, 2rem));
 }
 
 .section-header-split {
