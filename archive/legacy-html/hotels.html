@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="en" class="lenis lenis-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Luxury Hotels & Heritage Retreats — Global Holidays Tour & Travels
+    </title>
+
+    <meta
+      name="description"
+      content="Discover handpicked 5-star tea resorts, royal Himalayan heritage villas, and cliff-edge retreats across Northeast India and beyond. Direct concierge booking with Global Holidays."
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/favicon-192.png" />
+
+    <!-- Early Theme Initializer to prevent flicker -->
+    <script>
+      (function () {
+        var t = localStorage.getItem("gh_theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body data-theme="luxury-dark">
+    <!-- Custom Luxury Magnetic Cursor -->
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+      <div class="cursor-dot" id="cursor-dot"></div>
+      <div class="cursor-ring" id="cursor-ring"></div>
+    </div>
+
+    <!-- STICKY LUXURY NAVIGATION -->
+    <header class="site-header scrolled" id="site-header">
+      <div class="nav-container">
+        <a
+          href="index.html"
+          class="brand-logo"
+          aria-label="Global Holidays Home"
+        >
+          <img
+            src="/images/logo-icon.png"
+            alt="Global Holidays Logo"
+            class="brand-logo-img"
+            width="44"
+            height="44"
+          />
+          <div class="logo-text">
+            <span class="brand-name">GLOBAL HOLIDAYS</span>
+            <span class="brand-sub">TOUR & TRAVELS</span>
+          </div>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li>
+              <a href="destinations.html" class="nav-link">Destinations</a>
+            </li>
+            <li><a href="packages.html" class="nav-link">Packages</a></li>
+            <li><a href="hotels.html" class="nav-link active">Hotels</a></li>
+            <li><a href="deals.html" class="nav-link">Deals</a></li>
+            <li><a href="stories.html" class="nav-link">Stories</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-dropdown">
+              <button
+                class="dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+                id="company-dropdown-btn"
+                type="button"
+              >
+                <span>Company</span>
+                <svg
+                  class="dropdown-chevron"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="company-dropdown-btn">
+                <li>
+                  <a href="about.html" class="dropdown-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>About & Mission</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="legal.html" class="dropdown-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                      ></path>
+                    </svg>
+                    <span>Legal</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="contact.html" class="dropdown-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      ></path>
+                    </svg>
+                    <span>Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle-btn"
+            id="theme-toggle-btn"
+            aria-label="Toggle light and dark mode"
+            title="Switch Theme"
+          >
+            <span class="theme-icon-sun">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="12" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon-moon">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+          <a
+            href="contact.html"
+            class="btn btn-gold btn-magnetic"
+            id="nav-cta-btn"
+          >
+            <span>Plan My Trip</span>
+            <svg
+              class="btn-arrow"
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <button
+            class="menu-toggle"
+            id="menu-toggle-btn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Fullscreen Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-drawer-header">
+          <a href="index.html" class="brand-logo">
+            <img
+              src="/images/logo.png"
+              alt="Global Holidays Logo"
+              class="brand-logo-img"
+              width="38"
+              height="38"
+            />
+            <div class="logo-text">
+              <span class="brand-name" style="font-size: 1.05rem"
+                >GLOBAL HOLIDAYS</span
+              >
+              <span class="brand-sub" style="font-size: 0.6rem"
+                >TOUR & TRAVELS</span
+              >
+            </div>
+          </a>
+          <div style="display: flex; align-items: center; gap: 0.65rem">
+            <button
+              class="theme-toggle-btn mobile-theme-btn"
+              aria-label="Toggle light and dark mode"
+              title="Switch Theme"
+            >
+              <span class="theme-icon-sun">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="12" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                </svg>
+              </span>
+              <span class="theme-icon-moon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              class="drawer-close-btn"
+              id="drawer-close-btn"
+              aria-label="Close menu"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="index.html" class="mobile-nav-link">
+              <span class="nav-label">Home</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="destinations.html" class="mobile-nav-link">
+              <span class="nav-label">Destinations</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="packages.html" class="mobile-nav-link">
+              <span class="nav-label">Curated Packages</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="hotels.html" class="mobile-nav-link active">
+              <span class="nav-label">Luxury Hotels</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="deals.html" class="mobile-nav-link">
+              <span class="nav-label">Exclusive Deals</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="stories.html" class="mobile-nav-link">
+              <span class="nav-label">Travel Stories</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="gallery.html" class="mobile-nav-link">
+              <span class="nav-label">Gallery</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li class="mobile-nav-divider">
+            <span class="mobile-nav-divider-label">COMPANY & CONCIERGE</span>
+          </li>
+          <li>
+            <a href="about.html" class="mobile-nav-link mobile-sub-link">
+              <span class="nav-label">About & Mission</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="legal.html" class="mobile-nav-link mobile-sub-link">
+              <span class="nav-label">Legal & Accreditations</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="mobile-nav-link mobile-sub-link">
+              <span class="nav-label">Contact Concierge</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <span class="drawer-contact-title">Direct Agartala Concierge</span>
+          <div class="drawer-phone-group">
+            <a href="tel:+918731010676" class="drawer-phone-chip">
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span>+91 87310 10676</span>
+            </a>
+            <a href="tel:+918837070817" class="drawer-phone-chip">
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span>+91 88370 70817</span>
+            </a>
+          </div>
+          <div class="drawer-quick-actions">
+            <a
+              href="https://wa.me/918731010676"
+              target="_blank"
+              rel="noopener"
+              class="drawer-action-btn drawer-wa-btn"
+            >
+              <span>WhatsApp</span>
+            </a>
+            <a
+              href="mailto:globalholidaysagt@gmail.com"
+              class="drawer-action-btn"
+            >
+              <span>Email</span>
+            </a>
+            <a href="contact.html" class="drawer-action-btn">
+              <span>Visit Office</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main style="padding-top: 110px">
+      <!-- Page Hero Banner -->
+      <section class="section text-center" style="padding-bottom: 2rem">
+        <div class="container">
+          <span class="section-eyebrow gold-text"
+            >ACCREDITED BOUTIQUE HOSPITALITY</span
+          >
+          <h1 class="editorial-title" style="margin: 0.5rem 0 1.25rem">
+            Handpicked Luxury Stays & Heritage Retreats
+          </h1>
+          <p
+            class="section-desc"
+            style="margin: 0 auto 2.5rem; max-width: 740px"
+          >
+            From colonial tea garden suites and mountain view chalets to royal
+            lakeside retreats, explore verified boutique properties contracted
+            for flawless comfort, safety, and personalized culinary excellence.
+          </p>
+
+          <!-- Interactive Filter Tabs -->
+          <div
+            class="filter-tabs"
+            id="hotel-filters"
+            style="justify-content: center"
+            role="tablist"
+          >
+            <button class="filter-tab active" data-filter="all">
+              All Properties
+            </button>
+            <button class="filter-tab" data-filter="heritage">
+              Heritage & Tea Estates
+            </button>
+            <button class="filter-tab" data-filter="eco">
+              Eco & Lake Retreats
+            </button>
+            <button class="filter-tab" data-filter="mountain">
+              Mountain Chalets
+            </button>
+            <button class="filter-tab" data-filter="luxury">
+              5★ Luxury Suites
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hotel Cards Grid Section -->
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="hotels-grid" id="hotels-container">
+            <!-- Hotel 1 -->
+            <div class="hotel-card" data-category="heritage luxury">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">5★ Heritage Luxury</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+                  alt="Mayfair Tea Resort & Spa"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Darjeeling & Foothills</span>
+                </div>
+                <h3 class="hotel-title">Mayfair Tea Resort & Spa</h3>
+                <p class="hotel-desc">
+                  Vintage Tudor estate surrounded by miles of emerald tea
+                  bushes. Features private fireplaces, temperature-controlled
+                  indoor pool, and artisanal tea tasting salons.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Private Balcony</span>
+                  <span class="hotel-amenity-chip">Tea Sommelier</span>
+                  <span class="hotel-amenity-chip">Heated Pool</span>
+                  <span class="hotel-amenity-chip">Ayurvedic Spa</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹14,500 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Mayfair+Tea+Resort"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 2 -->
+            <div class="hotel-card" data-category="eco luxury">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Eco Luxury Retreat</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop"
+                  alt="Ri Kynjai Lake Resort"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Umiam Lake, Meghalaya</span>
+                </div>
+                <h3 class="hotel-title">Ri Kynjai – Serenity by the Lake</h3>
+                <p class="hotel-desc">
+                  Inspired by Khasi indigenous architecture. Waterfront chalets
+                  with sweeping pine hills, authentic herbal massage therapies,
+                  and private lake cruise docks.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Lakefront Cottages</span>
+                  <span class="hotel-amenity-chip">Ayurvedic Spa</span>
+                  <span class="hotel-amenity-chip">Speedboat Access</span>
+                  <span class="hotel-amenity-chip">Organic Kitchen</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹12,800 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Ri+Kynjai"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 3 -->
+            <div class="hotel-card" data-category="heritage mountain">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Royal Himalayan Heritage</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.8</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800&auto=format&fit=crop"
+                  alt="The Elgin Nor-Khill Gangtok"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Gangtok, Sikkim</span>
+                </div>
+                <h3 class="hotel-title">The Elgin Nor-Khill Heritage Villa</h3>
+                <p class="hotel-desc">
+                  Former guesthouse of the King of Sikkim. Displays Tibetan
+                  dragon frescos, antique brass fireplaces, and breathtaking
+                  morning views of Mt. Kanchenjunga.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Mountain Panoramas</span>
+                  <span class="hotel-amenity-chip">Royal Lounge</span>
+                  <span class="hotel-amenity-chip">Personal Butler</span>
+                  <span class="hotel-amenity-chip">Fireplace Suites</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹16,200 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Elgin+NorKhill"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 4 -->
+            <div class="hotel-card" data-category="eco mountain">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Cliff Edge Sanctuary</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop"
+                  alt="Polo Orchid Cliff Haven"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Cherrapunji, Meghalaya</span>
+                </div>
+                <h3 class="hotel-title">Polo Orchid Cliff Haven</h3>
+                <p class="hotel-desc">
+                  Perched dramatically on the rim of the Seven Sisters canyon.
+                  Features infinity decks, private open-air jacuzzis, and glass
+                  villas above the swirling clouds.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Infinity Pool Deck</span>
+                  <span class="hotel-amenity-chip">Private Jacuzzi</span>
+                  <span class="hotel-amenity-chip">Waterfall Views</span>
+                  <span class="hotel-amenity-chip">Sky Lounge</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹15,000 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Polo+Orchid"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 5 -->
+            <div class="hotel-card" data-category="luxury">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">5-Star Urban Luxury</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop"
+                  alt="Vivanta Meghalaya Shillong"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Shillong, Meghalaya</span>
+                </div>
+                <h3 class="hotel-title">Vivanta Meghalaya, Shillong</h3>
+                <p class="hotel-desc">
+                  Contemporary luxury situated in the heart of Shillong.
+                  Contemporary Nordic-Khasi decor, state-of-the-art wellness
+                  club, and signature Pan-Asian fine dining.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">City Center Access</span>
+                  <span class="hotel-amenity-chip">Fine Dining</span>
+                  <span class="hotel-amenity-chip">Executive Lounge</span>
+                  <span class="hotel-amenity-chip">Valet Concierge</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹13,500 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Vivanta+Shillong"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 6 -->
+            <div class="hotel-card" data-category="mountain luxury">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Mountain Summit Haven</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.8</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=800&auto=format&fit=crop"
+                  alt="Denzong Regency Mountain Resort"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Gangtok, Sikkim</span>
+                </div>
+                <h3 class="hotel-title">Denzong Regency Mountain Luxury</h3>
+                <p class="hotel-desc">
+                  Nestled against a lush hillside sanctuary. The only mountain
+                  retreat in Gangtok with individual suite balconies facing the
+                  sacred Mt. Kanchenjunga crest.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Private Balconies</span>
+                  <span class="hotel-amenity-chip">Ayurvedic Spa</span>
+                  <span class="hotel-amenity-chip">Heated Flooring</span>
+                  <span class="hotel-amenity-chip">Helipad Transfer</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹14,000 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Denzong+Regency"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 7 -->
+            <div class="hotel-card" data-category="heritage">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Royal Summer Retreat</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+                  alt="Heritage Club Tripura Castle"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Cleve Colony, Shillong</span>
+                </div>
+                <h3 class="hotel-title">Heritage Club – Tripura Castle</h3>
+                <p class="hotel-desc">
+                  Built in the 1920s by the Maharaja of Tripura as a royal
+                  summer palace. Set in nine acres of emerald pine forests with
+                  priceless family antiques and art.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Historic Royal Palace</span>
+                  <span class="hotel-amenity-chip">Pine Forest Trails</span>
+                  <span class="hotel-amenity-chip">Heritage Bar</span>
+                  <span class="hotel-amenity-chip">Fireplace Suites</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹11,500 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Tripura+Castle"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 8 -->
+            <div class="hotel-card" data-category="luxury">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Executive Palace View</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.7</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop"
+                  alt="Ginger Agartala Executive Suites"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Agartala, Tripura</span>
+                </div>
+                <h3 class="hotel-title">Ginger Agartala & Executive Suites</h3>
+                <p class="hotel-desc">
+                  The preferred premium stay in Tripura's capital. Conveniently
+                  located minutes from Ujjayanta Palace and MBB Airport with
+                  modern culinary services and conference facilities.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Airport Transfer</span>
+                  <span class="hotel-amenity-chip">Multi-Cuisine Cafe</span>
+                  <span class="hotel-amenity-chip">Fitness Centre</span>
+                  <span class="hotel-amenity-chip">High-Speed WiFi</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹6,800 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Ginger+Agartala"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Concierge Banner CTA -->
+      <section class="section" style="padding-top: 2rem">
+        <div class="container">
+          <div
+            class="cta-card glass-panel text-center"
+            style="
+              padding: 3.5rem 2rem;
+              border-radius: var(--radius-lg);
+              border: 1px solid var(--border-gold);
+            "
+          >
+            <span class="section-eyebrow gold-text"
+              >BESPOKE CONCIERGE PRIVILEGES</span
+            >
+            <h2
+              class="section-heading"
+              style="margin: 0.5rem auto 1rem; max-width: 700px"
+            >
+              Need Direct Contracting or Group Villa Booking?
+            </h2>
+            <p
+              class="section-desc"
+              style="max-width: 620px; margin: 0 auto 2rem"
+            >
+              Our Agartala concierge team manages private wedding buyouts,
+              corporate executive retreats, and exclusive suite upgrades with
+              direct hotel management agreements.
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <a href="tel:+918731010676" class="btn btn-gold btn-large">
+                <span>Call Concierge: +91 87310 10676</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a
+                href="https://wa.me/918731010676?text=Hello%20Global%20Holidays,%20I%20am%20interested%20in%20booking%20luxury%20hotels."
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-glass btn-large"
+              >
+                <span>WhatsApp Desk</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <div class="footer-col brand-col">
+            <div class="brand-logo footer-logo">
+              <img
+                src="/images/logo.png"
+                alt="Global Holidays Logo"
+                class="footer-logo-img"
+                width="52"
+                height="52"
+              />
+              <div class="logo-text">
+                <span class="brand-name">GLOBAL HOLIDAYS</span>
+                <span class="brand-sub">TOUR & TRAVELS</span>
+              </div>
+            </div>
+            <p class="footer-brand-desc">
+              A boutique luxury tour and travel company based in Agartala,
+              Tripura. Dedicated to bespoke journeys, private explorations, and
+              unforgettable experiences across India and global destinations.
+            </p>
+            <div class="footer-location-badge">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Agartala, Tripura, India</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="destinations.html">Destinations</a></li>
+              <li><a href="packages.html">Curated Packages</a></li>
+              <li><a href="hotels.html">Luxury Hotels</a></li>
+              <li><a href="deals.html">Exclusive Deals</a></li>
+              <li><a href="gallery.html">Travel Gallery</a></li>
+              <li><a href="stories.html">Travel Stories</a></li>
+              <li><a href="about.html">About & Heritage</a></li>
+              <li><a href="legal.html">Legal & Accreditations</a></li>
+              <li><a href="contact.html">Contact Concierge</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Signature Circuits</h4>
+            <ul class="footer-links">
+              <li><a href="packages.html">Meghalaya & Dawki Escape</a></li>
+              <li><a href="packages.html">Sikkim & Darjeeling Grandeur</a></li>
+              <li><a href="packages.html">Kashmir Valley Odyssey</a></li>
+              <li><a href="packages.html">Andaman Azure Haven</a></li>
+              <li><a href="packages.html">Royal Rajasthan Palaces</a></li>
+              <li><a href="packages.html">Tripura Heritage & Palaces</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Agartala Office</h4>
+            <p class="footer-address">
+              near hornbill restaurant, Banerjee Para, Krishna Nagar,<br />
+              Agartala, Tripura - 799003, India
+            </p>
+            <p class="footer-phone">
+              <a href="tel:+918731010676">+91 87310 10676</a> /
+              <a href="tel:+918837070817">+91 88370 70817</a>
+            </p>
+            <p class="footer-email">
+              <a href="mailto:globalholidaysagt@gmail.com"
+                >globalholidaysagt@gmail.com</a
+              >
+            </p>
+
+            <div class="footer-social-row">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                class="social-circle"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                class="social-circle"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/918731010676"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+                class="social-circle wa-social"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <p class="copyright-text">
+            © 2026 Global Holidays Tour & Travels. All rights reserved.
+          </p>
+          <div class="footer-legal-links">
+            <a href="legal.html">Government Registrations & GST</a>
+            <span>•</span>
+            <a href="contact.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="contact.html">Terms of Service</a>
+          </div>
+          <p class="footer-powered-by">
+            Powered by <a href="https://www.novaedges.in" target="_blank" rel="noopener noreferrer" class="powered-by-link">NOVAEDGES PRIVATE LIMITED</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MOBILE STICKY BOTTOM BAR -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+      <a href="tel:+918731010676" class="mob-bar-btn mob-bar-call">
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+        <span>Call Desk</span>
+      </a>
+      <a href="contact.html#planner" class="mob-bar-btn mob-bar-plan">
+        <span>Plan My Trip →</span>
+      </a>
+      <a
+        href="https://wa.me/918731010676"
+        target="_blank"
+        rel="noopener"
+        class="mob-bar-btn mob-bar-wa"
+        aria-label="Chat on WhatsApp"
+      >
+        <span class="mob-wa-icon-wrap">
+          <svg
+            class="mob-wa-icon"
+            viewBox="0 0 24 24"
+            width="19"
+            height="19"
+            fill="currentColor"
+          >
+            <path
+              d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+            />
+          </svg>
+          <span class="mob-wa-dot"></span>
+        </span>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON (Desktop) -->
+    <a
+      href="https://wa.me/918731010676?text=Hello%20Global%20Holidays%20Tour%20%26%20Travels,%20I%20would%20like%20to%20inquire%20about%20luxury%20hotels."
+      target="_blank"
+      rel="noopener"
+      class="floating-whatsapp-btn"
+      id="floating-whatsapp"
+      aria-label="Chat with Global Holidays Concierge on WhatsApp"
+    >
+      <div class="wa-pulse-ring"></div>
+      <div class="wa-btn-inner">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path
+            d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+          />
+        </svg>
+      </div>
+      <span class="wa-tooltip">Chat with Concierge</span>
+    </a>
+
+    <!-- FLOATING BACK TO TOP BUTTON -->
+    <button
+      type="button"
+      class="back-to-top-btn"
+      id="back-to-top-btn"
+      aria-label="Scroll to top of page"
+      title="Back to Top"
+    >
+      <div class="top-btn-inner">
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </div>
+    </button>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

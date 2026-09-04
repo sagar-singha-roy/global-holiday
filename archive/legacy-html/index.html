@@ -1,0 +1,4715 @@
+<!doctype html>
+<html lang="en" class="lenis lenis-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Holidays Tour & Travels — Luxury Travel Agency</title>
+
+    <!-- SEO & Meta Tags -->
+    <meta
+      name="description"
+      content="Experience bespoke luxury travel with Global Holidays Tour & Travels, based in Agartala, Tripura. Handcrafted journeys across Northeast India, Kashmir, Andaman, Goa, and world destinations."
+    />
+    <meta
+      name="keywords"
+      content="Global Holidays, luxury travel Tripura, Northeast India tours, Meghalaya holiday package, Sikkim tour operator, Kashmir luxury travel, travel agency in Agartala"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/images/favicon-192.png" />
+
+    <!-- Early Theme Initializer to prevent flicker -->
+    <script>
+      (function () {
+        var t = localStorage.getItem("gh_theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Global Holidays Tour & Travels — Luxury Travel Experiences"
+    />
+    <meta
+      property="og:description"
+      content="Discover extraordinary destinations and unforgettable journeys with Agartala's premier boutique travel agency."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop"
+    />
+
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <!-- Schema.org JSON-LD for Local Travel Agency -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Global Holidays Tour and Travels",
+        "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+        "description": "Luxury boutique travel agency in Agartala, Tripura providing bespoke customized holiday packages, luxury stays, and curated explorations.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "near hornbill restaurant, Banerjee Para, Krishna Nagar",
+          "addressLocality": "Agartala",
+          "addressRegion": "Tripura",
+          "postalCode": "799003",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-87310-10676",
+        "priceRange": "$$$"
+      }
+    </script>
+  </head>
+  <body data-theme="luxury-dark">
+    <!-- Custom Luxury Magnetic Cursor -->
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+      <div class="cursor-dot" id="cursor-dot"></div>
+      <div class="cursor-ring" id="cursor-ring"></div>
+    </div>
+
+    <!-- 1. STICKY LUXURY NAVIGATION -->
+    <header class="site-header" id="site-header">
+      <div class="nav-container">
+        <a href="#hero" class="brand-logo" aria-label="Global Holidays Home">
+          <img
+            src="/images/logo-icon.png"
+            alt="Global Holidays Logo"
+            class="brand-logo-img"
+            width="44"
+            height="44"
+          />
+          <div class="logo-text">
+            <span class="brand-name">GLOBAL HOLIDAYS</span>
+            <span class="brand-sub">TOUR & TRAVELS</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li>
+              <a href="destinations.html" class="nav-link">Destinations</a>
+            </li>
+            <li><a href="packages.html" class="nav-link">Packages</a></li>
+            <li><a href="hotels.html" class="nav-link">Hotels</a></li>
+            <li><a href="deals.html" class="nav-link">Deals</a></li>
+
+            <li><a href="stories.html" class="nav-link">Stories</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-dropdown">
+              <button
+                class="dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+                id="company-dropdown-btn"
+                type="button"
+              >
+                <span>Company</span>
+                <svg
+                  class="dropdown-chevron"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="company-dropdown-btn">
+                <li>
+                  <a href="about.html" class="dropdown-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>About & Mission</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="legal.html" class="dropdown-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                      ></path>
+                    </svg>
+                    <span>Legal</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="contact.html" class="dropdown-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      ></path>
+                    </svg>
+                    <span>Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Header Action CTA -->
+        <div class="nav-actions">
+          <button
+            class="theme-toggle-btn"
+            id="theme-toggle-btn"
+            aria-label="Toggle light and dark mode"
+            title="Switch Theme"
+          >
+            <span class="theme-icon-sun">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+            <span class="theme-icon-moon">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+          <a
+            href="contact.html"
+            class="btn btn-gold btn-magnetic"
+            id="nav-cta-btn"
+          >
+            <span>Plan My Trip</span>
+            <svg
+              class="btn-arrow"
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <button
+            class="menu-toggle"
+            id="menu-toggle-btn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Fullscreen Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-drawer-header">
+          <a href="index.html" class="brand-logo">
+            <img
+              src="/images/logo.png"
+              alt="Global Holidays Logo"
+              class="brand-logo-img"
+              width="38"
+              height="38"
+            />
+            <div class="logo-text">
+              <span class="brand-name" style="font-size: 1.05rem"
+                >GLOBAL HOLIDAYS</span
+              >
+              <span class="brand-sub" style="font-size: 0.6rem"
+                >TOUR & TRAVELS</span
+              >
+            </div>
+          </a>
+          <div style="display: flex; align-items: center; gap: 0.65rem">
+            <button
+              class="theme-toggle-btn mobile-theme-btn"
+              aria-label="Toggle light and dark mode"
+              title="Switch Theme"
+            >
+              <span class="theme-icon-sun">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </span>
+              <span class="theme-icon-moon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <button
+              class="drawer-close-btn"
+              id="drawer-close-btn"
+              aria-label="Close menu"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <ul class="mobile-nav-links">
+          <li>
+            <a href="index.html" class="mobile-nav-link active">
+              <span class="nav-label">Home</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="destinations.html" class="mobile-nav-link">
+              <span class="nav-label">Destinations</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="packages.html" class="mobile-nav-link">
+              <span class="nav-label">Curated Packages</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="hotels.html" class="mobile-nav-link">
+              <span class="nav-label">Luxury Hotels</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="deals.html" class="mobile-nav-link">
+              <span class="nav-label">Exclusive Deals</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="stories.html" class="mobile-nav-link">
+              <span class="nav-label">Travel Stories</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="gallery.html" class="mobile-nav-link">
+              <span class="nav-label">Gallery</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li class="mobile-nav-divider">
+            <span class="mobile-nav-divider-label">COMPANY & CONCIERGE</span>
+          </li>
+          <li>
+            <a href="about.html" class="mobile-nav-link mobile-sub-link">
+              <span class="nav-label">About & Mission</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="legal.html" class="mobile-nav-link mobile-sub-link">
+              <span class="nav-label">Legal & Accreditations</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="mobile-nav-link mobile-sub-link">
+              <span class="nav-label">Contact Concierge</span>
+              <span class="nav-arrow">→</span>
+            </a>
+          </li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <span class="drawer-contact-title">Direct Agartala Concierge</span>
+          <div class="drawer-phone-group">
+            <a href="tel:+918731010676" class="drawer-phone-chip">
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span>+91 87310 10676</span>
+            </a>
+            <a href="tel:+918837070817" class="drawer-phone-chip">
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span>+91 88370 70817</span>
+            </a>
+          </div>
+          <div class="drawer-quick-actions">
+            <a
+              href="https://wa.me/918731010676"
+              target="_blank"
+              rel="noopener"
+              class="drawer-action-btn drawer-wa-btn"
+            >
+              <span>WhatsApp</span>
+            </a>
+            <a
+              href="mailto:globalholidaysagt@gmail.com"
+              class="drawer-action-btn"
+            >
+              <span>Email</span>
+            </a>
+            <a href="#contact" class="drawer-action-btn">
+              <span>Visit Office</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- 2. CINEMATIC HERO SECTION WITH 5-IMAGE CAROUSEL -->
+      <section class="hero-section" id="hero">
+        <div class="hero-carousel-container" id="hero-carousel">
+          <!-- Slide 1: Meghalaya -->
+          <div
+            class="hero-slide active"
+            data-slide="0"
+            data-dest="Meghalaya"
+            data-badge="Signature Northeast Circuit"
+            data-route="Shillong • Cherrapunji • Dawki • Mawlynnong"
+            data-thumb="/images/meghalaya.jpg"
+          >
+            <img
+              src="/images/meghalaya.jpg"
+              alt="Meghalaya Living Root Bridge & Waterfalls"
+              class="hero-slide-img"
+              fetchpriority="high"
+            />
+          </div>
+
+          <!-- Slide 2: Kashmir -->
+          <div
+            class="hero-slide"
+            data-slide="1"
+            data-dest="Kashmir Valley"
+            data-badge="Paradise On Earth"
+            data-route="Srinagar • Dal Lake • Gulmarg • Pahalgam"
+            data-thumb="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=2000&auto=format&fit=crop"
+              alt="Kashmir Dal Lake Morning Shikara"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 3: Sikkim & Himalayas -->
+          <div
+            class="hero-slide"
+            data-slide="2"
+            data-dest="Sikkim & Darjeeling"
+            data-badge="Sacred Himalayan Pass"
+            data-route="Gangtok • Gurudongmar • Pelling • Tiger Hill"
+            data-thumb="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2000&auto=format&fit=crop"
+              alt="Sikkim Glacial Lake and Mountains"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 4: Andaman Islands -->
+          <div
+            class="hero-slide"
+            data-slide="3"
+            data-dest="Andaman Islands"
+            data-badge="Pristine Coral Haven"
+            data-route="Port Blair • Havelock • Neil • Radhanagar"
+            data-thumb="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop"
+              alt="Andaman Turquoise Island Waters"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 5: Rajasthan -->
+          <div
+            class="hero-slide"
+            data-slide="4"
+            data-dest="Royal Rajasthan"
+            data-badge="Echoes of Royalty"
+            data-route="Jaipur • Udaipur • Jaisalmer Dunes • Jodhpur"
+            data-thumb="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop"
+              alt="Royal Rajasthan Desert Forts & Lake Palaces"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 6: Kerala -->
+          <div
+            class="hero-slide"
+            data-slide="5"
+            data-dest="Kerala"
+            data-badge="God's Own Country"
+            data-route="Munnar Hills • Alleppey Backwaters • Wayanad • Kochi"
+            data-thumb="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop"
+              alt="Kerala Backwaters & Houseboat Sanctuary"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 7: Himachal Pradesh -->
+          <div
+            class="hero-slide"
+            data-slide="6"
+            data-dest="Himachal Pradesh"
+            data-badge="Valley of the Gods"
+            data-route="Manali • Shimla • Spiti Valley • Dharamshala"
+            data-thumb="https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=2000&auto=format&fit=crop"
+              alt="Himachal Snow Passes and Pine Glades"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 8: Goa -->
+          <div
+            class="hero-slide"
+            data-slide="7"
+            data-dest="Goa"
+            data-badge="Boutique Coastal Retreats"
+            data-route="Candolim • Palolem • Fontainhas • South Goa"
+            data-thumb="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=2000&auto=format&fit=crop"
+              alt="Goa Coastal Palm Shores and Sunsets"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 9: Uttarakhand -->
+          <div
+            class="hero-slide"
+            data-slide="8"
+            data-dest="Uttarakhand"
+            data-badge="Sacred Heights & Alpine Valleys"
+            data-route="Rishikesh • Mussoorie • Nainital • Auli Slopes"
+            data-thumb="https://images.unsplash.com/photo-1582650625119-3a31f8418365?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1582650625119-3a31f8418365?q=80&w=2000&auto=format&fit=crop"
+              alt="Uttarakhand Himalayan Peaks and Rivers"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 10: Ladakh -->
+          <div
+            class="hero-slide"
+            data-slide="9"
+            data-dest="Ladakh"
+            data-badge="Land of High Passes"
+            data-route="Leh • Pangong Tso • Nubra Valley • Khardung La"
+            data-thumb="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=2000&auto=format&fit=crop"
+              alt="Ladakh Pangong Lake and Monasteries"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 11: Arunachal Pradesh -->
+          <div
+            class="hero-slide"
+            data-slide="10"
+            data-dest="Arunachal Pradesh"
+            data-badge="Land of Dawn-Lit Mountains"
+            data-route="Tawang • Sela Pass • Bomdila • Ziro Valley"
+            data-thumb="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop"
+              alt="Arunachal Monasteries and Mist-Shrouded Valleys"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 12: Tripura -->
+          <div
+            class="hero-slide"
+            data-slide="11"
+            data-dest="Tripura"
+            data-badge="Royal Water Palace & Antiquity"
+            data-route="Agartala • Neermahal • Unakoti • Sepahijala"
+            data-thumb="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=2000&auto=format&fit=crop"
+              alt="Tripura Neermahal Water Palace and Heritage"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 13: Assam -->
+          <div
+            class="hero-slide"
+            data-slide="12"
+            data-region="india"
+            data-dest="Assam Wildlife"
+            data-badge="Gateway to the Northeast"
+            data-route="Kaziranga Safari • Majuli Island • Brahmaputra Cruise"
+            data-thumb="https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&w=2000&auto=format&fit=crop"
+              alt="Assam Kaziranga Wildlife and Tea Estates"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 14: Tamil Nadu -->
+          <div
+            class="hero-slide"
+            data-slide="13"
+            data-region="india"
+            data-dest="Tamil Nadu"
+            data-badge="Temple Towns & Blue Mountains"
+            data-route="Ooty Nilgiris • Kodaikanal • Rameshwaram • Madurai"
+            data-thumb="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2000&auto=format&fit=crop"
+              alt="Tamil Nadu Ooty Nilgiri Tea Mountains"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 15: Karnataka -->
+          <div
+            class="hero-slide"
+            data-slide="14"
+            data-region="india"
+            data-dest="Karnataka Heritage"
+            data-badge="Monolithic Wonders & Coffee Hills"
+            data-route="Coorg Coffee Valleys • Kabini Safari • Hampi Ruins"
+            data-thumb="https://images.unsplash.com/photo-1600100397608-f010e42e4720?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600100397608-f010e42e4720?q=80&w=2000&auto=format&fit=crop"
+              alt="Karnataka Hampi Ruins and Ancient Temples"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 16: Thailand -->
+          <div
+            class="hero-slide"
+            data-slide="15"
+            data-region="intl"
+            data-dest="Thailand"
+            data-badge="Tropical Kingdom"
+            data-route="Bangkok • Phuket Luxury • Krabi • Phi Phi Islands"
+            data-thumb="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2000&auto=format&fit=crop"
+              alt="Thailand Emerald Bays and Longtail Boats"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 17: Indonesia & Bali -->
+          <div
+            class="hero-slide"
+            data-slide="16"
+            data-region="intl"
+            data-dest="Bali & Indonesia"
+            data-badge="Island of the Gods"
+            data-route="Ubud Jungle Villas • Nusa Penida • Seminyak • Uluwatu"
+            data-thumb="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2000&auto=format&fit=crop"
+              alt="Bali Tropical Temple and Sacred Forest"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 18: Dubai -->
+          <div
+            class="hero-slide"
+            data-slide="17"
+            data-region="intl"
+            data-dest="Dubai & UAE"
+            data-badge="Futuristic Luxury Oasis"
+            data-route="Burj Khalifa • Desert Dunes • Palm Jumeirah • Marina"
+            data-thumb="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000&auto=format&fit=crop"
+              alt="Dubai Skyline and Burj Khalifa Grandeur"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 19: Switzerland -->
+          <div
+            class="hero-slide"
+            data-slide="18"
+            data-region="intl"
+            data-dest="Switzerland"
+            data-badge="Alpine Grandeur"
+            data-route="Interlaken • Lucerne • Zermatt • Matterhorn Glacier"
+            data-thumb="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=2000&auto=format&fit=crop"
+              alt="Swiss Alps and Glacier Lakes"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 20: Maldives -->
+          <div
+            class="hero-slide"
+            data-slide="19"
+            data-region="intl"
+            data-dest="Maldives"
+            data-badge="Overwater Paradise"
+            data-route="Private Coral Atolls • Water Bungalows • Sunset Cruises"
+            data-thumb="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2000&auto=format&fit=crop"
+              alt="Maldives Turquoise Waters and Overwater Villas"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 21: Kazakhstan -->
+          <div
+            class="hero-slide"
+            data-slide="20"
+            data-region="intl"
+            data-dest="Kazakhstan"
+            data-badge="The Silk Road Steppes"
+            data-route="Almaty Mountains • Charyn Canyon • Kolsai Lake • Astana"
+            data-thumb="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=2000&auto=format&fit=crop"
+              alt="Kazakhstan Dramatic Alpine Canyons and Lakes"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 22: Turkey -->
+          <div
+            class="hero-slide"
+            data-slide="21"
+            data-region="intl"
+            data-dest="Turkey"
+            data-badge="Where Continents Meet"
+            data-route="Istanbul Bosphorus • Cappadocia Balloons • Antalya Coast"
+            data-thumb="https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=2000&auto=format&fit=crop"
+              alt="Turkey Cappadocia Sunrise Hot Air Balloons"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 23: France -->
+          <div
+            class="hero-slide"
+            data-slide="22"
+            data-region="intl"
+            data-dest="France & Paris"
+            data-badge="Romance & Riviera"
+            data-route="Paris Eiffel • Nice • Cannes • French Riviera"
+            data-thumb="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2000&auto=format&fit=crop"
+              alt="Parisian Architecture and Eiffel Vista"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 24: Italy -->
+          <div
+            class="hero-slide"
+            data-slide="23"
+            data-region="intl"
+            data-dest="Italy"
+            data-badge="Bella Italia"
+            data-route="Rome Colosseum • Venice Canals • Florence • Amalfi Coast"
+            data-thumb="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2000&auto=format&fit=crop"
+              alt="Italy Amalfi Cliffside Villas"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 25: United Kingdom -->
+          <div
+            class="hero-slide"
+            data-slide="24"
+            data-region="intl"
+            data-dest="United Kingdom"
+            data-badge="Regal Heritage"
+            data-route="London • Edinburgh • Cotswolds • Scottish Highlands"
+            data-thumb="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2000&auto=format&fit=crop"
+              alt="London Westminster and Regal Palaces"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 26: Greece -->
+          <div
+            class="hero-slide"
+            data-slide="25"
+            data-region="intl"
+            data-dest="Greece"
+            data-badge="Aegean Odyssey"
+            data-route="Santorini Domes • Mykonos • Athens Acropolis • Crete"
+            data-thumb="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=2000&auto=format&fit=crop"
+              alt="Santorini White Domes and Turquoise Aegean Sea"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Slide 27: Spain -->
+          <div
+            class="hero-slide"
+            data-slide="26"
+            data-region="intl"
+            data-dest="Spain"
+            data-badge="Iberian Splendour"
+            data-route="Barcelona Sagrada • Madrid • Seville • Balearic Isles"
+            data-thumb="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=200&auto=format&fit=crop"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2000&auto=format&fit=crop"
+              alt="Spain Historic Architecture and Sunny Plazas"
+              class="hero-slide-img"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="hero-gradient-overlay"></div>
+          <div class="hero-noise-overlay"></div>
+        </div>
+
+        <!-- Hero Carousel Navigation Arrows -->
+        <button
+          class="hero-carousel-arrow hero-arrow-prev"
+          id="hero-arrow-prev"
+          aria-label="Previous Slide"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button
+          class="hero-carousel-arrow hero-arrow-next"
+          id="hero-arrow-next"
+          aria-label="Next Slide"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="hero-content container">
+          <!-- <div class="hero-pill-badge fade-reveal">
+            <span class="pulse-dot"></span>
+            <span class="badge-text">LUXURY • COMFORT • TRUST</span>
+          </div> -->
+
+          <h1 class="hero-headline editorial-title split-text-reveal">
+            <span class="line-wrap"
+              ><span class="line-inner hero-brand-title"
+                >GLOBAL HOLIDAYS</span
+              ></span
+            >
+            <span class="line-wrap"
+              ><span class="line-inner hero-headline-sub gold-italic"
+                >Tour and travels</span
+              ></span
+            >
+            <span class="line-wrap"
+              ><span class="line-inner hero-headline-tagline"
+                >LUXURY <span class="pulse-dot"></span> COMFORT
+                <span class="pulse-dot"></span> TRUST</span
+              ></span
+            >
+          </h1>
+
+          <p class="hero-subtitle fade-reveal delay-2">
+            We don’t just plan your journey, we become a part of your story,
+            turning every destination into a beautiful memory you’ll carry
+            forever.
+          </p>
+
+          <div class="hero-cta-group fade-reveal delay-3">
+            <a
+              href="destinations.html"
+              class="btn btn-gold btn-large btn-magnetic"
+            >
+              <span>Explore Destinations</span>
+              <svg
+                class="btn-arrow"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="contact.html"
+              class="btn btn-outline-glass btn-large btn-magnetic"
+            >
+              <span>Plan My Trip</span>
+            </a>
+          </div>
+
+          <!-- Floating Destination Feature Pill (Dynamic with Carousel) -->
+          <div
+            class="hero-floating-card glass-panel fade-reveal delay-4"
+            id="hero-floating-card"
+          >
+            <div class="floating-badge-thumb">
+              <img
+                id="floating-thumb-img"
+                src="/images/meghalaya.jpg"
+                alt="Current Featured Destination"
+              />
+            </div>
+            <div class="floating-badge-text">
+              <span class="floating-tag" id="floating-badge-tag"
+                >Signature Northeast Circuit</span
+              >
+              <strong class="floating-title" id="floating-badge-title"
+                >Meghalaya</strong
+              >
+              <span class="floating-sub" id="floating-badge-sub"
+                >Shillong • Cherrapunji • Dawki • Mawlynnong</span
+              >
+            </div>
+            <a
+              href="packages.html"
+              class="floating-arrow"
+              aria-label="View signature packages"
+              >→</a
+            >
+          </div>
+
+          <!-- Tab selector for Indian & International/Europe -->
+          <div
+            class="hero-region-tabs"
+            id="hero-region-tabs"
+            role="tablist"
+            aria-label="Destination region selector"
+          >
+            <button
+              class="region-tab active"
+              data-region="india"
+              role="tab"
+              aria-selected="true"
+              id="tab-india"
+            >
+              <span class="region-tab-icon">🇮🇳</span>
+              <span class="region-tab-text">Indian Escapes</span>
+              <!-- <span class="region-tab-badge">Top 15</span> -->
+            </button>
+            <button
+              class="region-tab"
+              data-region="intl"
+              role="tab"
+              aria-selected="false"
+              id="tab-intl"
+            >
+              <span class="region-tab-icon">✈️</span>
+              <span class="region-tab-text">International & Europe</span>
+              <span class="region-tab-badge">Global</span>
+            </button>
+          </div>
+
+          <!-- Carousel Slide Indicators / Progress Dots -->
+          <div
+            class="hero-indicators-row"
+            id="hero-indicators"
+            role="tablist"
+            aria-label="Featured destinations"
+          >
+            <!-- India Top 15 -->
+            <button
+              class="hero-indicator active"
+              data-index="0"
+              data-region="india"
+              aria-label="Meghalaya slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Meghalaya</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="1"
+              data-region="india"
+              aria-label="Kashmir slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Kashmir</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="2"
+              data-region="india"
+              aria-label="Sikkim slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Sikkim</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="3"
+              data-region="india"
+              aria-label="Andaman slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Andaman</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="4"
+              data-region="india"
+              aria-label="Rajasthan slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Rajasthan</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="5"
+              data-region="india"
+              aria-label="Kerala slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Kerala</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="6"
+              data-region="india"
+              aria-label="Himachal slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Himachal</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="7"
+              data-region="india"
+              aria-label="Goa slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Goa</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="8"
+              data-region="india"
+              aria-label="Uttarakhand slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Uttarakhand</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="9"
+              data-region="india"
+              aria-label="Ladakh slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Ladakh</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="10"
+              data-region="india"
+              aria-label="Arunachal slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Arunachal</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="11"
+              data-region="india"
+              aria-label="Tripura slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Tripura</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="12"
+              data-region="india"
+              aria-label="Assam slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Assam</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="13"
+              data-region="india"
+              aria-label="Tamil Nadu slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Tamil Nadu</span>
+            </button>
+            <button
+              class="hero-indicator"
+              data-index="14"
+              data-region="india"
+              aria-label="Karnataka slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Karnataka</span>
+            </button>
+
+            <!-- International & Europe -->
+            <button
+              class="hero-indicator hidden-region"
+              data-index="15"
+              data-region="intl"
+              aria-label="Thailand slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Thailand</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="16"
+              data-region="intl"
+              aria-label="Indonesia & Bali slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Bali & Indonesia</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="17"
+              data-region="intl"
+              aria-label="Dubai slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Dubai</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="18"
+              data-region="intl"
+              aria-label="Switzerland slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Switzerland</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="19"
+              data-region="intl"
+              aria-label="Maldives slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Maldives</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="20"
+              data-region="intl"
+              aria-label="Kazakhstan slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Kazakhstan</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="21"
+              data-region="intl"
+              aria-label="Turkey slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Turkey</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="22"
+              data-region="intl"
+              aria-label="France slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">France</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="23"
+              data-region="intl"
+              aria-label="Italy slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Italy</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="24"
+              data-region="intl"
+              aria-label="United Kingdom slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">UK</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="25"
+              data-region="intl"
+              aria-label="Greece slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Greece</span>
+            </button>
+            <button
+              class="hero-indicator hidden-region"
+              data-index="26"
+              data-region="intl"
+              aria-label="Spain slide"
+            >
+              <span class="ind-progress"></span
+              ><span class="ind-label">Spain</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <a
+          href="#experience"
+          class="hero-scroll-indicator"
+          aria-label="Scroll to experience section"
+        >
+          <span class="scroll-mouse">
+            <span class="scroll-wheel"></span>
+          </span>
+          <span class="scroll-label">Scroll to Explore</span>
+        </a>
+      </section>
+
+      <!-- 3. TRAVEL EXPERIENCE / INTRODUCTION -->
+      <section class="section experience-section" id="experience">
+        <div class="container">
+          <div class="editorial-grid">
+            <div class="editorial-text-col">
+              <span class="section-eyebrow gold-text"
+                >THE GLOBAL HOLIDAYS EXPERIENCE</span
+              >
+              <h2 class="section-heading editorial-quote">
+                “Travel isn't just about where you go.<br />
+                <span class="serif-italic"
+                  >It's about how you experience it.”</span
+                >
+              </h2>
+              <div class="editorial-body">
+                <p class="lead-text">
+                  At Global Holidays Tour & Travels, we believe genuine luxury
+                  lies in the effortless harmony of meticulous planning, genuine
+                  local warmth, and unfiltered discovery.
+                </p>
+                <p>
+                  From the misty rainforest passes of Meghalaya and sacred
+                  high-altitude lakes of Sikkim, to the royal palaces of
+                  Rajasthan and tranquil houseboats of Kashmir, we sculpt
+                  private journeys tailored specifically to your rhythm. Every
+                  itinerary is paired with handpicked boutique stays, private
+                  verified chauffeurs, and 24/7 personalized concierge care from
+                  our Agartala headquarters.
+                </p>
+                <div class="experience-pillars">
+                  <div class="pillar-item">
+                    <span class="pillar-num">01</span>
+                    <div>
+                      <h4>Hand-Crafted Itineraries</h4>
+                      <p>
+                        Zero cookie-cutter tours. Every day is tailored to your
+                        preferences.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="pillar-item">
+                    <span class="pillar-num">02</span>
+                    <div>
+                      <h4>Boutique & Heritage Stays</h4>
+                      <p>
+                        Exclusive resorts, colonial tea bungalows, and luxury
+                        retreats.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="pillar-item">
+                    <span class="pillar-num">03</span>
+                    <div>
+                      <h4>End-to-End Concierge</h4>
+                      <p>
+                        Dedicated travel manager from flight takeoff to safe
+                        homecoming.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-media-col">
+              <div class="asymmetric-image-stack">
+                <div class="image-frame main-frame parallax-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop"
+                    alt="High Altitude Himalayan Valley Experience"
+                    loading="lazy"
+                  />
+                  <div class="frame-caption">
+                    <span>Eastern Himalayas • Sacred Monasteries</span>
+                  </div>
+                </div>
+                <div class="image-frame secondary-frame glass-border">
+                  <img
+                    src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop"
+                    alt="Luxury Coastal Sunset Villa"
+                    loading="lazy"
+                  />
+                  <div class="secondary-badge">
+                    <span class="stars">★★★★★</span>
+                    <span>Curated Stays</span>
+                  </div>
+                </div>
+                <div class="decorative-accent-stamp">
+                  <svg viewBox="0 0 100 100" class="rotating-text-svg">
+                    <path
+                      id="textPath"
+                      d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                      fill="none"
+                    />
+                    <text>
+                      <textPath href="#textPath" startOffset="0%">
+                        • GLOBAL HOLIDAYS • TOUR & TRAVELS •
+                      </textPath>
+                    </text>
+                  </svg>
+                  <div
+                    class="stamp-icon"
+                    title="GLOBAL HOLIDAYS TOUR & TRAVELS"
+                  >
+                    <img
+                      src="/images/logo-icon.png"
+                      alt="Global Holidays Tour & Travels"
+                      class="stamp-logo-img"
+                      width="44"
+                      height="44"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. POPULAR DESTINATIONS SHOWCASE -->
+      <section class="section destinations-section" id="destinations">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text"
+                >EXPLORE SANCTUARIES & WONDERS</span
+              >
+              <h2 class="section-heading">Where will you go next?</h2>
+              <p class="section-desc">
+                Handpicked destinations spanning pristine Northeast hills,
+                snow-crested northern passes, royal heritage kingdoms, and
+                tropical island shores.
+              </p>
+            </div>
+            <div class="filter-tabs" id="destination-filters" role="tablist">
+              <button class="filter-tab active" data-filter="all">
+                All Destinations
+              </button>
+              <button class="filter-tab" data-filter="northeast">
+                Northeast India
+              </button>
+              <button class="filter-tab" data-filter="pan-india">
+                Pan-India
+              </button>
+              <button class="filter-tab" data-filter="international">
+                International
+              </button>
+            </div>
+          </div>
+
+          <div class="destinations-grid" id="destinations-container">
+            <!-- Meghalaya -->
+            <article
+              class="destination-card large-card"
+              data-category="northeast"
+            >
+              <div class="dest-media-wrapper">
+                <img
+                  src="/images/meghalaya.jpg"
+                  alt="Meghalaya Living Root Bridge & Waterfalls"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Northeast Jewel</span>
+                <h3 class="dest-name">Meghalaya</h3>
+                <p class="dest-desc">
+                  Abode of clouds, living root bridges, mystical caves, and the
+                  glass-like waters of Dawki's Umngot River.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Meghalaya">
+                  <span>Explore Meghalaya</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Sikkim -->
+            <article class="destination-card" data-category="northeast">
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop"
+                  alt="Sikkim High Altitude Mountain Passes"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Himalayan Sanctuary</span>
+                <h3 class="dest-name">Sikkim</h3>
+                <p class="dest-desc">
+                  Glacial lakes at 17,000 ft, sacred gompas, blooming
+                  rhododendrons, and Mt. Kanchenjunga vistas.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Sikkim">
+                  <span>Explore Sikkim</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Darjeeling -->
+            <article class="destination-card" data-category="northeast">
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop"
+                  alt="Darjeeling Emerald Tea Gardens"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Heritage Hillstation</span>
+                <h3 class="dest-name">Darjeeling</h3>
+                <p class="dest-desc">
+                  Tiger Hill sunrises over snow peaks, heritage Himalayan toy
+                  train rides, and colonial tea estate stays.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Darjeeling">
+                  <span>Explore Darjeeling</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Kashmir -->
+            <article
+              class="destination-card large-card"
+              data-category="pan-india"
+            >
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=1000&auto=format&fit=crop"
+                  alt="Kashmir Dal Lake Shikara and Mountains"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Paradise on Earth</span>
+                <h3 class="dest-name">Kashmir</h3>
+                <p class="dest-desc">
+                  Opulent carved houseboats on Dal Lake, alpine meadow gondolas
+                  in Gulmarg, and saffron gardens of Pahalgam.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Kashmir">
+                  <span>Explore Kashmir</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Andaman -->
+            <article class="destination-card" data-category="pan-india">
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop"
+                  alt="Andaman Pristine Turquoise Waters"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Tropical Escape</span>
+                <h3 class="dest-name">Andaman Islands</h3>
+                <p class="dest-desc">
+                  White powdery beaches at Havelock, private scuba excursions,
+                  and secluded luxury island resorts.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Andaman">
+                  <span>Explore Andaman</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Rajasthan -->
+            <article class="destination-card" data-category="pan-india">
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop"
+                  alt="Rajasthan Royal Palace Architecture"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Royal Heritage</span>
+                <h3 class="dest-name">Rajasthan</h3>
+                <p class="dest-desc">
+                  Grand palaces of Udaipur, golden desert dunes under
+                  star-studded skies in Jaisalmer, and majestic Jaipur forts.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Rajasthan">
+                  <span>Explore Rajasthan</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Himachal Pradesh -->
+            <article class="destination-card" data-category="pan-india">
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=800&auto=format&fit=crop"
+                  alt="Himachal Mountain Passes and Cedar Forests"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Alpine Solitude</span>
+                <h3 class="dest-name">Himachal Pradesh</h3>
+                <p class="dest-desc">
+                  Chalet retreats in Manali, surreal Moon Valley landscapes of
+                  Spiti, and cedar-scented trails of Shimla.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Himachal">
+                  <span>Explore Himachal</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Goa -->
+            <article class="destination-card" data-category="pan-india">
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop"
+                  alt="Goa Luxury Coastal Resort"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">Coastal Sophistication</span>
+                <h3 class="dest-name">Goa (South & Heritage)</h3>
+                <p class="dest-desc">
+                  Private beach cabanas, 400-year-old Portuguese mansions, river
+                  catamaran sunsets, and fine dining.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Goa">
+                  <span>Explore Goa</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Bali & Southeast Asia -->
+            <article
+              class="destination-card large-card"
+              data-category="international"
+            >
+              <div class="dest-media-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1000&auto=format&fit=crop"
+                  alt="Bali Luxury Tropical Forest Villa"
+                  loading="lazy"
+                />
+                <div class="dest-overlay"></div>
+              </div>
+              <div class="dest-content">
+                <span class="dest-tag">International Haven</span>
+                <h3 class="dest-name">Bali & Southeast Asia</h3>
+                <p class="dest-desc">
+                  Private pool jungle villas in Ubud, cliffside temples
+                  overlooking the Indian Ocean, and tailored island hopping.
+                </p>
+                <button class="dest-btn open-pkg-filter" data-dest="Bali">
+                  <span>Explore International</span>
+                  <span class="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. CURATED TOUR PACKAGES SECTION -->
+      <section class="section packages-section" id="packages">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text">CURATED JOURNEYS</span>
+              <h2 class="section-heading">Journeys Worth Remembering</h2>
+              <p class="section-desc">
+                Handcrafted itineraries including verified boutique stays,
+                private luxury transport, and personalized excursions.
+              </p>
+            </div>
+            <div class="carousel-nav-controls">
+              <button
+                class="slider-arrow"
+                id="pkg-prev-btn"
+                aria-label="Previous Package"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button
+                class="slider-arrow"
+                id="pkg-next-btn"
+                aria-label="Next Package"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="packages-carousel-wrapper">
+            <div class="packages-track" id="packages-track">
+              <!-- Package 1: Meghalaya -->
+              <div class="pkg-card" data-pkg-id="meghalaya-escape">
+                <div class="pkg-image-wrapper">
+                  <img
+                    src="/images/meghalaya.jpg"
+                    alt="Meghalaya Escape Tour"
+                    loading="lazy"
+                  />
+                  <span class="pkg-duration-badge">5 Days / 4 Nights</span>
+                  <span class="pkg-dest-badge">Meghalaya</span>
+                </div>
+                <div class="pkg-body">
+                  <div class="pkg-rating-row">
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-num">4.9 (48 Reviews)</span>
+                  </div>
+                  <h3 class="pkg-title">Meghalaya Cloud Sanctuary</h3>
+                  <p class="pkg-itinerary-line">
+                    Shillong • Cherrapunji • Dawki • Mawlynnong
+                  </p>
+                  <div class="pkg-highlights-pills">
+                    <span>Double Decker Root Bridge</span>
+                    <span>Crystal River Boating</span>
+                    <span>Boutique Pine Retreats</span>
+                  </div>
+                  <div class="pkg-footer">
+                    <div class="pkg-price-block">
+                      <span class="price-label">Starting From</span>
+                      <div class="price-reveal-wrap">
+                        <span class="price-amount blurred-price"
+                          >₹18,500 <small>/ person</small></span
+                        >
+                        <span class="revealing-soon-badge">Revealing Soon</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-outline-gold view-pkg-details"
+                      data-pkg="meghalaya-escape"
+                    >
+                      <span>View Package</span>
+                      <span class="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Package 2: Sikkim & Darjeeling -->
+              <div class="pkg-card" data-pkg-id="sikkim-grandeur">
+                <div class="pkg-image-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=700&auto=format&fit=crop"
+                    alt="Sikkim & Darjeeling Tour"
+                    loading="lazy"
+                  />
+                  <span class="pkg-duration-badge">7 Days / 6 Nights</span>
+                  <span class="pkg-dest-badge">Sikkim & Darjeeling</span>
+                </div>
+                <div class="pkg-body">
+                  <div class="pkg-rating-row">
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-num">5.0 (62 Reviews)</span>
+                  </div>
+                  <h3 class="pkg-title">Sikkim & Darjeeling Grandeur</h3>
+                  <p class="pkg-itinerary-line">
+                    Gangtok • Tsomgo Lake • Pelling • Tiger Hill
+                  </p>
+                  <div class="pkg-highlights-pills">
+                    <span>High Altitude Sacred Lake</span>
+                    <span>Kanchenjunga Sunrise</span>
+                    <span>Heritage Tea Bungalow</span>
+                  </div>
+                  <div class="pkg-footer">
+                    <div class="pkg-price-block">
+                      <span class="price-label">Starting From</span>
+                      <div class="price-reveal-wrap">
+                        <span class="price-amount blurred-price"
+                          >₹26,500 <small>/ person</small></span
+                        >
+                        <span class="revealing-soon-badge">Revealing Soon</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-outline-gold view-pkg-details"
+                      data-pkg="sikkim-grandeur"
+                    >
+                      <span>View Package</span>
+                      <span class="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Package 3: Kashmir -->
+              <div class="pkg-card" data-pkg-id="kashmir-paradise">
+                <div class="pkg-image-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=700&auto=format&fit=crop"
+                    alt="Enchanted Kashmir Odyssey"
+                    loading="lazy"
+                  />
+                  <span class="pkg-duration-badge">6 Days / 5 Nights</span>
+                  <span class="pkg-dest-badge">Kashmir</span>
+                </div>
+                <div class="pkg-body">
+                  <div class="pkg-rating-row">
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-num">4.9 (54 Reviews)</span>
+                  </div>
+                  <h3 class="pkg-title">Enchanted Kashmir Odyssey</h3>
+                  <p class="pkg-itinerary-line">
+                    Srinagar • Gulmarg • Pahalgam • Sonmarg
+                  </p>
+                  <div class="pkg-highlights-pills">
+                    <span>Luxury Dal Lake Houseboat</span>
+                    <span>Gulmarg Gondola Phase 2</span>
+                    <span>Private Saffron Valley Tour</span>
+                  </div>
+                  <div class="pkg-footer">
+                    <div class="pkg-price-block">
+                      <span class="price-label">Starting From</span>
+                      <div class="price-reveal-wrap">
+                        <span class="price-amount blurred-price"
+                          >₹32,000 <small>/ person</small></span
+                        >
+                        <span class="revealing-soon-badge">Revealing Soon</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-outline-gold view-pkg-details"
+                      data-pkg="kashmir-paradise"
+                    >
+                      <span>View Package</span>
+                      <span class="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Package 4: Andaman -->
+              <div class="pkg-card" data-pkg-id="andaman-luxury">
+                <div class="pkg-image-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=700&auto=format&fit=crop"
+                    alt="Andaman Tropical Luxury"
+                    loading="lazy"
+                  />
+                  <span class="pkg-duration-badge">6 Days / 5 Nights</span>
+                  <span class="pkg-dest-badge">Andaman</span>
+                </div>
+                <div class="pkg-body">
+                  <div class="pkg-rating-row">
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-num">5.0 (39 Reviews)</span>
+                  </div>
+                  <h3 class="pkg-title">Andaman Azure Haven</h3>
+                  <p class="pkg-itinerary-line">
+                    Port Blair • Havelock • Neil Island • Radhanagar
+                  </p>
+                  <div class="pkg-highlights-pills">
+                    <span>Catamaran Cruise Transfers</span>
+                    <span>Private Reef Scuba Guide</span>
+                    <span>Beachfront Luxury Villa</span>
+                  </div>
+                  <div class="pkg-footer">
+                    <div class="pkg-price-block">
+                      <span class="price-label">Starting From</span>
+                      <div class="price-reveal-wrap">
+                        <span class="price-amount blurred-price"
+                          >₹38,500 <small>/ person</small></span
+                        >
+                        <span class="revealing-soon-badge">Revealing Soon</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-outline-gold view-pkg-details"
+                      data-pkg="andaman-luxury"
+                    >
+                      <span>View Package</span>
+                      <span class="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Package 5: Rajasthan -->
+              <div class="pkg-card" data-pkg-id="rajasthan-royal">
+                <div class="pkg-image-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=700&auto=format&fit=crop"
+                    alt="Royal Rajasthan Splendour"
+                    loading="lazy"
+                  />
+                  <span class="pkg-duration-badge">7 Days / 6 Nights</span>
+                  <span class="pkg-dest-badge">Rajasthan</span>
+                </div>
+                <div class="pkg-body">
+                  <div class="pkg-rating-row">
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-num">4.8 (41 Reviews)</span>
+                  </div>
+                  <h3 class="pkg-title">Royal Rajasthan Splendour</h3>
+                  <p class="pkg-itinerary-line">
+                    Jaipur • Jodhpur • Udaipur • Jaisalmer Dunes
+                  </p>
+                  <div class="pkg-highlights-pills">
+                    <span>Heritage Palace Stays</span>
+                    <span>Private Desert Camp & Stargazing</span>
+                    <span>Lake Pichola Boat Charter</span>
+                  </div>
+                  <div class="pkg-footer">
+                    <div class="pkg-price-block">
+                      <span class="price-label">Starting From</span>
+                      <div class="price-reveal-wrap">
+                        <span class="price-amount blurred-price"
+                          >₹34,000 <small>/ person</small></span
+                        >
+                        <span class="revealing-soon-badge">Revealing Soon</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-outline-gold view-pkg-details"
+                      data-pkg="rajasthan-royal"
+                    >
+                      <span>View Package</span>
+                      <span class="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Package 6: Tripura Heritage -->
+              <div class="pkg-card" data-pkg-id="tripura-heritage">
+                <div class="pkg-image-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=800&auto=format&fit=crop"
+                    alt="Tripura Heritage and Royal Palaces"
+                    loading="lazy"
+                  />
+                  <span class="pkg-duration-badge">4 Days / 3 Nights</span>
+                  <span class="pkg-dest-badge">Tripura Exclusive</span>
+                </div>
+                <div class="pkg-body">
+                  <div class="pkg-rating-row">
+                    <div class="stars-gold">★★★★★</div>
+                    <span class="rating-num">5.0 (31 Reviews)</span>
+                  </div>
+                  <h3 class="pkg-title">Tripura Royal Palaces & Unakoti</h3>
+                  <p class="pkg-itinerary-line">
+                    Agartala • Neermahal • Sepahijala • Unakoti
+                  </p>
+                  <div class="pkg-highlights-pills">
+                    <span>Water Palace Boat Excursion</span>
+                    <span>Ancient Rock Carvings</span>
+                    <span>Tripuri Cultural Banquet</span>
+                  </div>
+                  <div class="pkg-footer">
+                    <div class="pkg-price-block">
+                      <span class="price-label">Starting From</span>
+                      <div class="price-reveal-wrap">
+                        <span class="price-amount blurred-price"
+                          >₹14,500 <small>/ person</small></span
+                        >
+                        <span class="revealing-soon-badge">Revealing Soon</span>
+                      </div>
+                    </div>
+                    <button
+                      class="btn btn-outline-gold view-pkg-details"
+                      data-pkg="tripura-heritage"
+                    >
+                      <span>View Package</span>
+                      <span class="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5B. LUXURY HOTELS & HERITAGE STAYS -->
+      <section class="section hotels-section" id="hotels">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text"
+                >ACCREDITED BOUTIQUE HOSPITALITY</span
+              >
+              <h2 class="section-heading">
+                Handpicked Luxury Stays & Heritage Retreats
+              </h2>
+              <p class="section-desc">
+                From colonial tea garden suites to cliff-edge mountain chalets,
+                indulge in exceptional Northeast Indian hospitality vetted for
+                comfort, safety, and bespoke culinary mastery.
+              </p>
+            </div>
+            <a href="hotels.html" class="btn btn-outline-glass">
+              <span>View All Hotels</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="hotels-grid">
+            <!-- Hotel 1 -->
+            <div class="hotel-card">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">5★ Heritage Luxury</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop"
+                  alt="Mayfair Tea Resort & Spa"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Darjeeling & Foothills</span>
+                </div>
+                <h3 class="hotel-title">Mayfair Tea Resort & Spa</h3>
+                <p class="hotel-desc">
+                  Vintage Tudor architecture surrounded by emerald tea gardens.
+                  Features ornate wood fireplaces, temperature-controlled indoor
+                  pool, and private garden pavilions.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Private Balcony</span>
+                  <span class="hotel-amenity-chip">Tea Sommelier</span>
+                  <span class="hotel-amenity-chip">Heated Pool</span>
+                  <span class="hotel-amenity-chip">Spa & Wellness</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹14,500 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Mayfair+Tea+Resort"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 2 -->
+            <div class="hotel-card">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Eco Luxury Retreat</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop"
+                  alt="Ri Kynjai Lake Resort"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Umiam Lake, Meghalaya</span>
+                </div>
+                <h3 class="hotel-title">Ri Kynjai – Serenity by Lake</h3>
+                <p class="hotel-desc">
+                  Inspired by indigenous Khasi thatch architecture. Waterfront
+                  chalets with sweeping pine hills, authentic herbal massage
+                  therapies, and private lake cruise docks.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Lakefront Cottages</span>
+                  <span class="hotel-amenity-chip">Ayurvedic Spa</span>
+                  <span class="hotel-amenity-chip">Private Speedboat</span>
+                  <span class="hotel-amenity-chip">Organic Kitchen</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹12,800 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Ri+Kynjai"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 3 -->
+            <div class="hotel-card">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Royal Himalayan Heritage</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.8</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800&auto=format&fit=crop"
+                  alt="The Elgin Nor-Khill Gangtok"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Gangtok, Sikkim</span>
+                </div>
+                <h3 class="hotel-title">The Elgin Nor-Khill Heritage Villa</h3>
+                <p class="hotel-desc">
+                  Originally built by the King of Sikkim as royal guest
+                  quarters. Displays Tibetan dragon frescos, antique brass
+                  fireplaces, and panoramic Kanchenjunga mountain views.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Mountain Panoramas</span>
+                  <span class="hotel-amenity-chip">Royal Lounge</span>
+                  <span class="hotel-amenity-chip">Personal Butler</span>
+                  <span class="hotel-amenity-chip">Fireplace Suites</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹16,200 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Elgin+NorKhill"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotel 4 -->
+            <div class="hotel-card">
+              <div class="hotel-image-wrapper">
+                <span class="hotel-badge">Cliff Edge Sanctuary</span>
+                <span class="hotel-rating-badge">
+                  <svg viewBox="0 0 24 24">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>4.9</span>
+                </span>
+                <img
+                  src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop"
+                  alt="Polo Orchid Cliff Haven"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="hotel-body">
+                <div class="hotel-location">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Cherrapunji, Meghalaya</span>
+                </div>
+                <h3 class="hotel-title">Polo Orchid Cliff Haven</h3>
+                <p class="hotel-desc">
+                  Dramatically suspended over the Seven Sisters Waterfall
+                  canyon. Boasts infinity decks, private open-air jacuzzis, and
+                  panoramic glass villas above the clouds.
+                </p>
+                <div class="hotel-amenities">
+                  <span class="hotel-amenity-chip">Infinity Pool Deck</span>
+                  <span class="hotel-amenity-chip">Private Jacuzzi</span>
+                  <span class="hotel-amenity-chip">Waterfall Views</span>
+                  <span class="hotel-amenity-chip">Sky Lounge</span>
+                </div>
+                <div class="hotel-footer">
+                  <div class="hotel-price">
+                    <span class="hotel-price-label">Starting Rate</span>
+                    <div class="price-reveal-wrap">
+                      <span class="hotel-price-val blurred-price"
+                        >₹15,000 <small>/ night</small></span
+                      >
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Hotel+Booking+Polo+Orchid"
+                    class="btn btn-sm btn-outline-gold"
+                  >
+                    <span>Reserve Stay</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5C. EXCLUSIVE DEALS & SEASONAL PRIVILEGES -->
+      <section class="section deals-section" id="deals">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text"
+                >LIMITED-TIME PRIVILEGES</span
+              >
+              <h2 class="section-heading">
+                Exclusive Seasonal Escapes & Curated Offers
+              </h2>
+              <p class="section-desc">
+                Take advantage of time-limited promotions, early-bird expedition
+                rates, and complimentary VIP upgrades secured directly through
+                our verified travel network.
+              </p>
+            </div>
+            <a href="deals.html" class="btn btn-outline-glass">
+              <span>Explore All Deals</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="deals-grid">
+            <!-- Deal 1 -->
+            <div class="deal-card">
+              <span class="deal-badge-ribbon">25% OFF EARLY BIRD</span>
+              <span class="deal-validity-badge"
+                >Valid until April 30, 2026</span
+              >
+              <div class="deal-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop"
+                  alt="Spring Himalayan Valley Trail"
+                  loading="lazy"
+                  width="400"
+                  height="210"
+                />
+              </div>
+              <div class="deal-body">
+                <span class="deal-tagline">SIKKIM & NORTH BENGAL</span>
+                <h3 class="deal-title">Spring Himalayan Rhododendron Trail</h3>
+                <p class="deal-desc">
+                  7 Days / 6 Nights premium circuit across Gangtok, Lachen, and
+                  Yumthang Valley during peak wildflower blooming season.
+                </p>
+                <ul class="deal-inclusions">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Complimentary Suite Upgrade to Mountain View</span>
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Private 4x4 Luxury SUV with Veteran Mountain
+                      Chauffeur</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Protected Area Permits & Monastic Passes
+                      Pre-Cleared</span
+                    >
+                  </li>
+                </ul>
+                <div class="deal-footer">
+                  <div class="deal-pricing">
+                    <div class="price-reveal-wrap">
+                      <div
+                        class="blurred-price"
+                        style="display: flex; flex-direction: column"
+                      >
+                        <span class="deal-original-price">₹48,000</span>
+                        <span class="deal-final-price"
+                          >₹36,000 <small>/ person</small></span
+                        >
+                      </div>
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Claim+Deal+Spring+Himalayan"
+                    class="btn btn-sm btn-gold"
+                  >
+                    <span>Claim Deal</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deal 2 -->
+            <div class="deal-card">
+              <span class="deal-badge-ribbon">COMPLIMENTARY SPA & CRUISE</span>
+              <span class="deal-validity-badge">Limited Seasonal Slots</span>
+              <div class="deal-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop"
+                  alt="Cloud Realm & Crystal Waters"
+                  loading="lazy"
+                  width="400"
+                  height="210"
+                />
+              </div>
+              <div class="deal-body">
+                <span class="deal-tagline">SHILLONG • SOHRA • DAWKI</span>
+                <h3 class="deal-title">
+                  Cloud Realm & Crystal Waters Escapade
+                </h3>
+                <p class="deal-desc">
+                  6 Days / 5 Nights luxury retreat covering living root bridges,
+                  secret canyon waterfalls, and glass-bottom boating in Dawki.
+                </p>
+                <ul class="deal-inclusions">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Daily Gourmet Breakfast & Multi-Course Chef Dinners</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Private Transparent Boating Session on Umngot River</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Dedicated Meghalaya Tourism Certified Local Escort</span
+                    >
+                  </li>
+                </ul>
+                <div class="deal-footer">
+                  <div class="deal-pricing">
+                    <div class="price-reveal-wrap">
+                      <div
+                        class="blurred-price"
+                        style="display: flex; flex-direction: column"
+                      >
+                        <span class="deal-original-price">₹38,000</span>
+                        <span class="deal-final-price"
+                          >₹29,500 <small>/ person</small></span
+                        >
+                      </div>
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Claim+Deal+Cloud+Realm"
+                    class="btn btn-sm btn-gold"
+                  >
+                    <span>Claim Deal</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deal 3 -->
+            <div class="deal-card">
+              <span class="deal-badge-ribbon">ROYAL CONCIERGE SPECIAL</span>
+              <span class="deal-validity-badge">Year-Round Exclusive</span>
+              <div class="deal-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800&auto=format&fit=crop"
+                  alt="Tripura Royal Kingdoms & Heritage"
+                  loading="lazy"
+                  width="400"
+                  height="210"
+                />
+              </div>
+              <div class="deal-body">
+                <span class="deal-tagline">AGARTALA • UDAIPUR • UNAKOTI</span>
+                <h3 class="deal-title">
+                  Tripura Royal Kingdoms & Heritage Trail
+                </h3>
+                <p class="deal-desc">
+                  4 Days / 3 Nights bespoke exploration of Ujjayanta Palace,
+                  twilight boat cruise to Neermahal, and ancient Unakoti
+                  colossal carvings.
+                </p>
+                <ul class="deal-inclusions">
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >VIP Museum Pass to Ujjayanta Palace Royal State
+                      Gallery</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Sunset Private Motorboat to Lake Rudrasagar Water
+                      Palace</span
+                    >
+                  </li>
+                  <li>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span
+                      >Complimentary Agartala Airport VIP Chauffeur
+                      Transfer</span
+                    >
+                  </li>
+                </ul>
+                <div class="deal-footer">
+                  <div class="deal-pricing">
+                    <div class="price-reveal-wrap">
+                      <div
+                        class="blurred-price"
+                        style="display: flex; flex-direction: column"
+                      >
+                        <span class="deal-original-price">₹22,000</span>
+                        <span class="deal-final-price"
+                          >₹16,800 <small>/ person</small></span
+                        >
+                      </div>
+                      <span class="revealing-soon-badge">Revealing Soon</span>
+                    </div>
+                  </div>
+                  <a
+                    href="contact.html?subject=Claim+Deal+Royal+Tripura"
+                    class="btn btn-sm btn-gold"
+                  >
+                    <span>Claim Deal</span>
+                    <span class="btn-arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CUSTOM TRIP PLANNER CONCIERGE -->
+      <section class="section planner-section" id="planner">
+        <div class="container">
+          <div class="planner-card glass-panel">
+            <div class="planner-header text-center">
+              <span class="section-eyebrow gold-text"
+                >INTERACTIVE TRAVEL CONCIERGE</span
+              >
+              <h2 class="section-heading">
+                Your Dream Trip, Designed Around You.
+              </h2>
+              <p class="section-desc">
+                Tell us what you imagine. We'll turn your vision into an
+                effortless, personalized itinerary.
+              </p>
+            </div>
+
+            <form
+              id="trip-planner-form"
+              class="planner-form"
+              onsubmit="return false;"
+            >
+              <!-- Step 1: Travel Vibe -->
+              <div class="planner-step-group">
+                <label class="step-label"
+                  ><span class="step-num">1</span> Select Travel Style</label
+                >
+                <div class="vibe-selectors" id="vibe-selector-group">
+                  <button
+                    type="button"
+                    class="vibe-btn active"
+                    data-vibe="Honeymoon"
+                  >
+                    <span class="vibe-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                        />
+                      </svg>
+                    </span>
+                    <span>Honeymoon</span>
+                  </button>
+                  <button type="button" class="vibe-btn" data-vibe="Family">
+                    <span class="vibe-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                    </span>
+                    <span>Family</span>
+                  </button>
+                  <button type="button" class="vibe-btn" data-vibe="Friends">
+                    <span class="vibe-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M8 22h8" />
+                        <path d="M12 15v7" />
+                        <path
+                          d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"
+                        />
+                      </svg>
+                    </span>
+                    <span>Friends</span>
+                  </button>
+                  <button type="button" class="vibe-btn" data-vibe="Solo">
+                    <span class="vibe-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <polygon
+                          points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+                        />
+                      </svg>
+                    </span>
+                    <span>Solo</span>
+                  </button>
+                  <button type="button" class="vibe-btn" data-vibe="Adventure">
+                    <span class="vibe-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+                      </svg>
+                    </span>
+                    <span>Adventure</span>
+                  </button>
+                  <button type="button" class="vibe-btn" data-vibe="Corporate">
+                    <span class="vibe-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect
+                          width="20"
+                          height="14"
+                          x="2"
+                          y="7"
+                          rx="2"
+                          ry="2"
+                        />
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                      </svg>
+                    </span>
+                    <span>Corporate</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Step 2: Destination & Dates & Budget -->
+              <div class="planner-step-group">
+                <label class="step-label"
+                  ><span class="step-num">2</span> Journey Parameters</label
+                >
+                <div class="planner-inputs-grid">
+                  <div class="form-field">
+                    <label for="plan-destination">Desired Destination</label>
+                    <select id="plan-destination" required>
+                      <option value="" disabled selected>
+                        Choose destination
+                      </option>
+                      <option value="Meghalaya & Shillong">
+                        Meghalaya & Shillong
+                      </option>
+                      <option value="Sikkim & Darjeeling">
+                        Sikkim & Darjeeling
+                      </option>
+                      <option value="Kashmir (Gulmarg & Pahalgam)">
+                        Kashmir (Gulmarg & Pahalgam)
+                      </option>
+                      <option value="Andaman & Nicobar Islands">
+                        Andaman & Nicobar Islands
+                      </option>
+                      <option value="Goa Coastal & Heritage">
+                        Goa Coastal & Heritage
+                      </option>
+                      <option value="Himachal & Spiti">Himachal & Spiti</option>
+                      <option value="Rajasthan Royal Palaces">
+                        Rajasthan Royal Palaces
+                      </option>
+                      <option value="Tripura Heritage Exclusive">
+                        Tripura Heritage Exclusive
+                      </option>
+                      <option value="Bali & Southeast Asia">
+                        Bali & Southeast Asia
+                      </option>
+                      <option value="Other / Custom Circuit">
+                        Other / Custom Circuit
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="plan-date">Approximate Travel Date</label>
+                    <input
+                      type="date"
+                      id="plan-date"
+                      min="2026-08-22"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="plan-travelers">Number of Travellers</label>
+                    <select id="plan-travelers" required>
+                      <option value="2 Adults (Couple)">
+                        2 Adults (Couple)
+                      </option>
+                      <option value="Family (3-4 Persons)">
+                        Family (3-4 Persons)
+                      </option>
+                      <option value="Small Group (5-8 Persons)">
+                        Small Group (5-8 Persons)
+                      </option>
+                      <option value="Solo Explorer (1 Person)">
+                        Solo Explorer (1 Person)
+                      </option>
+                      <option value="Large Group / Corporate (9+)">
+                        Large Group / Corporate (9+)
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="plan-budget">Preferred Comfort Tier</label>
+                    <select id="plan-budget" required>
+                      <option value="Luxury Boutique (4★ - 5★ Handpicked)">
+                        Luxury Boutique (4★ - 5★ Handpicked)
+                      </option>
+                      <option value="Premium Comfort (Deluxe 3★ - 4★)">
+                        Premium Comfort (Deluxe 3★ - 4★)
+                      </option>
+                      <option value="Ultra-Luxury & Villa Retreats">
+                        Ultra-Luxury & Villa Retreats
+                      </option>
+                      <option value="Flexible / Discuss with Concierge">
+                        Flexible / Discuss with Concierge
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3: Contact Details -->
+              <div class="planner-step-group">
+                <label class="step-label"
+                  ><span class="step-num">3</span> Your Contact Info</label
+                >
+                <div class="planner-inputs-grid-3">
+                  <div class="form-field">
+                    <label for="plan-name">Your Full Name</label>
+                    <input
+                      type="text"
+                      id="plan-name"
+                      placeholder="e.g. Debabrata Roy"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="plan-phone">Phone / WhatsApp Number</label>
+                    <input
+                      type="tel"
+                      id="plan-phone"
+                      placeholder="e.g. +91 87310 10676"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="plan-email">Email Address</label>
+                    <input
+                      type="email"
+                      id="plan-email"
+                      placeholder="e.g. name@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Summary & Submission Button -->
+              <div class="planner-actions">
+                <div class="planner-live-summary" id="planner-live-summary">
+                  <span
+                    >Trip Vibe:
+                    <strong id="summary-vibe">Honeymoon</strong></span
+                  >
+                  <span>•</span>
+                  <span
+                    >Destination:
+                    <strong id="summary-dest">Select above</strong></span
+                  >
+                </div>
+                <div class="planner-btn-duo">
+                  <button
+                    type="submit"
+                    class="btn btn-gold btn-large"
+                    id="submit-custom-plan-btn"
+                  >
+                    <span>Design My Trip</span>
+                    <svg
+                      class="btn-arrow"
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-glass btn-large"
+                    id="whatsapp-plan-btn"
+                  >
+                    <span>Send to WhatsApp</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. ABOUT US SECTION -->
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="editorial-grid">
+            <div class="editorial-media-col">
+              <div class="about-image-composition">
+                <div class="about-main-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop"
+                    alt="Travellers exploring mountain peaks"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="about-overlay-badge glass-panel">
+                  <span class="gold-text uppercase letter-spacing"
+                    >Headquartered in</span
+                  >
+                  <strong>Agartala, Tripura</strong>
+                  <p>
+                    Curating memorable journeys across the globe since
+                    inception.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="editorial-text-col">
+              <span class="section-eyebrow gold-text"
+                >OUR STORY & HERITAGE</span
+              >
+              <h2 class="section-heading">
+                Travel with people who care about the journey.
+              </h2>
+              <div class="editorial-body">
+                <p class="lead-text">
+                  Born in the royal city of Agartala, Tripura,
+                  <strong>Global Holidays Tour & Travels</strong> was founded
+                  with a singular conviction: travel should be soulful,
+                  seamless, and completely bespoke.
+                </p>
+                <p>
+                  Too often, travel agencies offer rigid itineraries and crowded
+                  group buses. We chose a different path — acting as your
+                  trusted personal travel atelier. Whether orchestrating a
+                  serene family holiday in Shillong, a high-altitude expedition
+                  across Sikkim, or an international luxury getaway, our team
+                  meticulously handles every flight, hotel check-in, permit, and
+                  local excursion with flawless attention to detail.
+                </p>
+
+                <!-- Animated Statistics Counters -->
+                <div class="stats-counters-grid" id="stats-container">
+                  <div class="stat-box">
+                    <div class="stat-number-wrap">
+                      <span class="stat-number" data-target="500">0</span
+                      ><span class="stat-plus">+</span>
+                    </div>
+                    <span class="stat-label">Happy Travellers</span>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-number-wrap">
+                      <span class="stat-number" data-target="100">0</span
+                      ><span class="stat-plus">+</span>
+                    </div>
+                    <span class="stat-label">Journeys Planned</span>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-number-wrap">
+                      <span class="stat-number" data-target="50">0</span
+                      ><span class="stat-plus">+</span>
+                    </div>
+                    <span class="stat-label">Destinations Covered</span>
+                  </div>
+                  <div class="stat-box">
+                    <div class="stat-number-wrap">
+                      <span class="stat-number" data-target="100">0</span
+                      ><span class="stat-plus">%</span>
+                    </div>
+                    <span class="stat-label">Dedicated Support</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. MISSION & VISION SECTION -->
+      <section class="section mission-vision-section" id="mission-vision">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="section-eyebrow gold-text"
+              >OUR GUIDING PRINCIPLES</span
+            >
+            <h2 class="section-heading">Purpose Driven Exploration</h2>
+          </div>
+
+          <div class="split-panels-container">
+            <!-- Mission Panel -->
+            <div class="split-panel mission-panel" id="panel-mission">
+              <div class="panel-bg-overlay"></div>
+              <div class="panel-content">
+                <div class="panel-tag gold-text">01 • OUR MISSION</div>
+                <h3 class="panel-title">
+                  “To create seamless, meaningful and memorable travel
+                  experiences tailored around every traveller.”
+                </h3>
+                <p class="panel-desc">
+                  We empower individuals, couples, and families to discover the
+                  world with total peace of mind, transforming every journey
+                  into an unforgettable life chapter through thoughtful curation
+                  and attentive service.
+                </p>
+                <div class="panel-pill">
+                  Personalized • Immersive • Flawless
+                </div>
+              </div>
+            </div>
+
+            <!-- Vision Panel -->
+            <div class="split-panel vision-panel" id="panel-vision">
+              <div class="panel-bg-overlay"></div>
+              <div class="panel-content">
+                <div class="panel-tag gold-text">02 • OUR VISION</div>
+                <h3 class="panel-title">
+                  “To become a trusted travel partner known for exceptional
+                  experiences, personalized service and responsible
+                  exploration.”
+                </h3>
+                <p class="panel-desc">
+                  To stand as the most reliable, respected boutique travel brand
+                  in Northeast India and beyond, inspiring people to travel
+                  deeper while supporting local communities and preserving
+                  natural heritage.
+                </p>
+                <div class="panel-pill">
+                  Trustworthy • Boutique • Responsible
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. WHY CHOOSE GLOBAL HOLIDAYS -->
+      <section class="section why-us-section" id="why-us">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text"
+                >THE BOUTIQUE ADVANTAGE</span
+              >
+              <h2 class="section-heading">Travel with confidence.</h2>
+            </div>
+            <p class="section-desc">
+              Why discerning travellers in Agartala, Tripura, and across India
+              entrust their holiday dreams to Global Holidays.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card glass-panel">
+              <div class="feature-icon-box">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Personalized Planning</h3>
+              <p class="feature-text">
+                Every single journey is designed around you — tailored pace,
+                boutique stays, and customized meal preferences.
+              </p>
+            </div>
+
+            <div class="feature-card glass-panel">
+              <div class="feature-icon-box">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Complete Travel Assistance</h3>
+              <p class="feature-text">
+                From first consultation to safe homecoming, your dedicated
+                concierge is available on WhatsApp and call around the clock.
+              </p>
+            </div>
+
+            <div class="feature-card glass-panel">
+              <div class="feature-icon-box">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon
+                    points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+                  />
+                </svg>
+              </div>
+              <h3 class="feature-title">Curated Experiences</h3>
+              <p class="feature-text">
+                Access secluded viewpoints, private tea estate walks, shikara
+                sunset rides, and insider regional gems.
+              </p>
+            </div>
+
+            <div class="feature-card glass-panel">
+              <div class="feature-icon-box">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Local Expertise</h3>
+              <p class="feature-text">
+                Rooted in Agartala with authentic regional connections across
+                Northeast India and premier pan-India travel circles.
+              </p>
+            </div>
+
+            <div class="feature-card glass-panel">
+              <div class="feature-icon-box">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Transparent Service</h3>
+              <p class="feature-text">
+                Zero hidden fees, clear hotel voucher confirmations, reliable
+                vetted drivers, and genuine upfront pricing.
+              </p>
+            </div>
+
+            <div class="feature-card glass-panel">
+              <div class="feature-icon-box">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <h3 class="feature-title">Handpicked Stays</h3>
+              <p class="feature-text">
+                Boutique heritage homestays, scenic cliffside resorts, luxury
+                Dal Lake houseboats, and mountain chalets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. TRAVEL STORIES / GALLERY SECTION -->
+      <section class="section gallery-section" id="gallery">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text">VISUAL MEMORIES</span>
+              <h2 class="section-heading">Moments from the Journey</h2>
+              <p class="section-desc">
+                Snapshots of misty peaks, serene coastal sunsets, and
+                unforgettable explorations.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+              <a href="gallery.html" class="btn btn-gold">
+                <span>View Full Gallery</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-glass"
+              >
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="masonry-gallery" id="masonry-gallery">
+            <div
+              class="gallery-item"
+              data-img="/images/meghalaya.jpg"
+              data-caption="Ancient Living Root Bridge • Meghalaya"
+              data-author="Global Holidays Guest"
+            >
+              <img
+                src="/images/meghalaya.jpg"
+                alt="Meghalaya Living Root Bridge"
+                loading="lazy"
+              />
+              <div class="gallery-caption-overlay">
+                <span class="cap-tag">Meghalaya</span>
+                <h4>Living Root Bridge</h4>
+                <span class="cap-hint">Click to enlarge ⤢</span>
+              </div>
+            </div>
+
+            <div
+              class="gallery-item item-tall"
+              data-img="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=1200&auto=format&fit=crop"
+              data-caption="Dal Lake Shikara Morning • Srinagar, Kashmir"
+              data-author="Global Holidays Guest"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=600&auto=format&fit=crop"
+                alt="Kashmir Shikara"
+                loading="lazy"
+              />
+              <div class="gallery-caption-overlay">
+                <span class="cap-tag">Kashmir</span>
+                <h4>Dal Lake Morning Mist</h4>
+                <span class="cap-hint">Click to enlarge ⤢</span>
+              </div>
+            </div>
+
+            <div
+              class="gallery-item"
+              data-img="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop"
+              data-caption="Gurudongmar High Altitude Lake • North Sikkim"
+              data-author="Global Holidays Guest"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop"
+                alt="North Sikkim Lake"
+                loading="lazy"
+              />
+              <div class="gallery-caption-overlay">
+                <span class="cap-tag">Sikkim</span>
+                <h4>Gurudongmar 17,800 ft</h4>
+                <span class="cap-hint">Click to enlarge ⤢</span>
+              </div>
+            </div>
+
+            <div
+              class="gallery-item item-tall"
+              data-img="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop"
+              data-caption="Radhanagar Beach Sunset • Havelock Island, Andaman"
+              data-author="Global Holidays Guest"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop"
+                alt="Andaman Radhanagar Beach"
+                loading="lazy"
+              />
+              <div class="gallery-caption-overlay">
+                <span class="cap-tag">Andaman</span>
+                <h4>Radhanagar Beach Glow</h4>
+                <span class="cap-hint">Click to enlarge ⤢</span>
+              </div>
+            </div>
+
+            <div
+              class="gallery-item"
+              data-img="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1200&auto=format&fit=crop"
+              data-caption="Udaipur City Palace • Rajasthan"
+              data-author="Global Holidays Guest"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=600&auto=format&fit=crop"
+                alt="Rajasthan Udaipur"
+                loading="lazy"
+              />
+              <div class="gallery-caption-overlay">
+                <span class="cap-tag">Rajasthan</span>
+                <h4>City Palace Grandeur</h4>
+                <span class="cap-hint">Click to enlarge ⤢</span>
+              </div>
+            </div>
+
+            <div
+              class="gallery-item"
+              data-img="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop"
+              data-caption="Darjeeling Heritage Tea Valley Vista"
+              data-author="Global Holidays Guest"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600&auto=format&fit=crop"
+                alt="Darjeeling Tea Valley"
+                loading="lazy"
+              />
+              <div class="gallery-caption-overlay">
+                <span class="cap-tag">Darjeeling</span>
+                <h4>Misty Tea Slopes</h4>
+                <span class="cap-hint">Click to enlarge ⤢</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. TESTIMONIALS SECTION -->
+      <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+          <div class="section-header-split">
+            <div>
+              <span class="section-eyebrow gold-text"
+                >AUTHENTIC EXPERIENCES</span
+              >
+              <h2 class="section-heading">Stories from our travellers.</h2>
+            </div>
+            <div class="carousel-nav-controls">
+              <button
+                class="slider-arrow"
+                id="test-prev-btn"
+                aria-label="Previous Testimonial"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button
+                class="slider-arrow"
+                id="test-next-btn"
+                aria-label="Next Testimonial"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="testimonials-track-container">
+            <div class="testimonials-track" id="testimonials-track">
+              <!-- Testimonial 1 -->
+              <div class="testimonial-card glass-panel">
+                <div class="test-quote-icon">“</div>
+                <div class="stars-gold mb-3">★★★★★</div>
+                <p class="test-quote">
+                  “Beautifully planned trip, excellent coordination and an
+                  unforgettable experience. Our 6-day Meghalaya & Shillong
+                  vacation was flawless. From private airport pickup in Guwahati
+                  to our boutique cottage in Cherrapunji, Global Holidays took
+                  care of every tiny detail!”
+                </p>
+                <div class="test-author-info">
+                  <div class="author-avatar">SC</div>
+                  <div>
+                    <h4 class="author-name">Subrata & Piyali Chakraborty</h4>
+                    <span class="author-location"
+                      >Agartala → Meghalaya Holiday</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div class="testimonial-card glass-panel">
+                <div class="test-quote-icon">“</div>
+                <div class="stars-gold mb-3">★★★★★</div>
+                <p class="test-quote">
+                  “Booking our Kashmir honeymoon through Global Holidays was the
+                  best decision. The houseboat on Dal Lake was majestic and the
+                  private gondola passes in Gulmarg were arranged without any
+                  queues. Truly high-end boutique hospitality right from
+                  Agartala.”
+                </p>
+                <div class="test-author-info">
+                  <div class="author-avatar">AD</div>
+                  <div>
+                    <h4 class="author-name">Anirban & Disha Debnath</h4>
+                    <span class="author-location"
+                      >Agartala → Kashmir Honeymoon</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div class="testimonial-card glass-panel">
+                <div class="test-quote-icon">“</div>
+                <div class="stars-gold mb-3">★★★★★</div>
+                <p class="test-quote">
+                  “North Sikkim can be challenging with permits and mountain
+                  roads, but Global Holidays made it feel effortless. Our driver
+                  was extremely courteous and safe, and the hotels in Lachen and
+                  Lachung exceeded our expectations. Highly recommended!”
+                </p>
+                <div class="test-author-info">
+                  <div class="author-avatar">RM</div>
+                  <div>
+                    <h4 class="author-name">Dr. Rajesh Majumder</h4>
+                    <span class="author-location"
+                      >Agartala → North Sikkim Expedition</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 4 -->
+              <div class="testimonial-card glass-panel">
+                <div class="test-quote-icon">“</div>
+                <div class="stars-gold mb-3">★★★★★</div>
+                <p class="test-quote">
+                  “Our family trip to the Andaman Islands was magical. The
+                  beachfront villa at Havelock and the private scuba
+                  arrangements were top tier. Very honest and transparent
+                  pricing with prompt WhatsApp support throughout the trip.”
+                </p>
+                <div class="test-author-info">
+                  <div class="author-avatar">TD</div>
+                  <div>
+                    <h4 class="author-name">Tanmay & Sanchita Das</h4>
+                    <span class="author-location"
+                      >Agartala → Andaman Islands Family Tour</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+      <section class="section faq-section" id="faq">
+        <div class="container faq-container">
+          <div class="text-center" style="margin-bottom: 2.5rem">
+            <span class="section-eyebrow gold-text"
+              >COMMON QUESTIONS & CLARITY</span
+            >
+            <h2 class="section-heading">Frequently Asked Questions</h2>
+            <p
+              class="section-desc"
+              style="margin: 0.5rem auto 0; max-width: 680px"
+            >
+              Everything you need to know about booking, bespoke customizations,
+              safe private transfers, payments, and our transparent travel
+              guarantees.
+            </p>
+          </div>
+
+          <div class="faq-accordion-list">
+            <!-- FAQ 1: Booking Process -->
+            <details class="faq-item" open>
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">01</span>
+                  <span class="faq-question-text"
+                    >How can I book a package?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Booking a journey with us is seamless and personalized. You
+                  can start by connecting directly with our travel designers via
+                  <strong>WhatsApp (+91 87310 10676)</strong>, calling our
+                  concierge desk, filling out the
+                  <strong>online trip planner</strong> on our website, or
+                  visiting our boutique office near Hornbill Restaurant, Colonel
+                  Chowmuhani Road, Agartala.
+                </p>
+                <p>
+                  Once you share your desired destination, travel dates, and
+                  group size, we prepare a customized day-by-day itinerary
+                  proposal with transparent pricing. Once you approve, the
+                  reservation is confirmed upon a nominal advance deposit, after
+                  which we issue all official vouchers and GST tax invoices.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 2: Package Customization -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">02</span>
+                  <span class="faq-question-text"
+                    >Can you customize packages?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong
+                    >Yes, 100% of our tour packages are fully
+                    customizable.</strong
+                  >
+                  We do not enforce rigid group schedules. You have total
+                  freedom to adjust the number of days, swap sightseeing spots,
+                  upgrade hotel categories (such as boutique tea estate
+                  bungalows or luxury 5-star mountain resorts), and choose your
+                  preferred daily pacing.
+                </p>
+                <p>
+                  We also cater to special requests including pure vegetarian /
+                  Jain meals, senior citizen-friendly relaxed transit schedules,
+                  and romantic anniversary setups.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 3: Transportation & Vehicles -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">03</span>
+                  <span class="faq-question-text"
+                    >Do you provide transportation?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong
+                    >Yes, comprehensive private transportation is included with
+                    every itinerary.</strong
+                  >
+                  We provide premium, sanitized, air-conditioned private
+                  vehicles tailored to your group size — including Innova
+                  Crysta, Maruti Ertiga, Scorpio, Swift Dzire, and luxury Tempo
+                  Travellers.
+                </p>
+                <p>
+                  All our chauffeurs are polite, experienced in hill driving,
+                  and background-verified. All fuel expenses, interstate
+                  permits, hill road tolls, and driver allowances are included
+                  with zero surprise surcharges. We also handle flight and train
+                  ticketing connecting from MBB Airport Agartala, Kolkata, and
+                  Guwahati.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 4: Hotel Bookings Separately -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">04</span>
+                  <span class="faq-question-text"
+                    >Can I book hotels separately?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong
+                    >Yes, we provide standalone hotel and resort booking
+                    services</strong
+                  >
+                  across India and international destinations. Thanks to our
+                  direct contracted rates with luxury boutique hotels, heritage
+                  palaces, mountain view chalets, and premium beachfront villas,
+                  you benefit from verified properties at competitive rates.
+                </p>
+                <p>
+                  Every separate hotel booking comes with an official
+                  confirmation voucher and full check-in coordination support.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 5: Online & Digital Payments -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">05</span>
+                  <span class="faq-question-text">Can I pay online?</span>
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong
+                    >Yes, we offer multiple secure digital and online payment
+                    channels.</strong
+                  >
+                  You can pay easily via:
+                </p>
+                <ul style="margin: 0.5rem 0 0.75rem 1.25rem; line-height: 1.8">
+                  <li>
+                    <strong>Instant UPI:</strong> Google Pay, PhonePe, Paytm,
+                    BHIM
+                  </li>
+                  <li>
+                    <strong>Direct Bank Transfer:</strong> IMPS / NEFT / RTGS to
+                    our official business current bank account
+                  </li>
+                  <li><strong>Credit & Debit Cards</strong></li>
+                </ul>
+                <p>
+                  As an empanelled and GST-registered agency (<strong
+                    >GSTIN: 16DTDPS0586Q2ZU</strong
+                  >), every transaction receives an immediate digital payment
+                  receipt followed by a formal tax invoice suitable for
+                  personal, corporate, or government LTC reimbursement claims.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 6: Cancellation Policy -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">06</span>
+                  <span class="faq-question-text"
+                    >What is your cancellation policy?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  We maintain a fair, transparent, and traveler-friendly
+                  cancellation policy. In case of unexpected medical
+                  emergencies, travel restrictions, or severe mountain weather
+                  disruptions, our primary approach is
+                  <strong>flexible date rescheduling</strong> with minimal or
+                  zero amendment fees from our side.
+                </p>
+                <p>
+                  If cancellation is unavoidable, refunds are processed promptly
+                  according to the standard cancellation timeline (after
+                  deducting non-refundable airline / high-season hotel supplier
+                  fees). The complete day-count cancellation breakdown is always
+                  provided in writing before your booking is finalized.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 7: Group Tours & Corporate Offsites -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">07</span>
+                  <span class="faq-question-text"
+                    >Do you organize group tours?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong
+                    >Yes, we have extensive experience managing custom group
+                    departures</strong
+                  >
+                  for large extended families, corporate annual retreats,
+                  college and university study trips, social clubs, and official
+                  government delegations.
+                </p>
+                <p>
+                  For group departures, we deploy dedicated on-ground tour
+                  managers, arrange private luxury Volvo/Tempo coaches,
+                  coordinate buffet dining and gala dinners, and offer
+                  attractive tiered group volume discounts.
+                </p>
+              </div>
+            </details>
+
+            <!-- FAQ 8: Honeymoon Packages -->
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <div class="faq-summary-left">
+                  <span class="faq-num-pill">08</span>
+                  <span class="faq-question-text"
+                    >Do you provide honeymoon packages?</span
+                  >
+                </div>
+                <div class="faq-icon-toggle" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong
+                    >Yes, bespoke romantic honeymoons are one of our signature
+                    specialties.</strong
+                  >
+                  We craft private honeymoon itineraries to dream destinations
+                  like
+                  <em
+                    >Kashmir (Pahalgam & Gulmarg), Meghalaya (Cherrapunji &
+                    Dawki glamping), Sikkim & Darjeeling, Andaman Islands
+                    (Havelock beach villas), Kerala Backwaters, Rajasthan
+                    Palaces, Bali, Thailand, and the Maldives</em
+                  >.
+                </p>
+                <p>
+                  Our honeymoon packages include intimate romantic inclusions
+                  such as private candlelight dinners, traditional flower bed
+                  decorations, complimentary honeymoon cakes, morning shikara
+                  cruises, and secluded luxury boutique resort stays.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. CONTACT / TRAVEL CONCIERGE -->
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left: Contact Details & Office Location -->
+            <div class="contact-info-col">
+              <span class="section-eyebrow gold-text"
+                >TRAVEL CONCIERGE & BOOKINGS</span
+              >
+              <h2 class="section-heading">Let's plan your next escape.</h2>
+              <p class="section-desc">
+                Have a destination in mind? Speak with our travel designers or
+                visit our boutique office in Agartala.
+              </p>
+
+              <div class="contact-methods">
+                <a
+                  href="tel:+918731010676"
+                  class="contact-method-card glass-panel"
+                >
+                  <div class="cm-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="cm-label">Call Our Concierge</span>
+                    <strong class="cm-value"
+                      >+91 87310 10676 / +91 88370 70817</strong
+                    >
+                    <span class="cm-note"
+                      >Mon – Sat, 9:30 AM to 8:30 PM IST</span
+                    >
+                  </div>
+                </a>
+
+                <a
+                  href="https://wa.me/918731010676?text=Hello%20Global%20Holidays%20Tour%20%26%20Travels,%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20holiday%20package."
+                  target="_blank"
+                  rel="noopener"
+                  class="contact-method-card glass-panel wa-card"
+                >
+                  <div class="cm-icon wa-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="cm-label">Instant WhatsApp Chat</span>
+                    <strong class="cm-value">+91 87310 10676</strong>
+                    <span class="cm-note">Live response within minutes</span>
+                  </div>
+                </a>
+
+                <a
+                  href="mailto:globalholidaysagt@gmail.com"
+                  class="contact-method-card glass-panel"
+                >
+                  <div class="cm-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="cm-label">Email Our Team</span>
+                    <strong class="cm-value"
+                      >globalholidaysagt@gmail.com</strong
+                    >
+                    <span class="cm-note"
+                      >Detailed custom proposals & itineraries</span
+                    >
+                  </div>
+                </a>
+
+                <div class="contact-method-card glass-panel">
+                  <div class="cm-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="cm-label">Visit Our Boutique Desk</span>
+                    <strong class="cm-value"
+                      >near hornbill restaurant, Banerjee Para, Krishna Nagar,
+                      Agartala, Tripura - 799003</strong
+                    >
+                    <span class="cm-note"
+                      >In-person holiday consultation & coffee</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Premium Consultation Form -->
+            <div class="contact-form-col">
+              <div class="contact-form-wrapper glass-panel">
+                <h3 class="form-title">Send a Direct Enquiry</h3>
+                <p class="form-subtitle">
+                  Receive a tailored itinerary proposal and transparent quote
+                  within 24 hours.
+                </p>
+
+                <form id="direct-enquiry-form" class="enquiry-form">
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label for="contact-name">Full Name *</label>
+                      <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        placeholder="Debabrata Roy"
+                        required
+                      />
+                    </div>
+                    <div class="form-field">
+                      <label for="contact-phone">Phone / WhatsApp *</label>
+                      <input
+                        type="tel"
+                        id="contact-phone"
+                        name="phone"
+                        placeholder="+91 87310 10676"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label for="contact-email">Email Address *</label>
+                      <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="debabrata@example.com"
+                        required
+                      />
+                    </div>
+                    <div class="form-field">
+                      <label for="contact-dest">Preferred Destination *</label>
+                      <input
+                        type="text"
+                        id="contact-dest"
+                        name="destination"
+                        placeholder="e.g. Meghalaya / Kashmir / Sikkim"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-field">
+                      <label for="contact-date">Travel Month / Date</label>
+                      <input
+                        type="date"
+                        id="contact-date"
+                        name="travel_date"
+                        min="2026-08-22"
+                      />
+                    </div>
+                    <div class="form-field">
+                      <label for="contact-travelers"
+                        >Number of Travellers</label
+                      >
+                      <input
+                        type="number"
+                        id="contact-travelers"
+                        name="travelers"
+                        min="1"
+                        max="50"
+                        placeholder="2"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="contact-msg"
+                      >Special Requests / Preferences</label
+                    >
+                    <textarea
+                      id="contact-msg"
+                      name="message"
+                      rows="3"
+                      placeholder="Tell us about preferred stays, activities, dietary preferences, or specific places you want to visit..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-gold btn-large w-100"
+                    id="send-enquiry-btn"
+                  >
+                    <span>Start Planning</span>
+                    <svg
+                      class="btn-arrow"
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. FINAL CINEMATIC CTA -->
+      <section class="section final-cta-section" id="final-cta">
+        <div class="final-cta-bg">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2000&auto=format&fit=crop"
+            alt="Luxury Travel Horizon Vista"
+            loading="lazy"
+          />
+          <div class="final-cta-overlay"></div>
+        </div>
+        <div class="container text-center relative-z">
+          <span class="section-eyebrow gold-text letter-spacing"
+            >YOUR NEXT ADVENTURE AWAITS</span
+          >
+          <h2 class="final-cta-title editorial-title">
+            “The world is waiting.”
+          </h2>
+          <p class="final-cta-subtitle">
+            Where will your next story take you? Let Global Holidays craft an
+            unforgettable chapter.
+          </p>
+          <div class="final-cta-buttons">
+            <a href="#planner" class="btn btn-gold btn-large btn-magnetic">
+              <span>Plan My Journey</span>
+              <svg
+                class="btn-arrow"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/918731010676"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline-glass btn-large btn-magnetic"
+            >
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 14. FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <!-- Col 1: Brand Info -->
+          <div class="footer-col brand-col">
+            <div class="brand-logo footer-logo">
+              <img
+                src="/images/logo.png"
+                alt="Global Holidays Logo"
+                class="footer-logo-img"
+                width="52"
+                height="52"
+              />
+              <div class="logo-text">
+                <span class="brand-name">GLOBAL HOLIDAYS</span>
+                <span class="brand-sub">TOUR & TRAVELS</span>
+              </div>
+            </div>
+            <p class="footer-brand-desc">
+              A boutique luxury tour and travel company based in Agartala,
+              Tripura. Dedicated to bespoke journeys, private explorations, and
+              unforgettable experiences across India and global destinations.
+            </p>
+            <div class="footer-location-badge">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Agartala, Tripura, India</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="destinations.html">Destinations</a></li>
+              <li><a href="packages.html">Curated Packages</a></li>
+              <li><a href="about.html">About & Heritage</a></li>
+              <li><a href="about.html#mission-vision">Mission & Vision</a></li>
+              <li><a href="stories.html">Travel Stories</a></li>
+              <li><a href="#faq">Frequently Asked Questions</a></li>
+              <li><a href="legal.html">Legal & Accreditations</a></li>
+              <li><a href="contact.html">Contact Concierge</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Popular Circuits -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Signature Circuits</h4>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="#packages"
+                  class="open-pkg-filter"
+                  data-dest="Meghalaya"
+                  >Meghalaya & Dawki Escape</a
+                >
+              </li>
+              <li>
+                <a href="#packages" class="open-pkg-filter" data-dest="Sikkim"
+                  >Sikkim & Darjeeling Grandeur</a
+                >
+              </li>
+              <li>
+                <a href="#packages" class="open-pkg-filter" data-dest="Kashmir"
+                  >Kashmir Valley Odyssey</a
+                >
+              </li>
+              <li>
+                <a href="#packages" class="open-pkg-filter" data-dest="Andaman"
+                  >Andaman Azure Haven</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#packages"
+                  class="open-pkg-filter"
+                  data-dest="Rajasthan"
+                  >Royal Rajasthan Palaces</a
+                >
+              </li>
+              <li>
+                <a href="#packages" class="open-pkg-filter" data-dest="Tripura"
+                  >Tripura Heritage & Palaces</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact & Newsletter -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Agartala Office</h4>
+            <p class="footer-address">
+              near hornbill restaurant, Banerjee Para, Krishna Nagar,<br />
+              Agartala, Tripura - 799003, India
+            </p>
+            <p class="footer-phone">
+              <a href="tel:+918731010676">+91 87310 10676</a> /
+              <a href="tel:+918837070817">+91 88370 70817</a>
+            </p>
+            <p class="footer-email">
+              <a href="mailto:globalholidaysagt@gmail.com"
+                >globalholidaysagt@gmail.com</a
+              >
+            </p>
+
+            <div class="footer-social-row">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                class="social-circle"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                class="social-circle"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/918731010676"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+                class="social-circle wa-social"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <p class="copyright-text">
+            © 2026 Global Holidays Tour & Travels. All rights reserved.
+          </p>
+          <div class="footer-legal-links">
+            <a href="legal.html">Government Registrations & GST</a>
+            <span>•</span>
+            <a href="contact.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="contact.html">Terms of Service</a>
+          </div>
+          <p class="footer-powered-by">
+            Powered by <a href="https://www.novaedges.in" target="_blank" rel="noopener noreferrer" class="powered-by-link">NOVAEDGES PRIVATE LIMITED</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON (Desktop) -->
+    <a
+      href="https://wa.me/918731010676?text=Hello%20Global%20Holidays%20Tour%20%26%20Travels,%20I%20would%20like%20to%20plan%20a%20luxury%20holiday."
+      target="_blank"
+      rel="noopener"
+      class="floating-whatsapp-btn"
+      id="floating-whatsapp"
+      aria-label="Chat with Global Holidays Concierge on WhatsApp"
+    >
+      <div class="wa-pulse-ring"></div>
+      <div class="wa-btn-inner">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path
+            d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+          />
+        </svg>
+      </div>
+      <span class="wa-tooltip">Chat with Concierge</span>
+    </a>
+
+    <!-- FLOATING BACK TO TOP BUTTON -->
+    <button
+      type="button"
+      class="back-to-top-btn"
+      id="back-to-top-btn"
+      aria-label="Scroll to top of page"
+      title="Back to Top"
+    >
+      <div class="top-btn-inner">
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </div>
+    </button>
+
+    <!-- MOBILE STICKY BOTTOM BAR -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+      <a href="tel:+918731010676" class="mob-bar-btn mob-bar-call">
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+          />
+        </svg>
+        <span>Call Desk</span>
+      </a>
+      <a href="#planner" class="mob-bar-btn mob-bar-plan">
+        <span>Plan My Trip →</span>
+      </a>
+      <a
+        href="https://wa.me/918731010676"
+        target="_blank"
+        rel="noopener"
+        class="mob-bar-btn mob-bar-wa"
+        aria-label="Chat on WhatsApp"
+      >
+        <span class="mob-wa-icon-wrap">
+          <svg
+            class="mob-wa-icon"
+            viewBox="0 0 24 24"
+            width="19"
+            height="19"
+            fill="currentColor"
+          >
+            <path
+              d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"
+            />
+          </svg>
+          <span class="mob-wa-dot"></span>
+        </span>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- NATIVE ACCESSIBLE DIALOG: PACKAGE DETAILS MODAL -->
+    <dialog
+      id="package-modal"
+      class="luxury-modal"
+      closedby="any"
+      data-lenis-prevent
+    >
+      <div class="modal-dialog-content">
+        <button
+          class="modal-close-btn"
+          id="close-pkg-modal"
+          aria-label="Close dialog"
+        >
+          &times;
+        </button>
+        <div class="modal-body-scroll" id="pkg-modal-content">
+          <!-- Dynamically injected via main.js -->
+        </div>
+      </div>
+    </dialog>
+
+    <!-- NATIVE ACCESSIBLE DIALOG: GALLERY LIGHTBOX -->
+    <dialog
+      id="lightbox-modal"
+      class="lightbox-dialog"
+      closedby="any"
+      data-lenis-prevent
+    >
+      <div class="lightbox-wrapper">
+        <button
+          class="lightbox-close"
+          id="close-lightbox"
+          aria-label="Close image viewer"
+        >
+          &times;
+        </button>
+        <button
+          class="lightbox-nav lightbox-prev"
+          id="lightbox-prev-btn"
+          aria-label="Previous image"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="lightbox-figure">
+          <img
+            id="lightbox-img"
+            src=""
+            alt="Travel photography fullscreen preview"
+          />
+          <div class="lightbox-caption">
+            <h4 id="lightbox-title"></h4>
+            <span id="lightbox-sub"></span>
+          </div>
+        </div>
+        <button
+          class="lightbox-nav lightbox-next"
+          id="lightbox-next-btn"
+          aria-label="Next image"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </dialog>
+
+    <!-- TOAST NOTIFICATION POPUP -->
+    <div
+      class="toast-notification"
+      id="toast-notify"
+      role="status"
+      aria-live="polite"
+    >
+      <div class="toast-icon">✓</div>
+      <div class="toast-body">
+        <strong id="toast-title">Request Received</strong>
+        <p id="toast-desc">Our travel concierge will contact you shortly.</p>
+      </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
