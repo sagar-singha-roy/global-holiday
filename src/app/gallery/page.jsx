@@ -5,8 +5,6 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-
- Page Hero Banner 
 <section className="section text-center" style={{'paddingBottom': '2rem'}}>
 <div className="container">
 <span className="section-eyebrow gold-text">A VISUAL ODYSSEY THROUGH WONDER</span>
@@ -39,7 +37,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Masonry Gallery Section 
 <section className="section gallery-section" style={{'paddingTop': '0'}}>
 <div className="container">
 <div className="masonry-gallery" id="masonry-gallery">
@@ -154,7 +151,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Instagram / Community Banner 
 <section className="section" style={{'paddingTop': '1rem'}}>
 <div className="container">
 <div className="cta-card glass-panel text-center" style={{'padding': '3.5rem 2rem', 'borderRadius': 'var(--radius-lg)', 'border': '1px solid var(--border-gold)'}}>

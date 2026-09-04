@@ -62,7 +62,7 @@ export default function Footer() {
                 <a href="/stories">Travel Stories</a>
               </li>
               <li>
-                <a href="#faq">Frequently Asked Questions</a>
+                <a href="/#faq">Frequently Asked Questions</a>
               </li>
               <li>
                 <a href="/legal">Legal &amp; Accreditations</a>
@@ -80,7 +80,7 @@ export default function Footer() {
                 <a
                   className="open-pkg-filter"
                   data-dest="Meghalaya"
-                  href="#packages"
+                  href="/packages"
                 >
                   Meghalaya &amp; Dawki Escape
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                 <a
                   className="open-pkg-filter"
                   data-dest="Sikkim"
-                  href="#packages"
+                  href="/packages"
                 >
                   Sikkim &amp; Darjeeling Grandeur
                 </a>
@@ -98,7 +98,7 @@ export default function Footer() {
                 <a
                   className="open-pkg-filter"
                   data-dest="Kashmir"
-                  href="#packages"
+                  href="/packages"
                 >
                   Kashmir Valley Odyssey
                 </a>
@@ -107,7 +107,7 @@ export default function Footer() {
                 <a
                   className="open-pkg-filter"
                   data-dest="Andaman"
-                  href="#packages"
+                  href="/packages"
                 >
                   Andaman Azure Haven
                 </a>
@@ -116,7 +116,7 @@ export default function Footer() {
                 <a
                   className="open-pkg-filter"
                   data-dest="Rajasthan"
-                  href="#packages"
+                  href="/packages"
                 >
                   Royal Rajasthan Palaces
                 </a>
@@ -125,7 +125,7 @@ export default function Footer() {
                 <a
                   className="open-pkg-filter"
                   data-dest="Tripura"
-                  href="#packages"
+                  href="/packages"
                 >
                   Tripura Heritage &amp; Palaces
                 </a>

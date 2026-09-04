@@ -7,8 +7,6 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-
- Page Header 
 <section className="section text-center" style={{'paddingBottom': '2rem'}}>
 <div className="container">
 <span className="section-eyebrow gold-text">HANDCRAFTED LUXURY ITINERARIES</span>
@@ -22,7 +20,6 @@ export default function Page() {
           </p>
 </div>
 </section>
- Packages Grid 
 <section className="section" style={{'paddingTop': '1rem'}}>
 <div className="container">
 <div style={{'display': 'grid', 'gridTemplateColumns': 'repeat(auto-fit, minmax(350px, 1fr))', 'gap': '2rem'}}>
@@ -245,7 +242,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- The Global Holidays Difference Comparison Table 
 <section className="section" style={{'background': 'var(--bg-surface)'}}>
 <div className="container">
 <div className="text-center mb-5">

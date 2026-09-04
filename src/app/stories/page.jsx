@@ -7,8 +7,6 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-
- Page Hero Banner 
 <section className="section text-center" style={{'paddingBottom': '2rem'}}>
 <div className="container">
 <span className="section-eyebrow gold-text">MOMENTS &amp; MEMORIES</span>
@@ -21,7 +19,6 @@ export default function Page() {
           </p>
 </div>
 </section>
- Visual Masonry Gallery 
 <section className="section" style={{'paddingTop': '1rem'}}>
 <div className="container">
 <div className="masonry-gallery" id="masonry-gallery">
@@ -109,7 +106,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Written Traveller Stories & Testimonials 
 <section className="section" style={{'background': 'var(--bg-surface)'}}>
 <div className="container">
 <div className="text-center mb-5">

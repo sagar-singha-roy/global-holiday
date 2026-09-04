@@ -5,8 +5,6 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-
- Page Hero Banner 
 <section className="section text-center" style={{'paddingBottom': '2rem'}}>
 <div className="container">
 <span className="section-eyebrow gold-text">EXPLORE THE WORLD WITH GLOBAL HOLIDAYS</span>
@@ -38,7 +36,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Destinations Grid Showcase 
 <section className="section" style={{'paddingTop': '1rem'}}>
 <div className="container">
 <div className="destinations-grid" id="destinations-container">
@@ -237,7 +234,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Seasonal Travel Guide Section 
 <section className="section" style={{'background': 'var(--bg-surface)'}}>
 <div className="container">
 <div className="text-center mb-5">
@@ -326,7 +322,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Custom Destination Enquiry CTA 
 <section className="section text-center">
 <div className="container">
 <div className="planner-card glass-panel" style={{'maxWidth': '880px', 'margin': '0 auto'}}>

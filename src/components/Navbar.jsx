@@ -1,16 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname() || "/";
+
+  const isActive = (path) => {
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
+  };
+
+  const isCompanyActive = ["/about", "/legal", "/contact"].some((p) =>
+    pathname.startsWith(p),
+  );
+
   return (
     <>
       <header className="site-header" id="site-header">
         <div className="nav-container">
-          <a
+          <Link
             aria-label="Global Holidays Home"
             className="brand-logo"
-            href="#hero"
+            href="/"
           >
             <img
               alt="Global Holidays Logo"
@@ -23,50 +35,71 @@ export default function Navbar() {
               <span className="brand-name">GLOBAL HOLIDAYS</span>
               <span className="brand-sub">TOUR &amp; TRAVELS</span>
             </div>
-          </a>
+          </Link>
 
           <nav aria-label="Main Navigation" className="desktop-nav">
             <ul className="nav-links">
               <li>
-                <a className="nav-link active" href="/">
+                <Link
+                  className={`nav-link ${isActive("/") ? "active" : ""}`}
+                  href="/"
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="/destinations">
+                <Link
+                  className={`nav-link ${isActive("/destinations") ? "active" : ""}`}
+                  href="/destinations"
+                >
                   Destinations
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="/packages">
+                <Link
+                  className={`nav-link ${isActive("/packages") ? "active" : ""}`}
+                  href="/packages"
+                >
                   Packages
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="/hotels">
+                <Link
+                  className={`nav-link ${isActive("/hotels") ? "active" : ""}`}
+                  href="/hotels"
+                >
                   Hotels
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="/deals">
+                <Link
+                  className={`nav-link ${isActive("/deals") ? "active" : ""}`}
+                  href="/deals"
+                >
                   Deals
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="/stories">
+                <Link
+                  className={`nav-link ${isActive("/stories") ? "active" : ""}`}
+                  href="/stories"
+                >
                   Stories
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="/gallery">
+                <Link
+                  className={`nav-link ${isActive("/gallery") ? "active" : ""}`}
+                  href="/gallery"
+                >
                   Gallery
-                </a>
+                </Link>
               </li>
               <li className="nav-dropdown">
                 <button
                   aria-expanded="false"
                   aria-haspopup="true"
-                  className="dropdown-toggle"
+                  className={`dropdown-toggle ${isCompanyActive ? "active" : ""}`}
                   id="company-dropdown-btn"
                   type="button"
                 >
@@ -90,7 +123,10 @@ export default function Navbar() {
                   className="dropdown-menu"
                 >
                   <li>
-                    <a className="dropdown-item" href="/about">
+                    <Link
+                      className={`dropdown-item ${isActive("/about") ? "active" : ""}`}
+                      href="/about"
+                    >
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -104,10 +140,13 @@ export default function Navbar() {
                         <line x1="12" x2="12.01" y1="8" y2="8"></line>
                       </svg>
                       <span>About &amp; Mission</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/legal">
+                    <Link
+                      className={`dropdown-item ${isActive("/legal") ? "active" : ""}`}
+                      href="/legal"
+                    >
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -119,10 +158,13 @@ export default function Navbar() {
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                       </svg>
                       <span>Legal</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/contact">
+                    <Link
+                      className={`dropdown-item ${isActive("/contact") ? "active" : ""}`}
+                      href="/contact"
+                    >
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -134,7 +176,7 @@ export default function Navbar() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                       </svg>
                       <span>Contact</span>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -304,46 +346,67 @@ export default function Navbar() {
           </div>
           <ul className="mobile-nav-links">
             <li>
-              <a className="mobile-nav-link active" href="/">
+              <Link
+                className={`mobile-nav-link ${isActive("/") ? "active" : ""}`}
+                href="/"
+              >
                 <span className="nav-label">Home</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link" href="/destinations">
+              <Link
+                className={`mobile-nav-link ${isActive("/destinations") ? "active" : ""}`}
+                href="/destinations"
+              >
                 <span className="nav-label">Destinations</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link" href="/packages">
+              <Link
+                className={`mobile-nav-link ${isActive("/packages") ? "active" : ""}`}
+                href="/packages"
+              >
                 <span className="nav-label">Curated Packages</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link" href="/hotels">
+              <Link
+                className={`mobile-nav-link ${isActive("/hotels") ? "active" : ""}`}
+                href="/hotels"
+              >
                 <span className="nav-label">Luxury Hotels</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link" href="/deals">
+              <Link
+                className={`mobile-nav-link ${isActive("/deals") ? "active" : ""}`}
+                href="/deals"
+              >
                 <span className="nav-label">Exclusive Deals</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link" href="/stories">
+              <Link
+                className={`mobile-nav-link ${isActive("/stories") ? "active" : ""}`}
+                href="/stories"
+              >
                 <span className="nav-label">Travel Stories</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link" href="/gallery">
+              <Link
+                className={`mobile-nav-link ${isActive("/gallery") ? "active" : ""}`}
+                href="/gallery"
+              >
                 <span className="nav-label">Gallery</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li className="mobile-nav-divider">
               <span className="mobile-nav-divider-label">
@@ -351,22 +414,31 @@ export default function Navbar() {
               </span>
             </li>
             <li>
-              <a className="mobile-nav-link mobile-sub-link" href="/about">
+              <Link
+                className={`mobile-nav-link mobile-sub-link ${isActive("/about") ? "active" : ""}`}
+                href="/about"
+              >
                 <span className="nav-label">About &amp; Mission</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link mobile-sub-link" href="/legal">
+              <Link
+                className={`mobile-nav-link mobile-sub-link ${isActive("/legal") ? "active" : ""}`}
+                href="/legal"
+              >
                 <span className="nav-label">Legal &amp; Accreditations</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="mobile-nav-link mobile-sub-link" href="/contact">
+              <Link
+                className={`mobile-nav-link mobile-sub-link ${isActive("/contact") ? "active" : ""}`}
+                href="/contact"
+              >
                 <span className="nav-label">Contact Concierge</span>
                 <span className="nav-arrow">→</span>
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mobile-drawer-footer">

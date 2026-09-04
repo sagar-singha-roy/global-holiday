@@ -7,7 +7,6 @@ import Link from "next/link";
 export default function Page() {
   return (
     <>
-      2. CINEMATIC HERO SECTION WITH 5-IMAGE CAROUSEL
       <section className="hero-section" id="hero">
         <div className="hero-carousel-container" id="hero-carousel">
           <div
@@ -876,7 +875,6 @@ export default function Page() {
           <span className="scroll-label">Scroll to Explore</span>
         </a>
       </section>
-      3. TRAVEL EXPERIENCE / INTRODUCTION
       <section className="section experience-section" id="experience">
         <div className="container">
           <div className="editorial-grid">
@@ -1000,7 +998,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      4. POPULAR DESTINATIONS SHOWCASE
       <section className="section destinations-section" id="destinations">
         <div className="container">
           <div className="section-header-split">
@@ -1271,7 +1268,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      5. CURATED TOUR PACKAGES SECTION
       <section className="section packages-section" id="packages">
         <div className="container">
           <div className="section-header-split">
@@ -1655,7 +1651,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      5B. LUXURY HOTELS & HERITAGE STAYS
       <section className="section hotels-section" id="hotels">
         <div className="container">
           <div className="section-header-split">
@@ -1950,7 +1945,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      5C. EXCLUSIVE DEALS & SEASONAL PRIVILEGES
       <section className="section deals-section" id="deals">
         <div className="container">
           <div className="section-header-split">
@@ -2270,7 +2264,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      6. CUSTOM TRIP PLANNER CONCIERGE
       <section className="section planner-section" id="planner">
         <div className="container">
           <div className="planner-card glass-panel">
@@ -2612,7 +2605,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      7. ABOUT US SECTION
       <section className="section about-section" id="about">
         <div className="container">
           <div className="editorial-grid">
@@ -2704,7 +2696,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      8. MISSION & VISION SECTION
       <section className="section mission-vision-section" id="mission-vision">
         <div className="container">
           <div className="text-center mb-5">
@@ -2757,7 +2748,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      9. WHY CHOOSE GLOBAL HOLIDAYS
       <section className="section why-us-section" id="why-us">
         <div className="container">
           <div className="section-header-split">
@@ -2893,7 +2883,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      10. TRAVEL STORIES / GALLERY SECTION
       <section className="section gallery-section" id="gallery">
         <div className="container">
           <div className="section-header-split">
@@ -3026,7 +3015,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      10. TESTIMONIALS SECTION
       <section className="section testimonials-section" id="testimonials">
         <div className="container">
           <div className="section-header-split">
@@ -3190,7 +3178,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      11. FREQUENTLY ASKED QUESTIONS (FAQ)
       <section className="section faq-section" id="faq">
         <div className="container faq-container">
           <div className="text-center" style={{ marginBottom: "2.5rem" }}>
@@ -3569,7 +3556,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      12. CONTACT / TRAVEL CONCIERGE
       <section className="section contact-section" id="contact">
         <div className="container">
           <div className="contact-grid">
@@ -3801,7 +3787,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      13. FINAL CINEMATIC CTA
       <section className="section final-cta-section" id="final-cta">
         <div className="final-cta-bg">
           <img

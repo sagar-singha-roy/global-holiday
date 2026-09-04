@@ -5,8 +5,6 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-
- Page Hero Banner 
 <section className="section text-center" style={{'paddingBottom': '2rem'}}>
 <div className="container">
 <span className="section-eyebrow gold-text">GOVERNMENT RECOGNITIONS &amp; ACCREDITATIONS</span>
@@ -18,7 +16,6 @@ export default function Page() {
           </p>
 </div>
 </section>
- Trust Summary Bar 
 <section style={{'padding': '0 0 2.5rem'}}>
 <div className="container">
 <div className="legal-trust-banner" style={{'marginTop': '0'}}>
@@ -45,7 +42,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Official Documents Showcase Grid 
 <section className="section legal-cert-section" id="legal-certifications" style={{'paddingTop': '1rem'}}>
 <div className="container">
 <div className="section-header-split">
@@ -234,7 +230,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Business Identity & Verification Table Section 
 <section className="section" style={{'paddingTop': '1.5rem'}}>
 <div className="container">
 <div className="planner-card glass-panel" style={{'maxWidth': '1000px', 'margin': '0 auto', 'padding': '2.5rem 2rem'}}>
@@ -274,7 +269,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Consumer Protection & Safe Booking Commitments 
 <section className="section" style={{'paddingTop': '1rem'}}>
 <div className="container">
 <div className="section-header-split">
@@ -328,7 +322,6 @@ export default function Page() {
 </div>
 </div>
 </section>
- Consultation CTA 
 <section className="section text-center" style={{'paddingTop': '2rem'}}>
 <div className="container">
 <div className="planner-card glass-panel" style={{'maxWidth': '840px', 'margin': '0 auto'}}>
