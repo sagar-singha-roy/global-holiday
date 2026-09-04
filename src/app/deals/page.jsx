@@ -74,7 +74,7 @@ export default function Page() {
 <span className="revealing-soon-badge">Revealing Soon</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="contact.html?subject=Claim+Deal+Spring+Himalayan">
+<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Spring+Himalayan">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
 </a>
@@ -118,7 +118,7 @@ export default function Page() {
 <span className="revealing-soon-badge">Revealing Soon</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="contact.html?subject=Claim+Deal+Cloud+Realm">
+<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Cloud+Realm">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
 </a>
@@ -162,7 +162,7 @@ export default function Page() {
 <span className="revealing-soon-badge">Revealing Soon</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="contact.html?subject=Claim+Deal+Royal+Tripura">
+<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Royal+Tripura">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
 </a>
@@ -206,7 +206,7 @@ export default function Page() {
 <span className="revealing-soon-badge">Revealing Soon</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="contact.html?subject=Claim+Deal+Kashmir+Paradise">
+<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Kashmir+Paradise">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
 </a>
@@ -250,7 +250,7 @@ export default function Page() {
 <span className="revealing-soon-badge">Revealing Soon</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="contact.html?subject=Claim+Deal+Andaman+Azure">
+<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Andaman+Azure">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
 </a>
@@ -294,7 +294,7 @@ export default function Page() {
 <span className="revealing-soon-badge">Revealing Soon</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="contact.html?subject=Claim+Deal+Tawang+Monastic">
+<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Tawang+Monastic">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
 </a>

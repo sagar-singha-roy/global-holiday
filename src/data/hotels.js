@@ -86,14 +86,14 @@ export const HOTELS = [
   },
   {
     "id": 8,
-    "title": "Ginger Agartala & Executive Suites",
-    "badge": "Executive Palace View",
+    "title": "Hotel Polo Towers Agartala",
+    "badge": "5-Star Premier Luxury",
     "location": "Agartala, Tripura",
     "category": "luxury",
-    "desc": "The preferred premium stay in Tripura's capital. Conveniently\n                  located minutes from Ujjayanta Palace and MBB Airport with\n                  modern culinary services and conference facilities.",
+    "desc": "Tripura's premier 5-star landmark hotel in Agartala. Features five-star executive suites, rooftop pool, grand banquet spaces, multi-cuisine fine dining, and signature hospitality.",
     "perks": [],
-    "price": "Starting Rate\u20b96,800/ nightRevealing Soon",
-    "src": "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop",
-    "alt": "Ginger Agartala Executive Suites"
+    "price": "Starting Rate₹7,500/ nightRevealing Soon",
+    "src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
+    "alt": "Hotel Polo Towers Agartala"
   }
 ];

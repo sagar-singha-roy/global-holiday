@@ -1731,7 +1731,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-outline-gold"
-                    href="contact.html?subject=Hotel+Booking+Mayfair+Tea+Resort"
+                    href="/contact?subject=Hotel+Booking+Mayfair+Tea+Resort"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
@@ -1798,7 +1798,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-outline-gold"
-                    href="contact.html?subject=Hotel+Booking+Ri+Kynjai"
+                    href="/contact?subject=Hotel+Booking+Ri+Kynjai"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
@@ -1867,7 +1867,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-outline-gold"
-                    href="contact.html?subject=Hotel+Booking+Elgin+NorKhill"
+                    href="/contact?subject=Hotel+Booking+Elgin+NorKhill"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
@@ -1934,7 +1934,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-outline-gold"
-                    href="contact.html?subject=Hotel+Booking+Polo+Orchid"
+                    href="/contact?subject=Hotel+Booking+Polo+Orchid"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
@@ -2054,7 +2054,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-gold"
-                    href="contact.html?subject=Claim+Deal+Spring+Himalayan"
+                    href="/contact?subject=Claim+Deal+Spring+Himalayan"
                   >
                     <span>Claim Deal</span>
                     <span className="btn-arrow">→</span>
@@ -2154,7 +2154,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-gold"
-                    href="contact.html?subject=Claim+Deal+Cloud+Realm"
+                    href="/contact?subject=Claim+Deal+Cloud+Realm"
                   >
                     <span>Claim Deal</span>
                     <span className="btn-arrow">→</span>
@@ -2253,7 +2253,7 @@ export default function Page() {
                   </div>
                   <a
                     className="btn btn-sm btn-gold"
-                    href="contact.html?subject=Claim+Deal+Royal+Tripura"
+                    href="/contact?subject=Claim+Deal+Royal+Tripura"
                   >
                     <span>Claim Deal</span>
                     <span className="btn-arrow">→</span>
