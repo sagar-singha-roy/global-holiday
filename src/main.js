@@ -391,9 +391,29 @@ function initCustomCursor() {
 
   if (!cursor || !dot || !ring) return;
 
+  function bindHover() {
+    const interactiveEls = document.querySelectorAll(
+      "a, button, input, select, textarea, .destination-card, .gallery-item, .pkg-card, .split-panel",
+    );
+    interactiveEls.forEach((el) => {
+      if (el.dataset.cursorHoverAttached) return;
+      el.dataset.cursorHoverAttached = "true";
+      el.addEventListener("mouseenter", () => cursor.classList.add("hovering"));
+      el.addEventListener("mouseleave", () =>
+        cursor.classList.remove("hovering"),
+      );
+    });
+  }
+
+  // Bind interactive hovers for newly rendered elements
+  bindHover();
+
+  // If already tracking mouse, do not duplicate listeners or RAF loops
+  if (cursor.dataset.cursorReady === "true") return;
+
   // Only enable on desktop pointer devices
   if (window.matchMedia("(pointer: fine)").matches) {
-    cursor.style.display = "block";
+    cursor.dataset.cursorReady = "true";
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -413,17 +433,6 @@ function initCustomCursor() {
       requestAnimationFrame(renderRing);
     }
     requestAnimationFrame(renderRing);
-
-    // Hover effect over interactive elements
-    const interactiveEls = document.querySelectorAll(
-      "a, button, input, select, textarea, .destination-card, .gallery-item, .pkg-card, .split-panel",
-    );
-    interactiveEls.forEach((el) => {
-      el.addEventListener("mouseenter", () => cursor.classList.add("hovering"));
-      el.addEventListener("mouseleave", () =>
-        cursor.classList.remove("hovering"),
-      );
-    });
   }
 }
 
@@ -816,7 +825,6 @@ function initPackageFeatures() {
           </div>
         </div>
       </div>
-      
       <span style="font-size: 0.75rem; color: var(--text-gold); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700;">Global Holidays Curated Circuit</span>
       <h2 style="font-size: 2.2rem; font-family: var(--font-serif); margin: 0.3rem 0 0.75rem; line-height: 1.2; color: var(--text-primary);">${data.title}</h2>
       <p style="color: var(--accent-teal); font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem;">${data.destination}</p>

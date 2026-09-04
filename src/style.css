@@ -419,7 +419,13 @@ h4,
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: normal;
-  display: none; /* activated on desktop via JS */
+  display: none;
+}
+
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
 }
 
 .cursor-dot {

@@ -1,16 +1,38 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { FaCheck, FaXmark } from "react-icons/fa6";
 
 import AppController from "@/components/AppController";
 
 export default function GlobalShell() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <>
-      <div aria-hidden="true" className="custom-cursor" id="custom-cursor">
-        <div className="cursor-dot" id="cursor-dot"></div>
-        <div className="cursor-ring" id="cursor-ring"></div>
-      </div>
+      {mounted && (
+        <div
+          aria-hidden="true"
+          className="custom-cursor"
+          id="custom-cursor"
+          suppressHydrationWarning
+        >
+          <div
+            className="cursor-dot"
+            id="cursor-dot"
+            suppressHydrationWarning
+          ></div>
+          <div
+            className="cursor-ring"
+            id="cursor-ring"
+            suppressHydrationWarning
+          ></div>
+        </div>
+      )}
       <a
         aria-label="Chat with Global Holidays Concierge on WhatsApp"
         className="floating-whatsapp-btn"
