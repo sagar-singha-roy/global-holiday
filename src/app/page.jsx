@@ -975,9 +975,9 @@ export default function Page() {
                       id="textPath"
                     ></path>
                     <text>
-                      <textpath href="#textPath" startoffset="0%">
+                      <textPath href="#textPath" startOffset="0%">
                         • GLOBAL HOLIDAYS • TOUR &amp; TRAVELS •
-                      </textpath>
+                      </textPath>
                     </text>
                   </svg>
                   <div
@@ -2282,7 +2282,7 @@ export default function Page() {
             <form
               className="planner-form"
               id="trip-planner-form"
-              onsubmit="return false;"
+              onSubmit={(e) => e.preventDefault()}
             >
               <div className="planner-step-group">
                 <label className="step-label">
@@ -2433,8 +2433,8 @@ export default function Page() {
                     <label htmlFor="plan-destination">
                       Desired Destination
                     </label>
-                    <select id="plan-destination" required="">
-                      <option disabled="" selected="" value="">
+                    <select defaultValue="" id="plan-destination" required="">
+                      <option disabled="" value="">
                         Choose destination
                       </option>
                       <option value="Meghalaya &amp; Shillong">

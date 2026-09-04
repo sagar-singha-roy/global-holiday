@@ -1130,6 +1130,7 @@ function initHeroCarousel() {
   const thumbImg = document.getElementById("floating-thumb-img");
   const badgeTag = document.getElementById("floating-badge-tag");
   const badgeTitle = document.getElementById("floating-badge-title");
+  const badgeSub = document.getElementById("floating-badge-sub");
   const regionTabs = document.querySelectorAll("#hero-region-tabs .region-tab");
   const indicatorsRow = document.getElementById("hero-indicators");
 
