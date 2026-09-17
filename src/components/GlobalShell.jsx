@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { FaCheck, FaXmark } from "react-icons/fa6";
 
 import AppController from "@/components/AppController";
+import OfferPopup from "@/components/OfferPopup";
 
 export default function GlobalShell() {
   const [mounted, setMounted] = useState(false);
@@ -204,6 +205,7 @@ export default function GlobalShell() {
           <p id="toast-desc">Our travel concierge will contact you shortly.</p>
         </div>
       </div>
+      <OfferPopup />
       <AppController />
     </>
   );

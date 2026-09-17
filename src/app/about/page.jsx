@@ -24,7 +24,7 @@ export default function Page() {
 <div className="editorial-media-col">
 <div className="about-image-composition">
 <div className="about-main-img" style={{'height': '560px'}}>
-<img alt="Scenic mountain travellers" loading="lazy" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"/>
+<img alt="Tripura Royal Heritage" loading="lazy" src="/images/india/tripura/Tripura_1.jpeg"/>
 </div>
 <div className="about-overlay-badge glass-panel">
 <span className="gold-text uppercase letter-spacing">Headquartered In</span>

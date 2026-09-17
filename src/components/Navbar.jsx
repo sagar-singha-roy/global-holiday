@@ -2,9 +2,37 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname() || "/";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    try {
+      const savedTheme = localStorage.getItem("gh_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } catch (_) {}
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleTheme = (e) => {
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
+    const current =
+      document.documentElement.getAttribute("data-theme") || "dark";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("gh_theme", next);
+    } catch (_) {}
+  };
 
   const isActive = (path) => {
     if (path === "/") return pathname === "/";
@@ -17,7 +45,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="site-header" id="site-header">
+      <header
+        className={`site-header ${scrolled ? "scrolled" : ""}`}
+        id="site-header"
+      >
         <div className="nav-container">
           <Link
             aria-label="Global Holidays Home"
@@ -188,7 +219,9 @@ export default function Navbar() {
               aria-label="Toggle light and dark mode"
               className="theme-toggle-btn"
               id="theme-toggle-btn"
+              onClick={toggleTheme}
               title="Switch Theme"
+              type="button"
             >
               <span className="theme-icon-sun">
                 <svg
@@ -284,7 +317,9 @@ export default function Navbar() {
               <button
                 aria-label="Toggle light and dark mode"
                 className="theme-toggle-btn mobile-theme-btn"
+                onClick={toggleTheme}
                 title="Switch Theme"
+                type="button"
               >
                 <span className="theme-icon-sun">
                   <svg

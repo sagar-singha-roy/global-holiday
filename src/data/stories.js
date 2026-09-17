@@ -6,16 +6,16 @@ export const STORIES_ITEMS = [
     "location": "Meghalaya",
     "category": "northeast",
     "isTall": false,
-    "src": "/images/meghalaya.jpg",
+    "src": "/images/india/meghalaya/Meghalaya.jpeg",
     "alt": "Meghalaya Living Root Bridge"
   },
   {
     "id": 2,
     "title": "",
     "location": "Kashmir",
-    "category": "northeast",
+    "category": "pan-india",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/kashmir/Kashmir.jpeg",
     "alt": "Kashmir Shikara"
   },
   {
@@ -24,25 +24,25 @@ export const STORIES_ITEMS = [
     "location": "Sikkim",
     "category": "northeast",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/sikkim/Sikkim.jpeg",
     "alt": "North Sikkim Lake"
   },
   {
     "id": 4,
     "title": "",
     "location": "Andaman",
-    "category": "northeast",
+    "category": "islands",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/andaman-islands/andaman.jpg",
     "alt": "Andaman Radhanagar Beach"
   },
   {
     "id": 5,
     "title": "",
     "location": "Rajasthan",
-    "category": "northeast",
+    "category": "pan-india",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/rajasthan/rajasthan.jpeg",
     "alt": "Rajasthan Udaipur"
   },
   {
@@ -51,7 +51,7 @@ export const STORIES_ITEMS = [
     "location": "Darjeeling",
     "category": "northeast",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/darjeeling-west-bengal/darjeeling.jpeg",
     "alt": "Darjeeling Tea Valley"
   },
   {
@@ -60,25 +60,25 @@ export const STORIES_ITEMS = [
     "location": "Tripura Exclusive",
     "category": "northeast",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/tripura/Tripura.jpeg",
     "alt": "Tripura Neermahal"
   },
   {
     "id": 8,
     "title": "",
     "location": "International Haven",
-    "category": "northeast",
+    "category": "international",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/international/bali-indonesia/Bali.jpeg",
     "alt": "Bali Luxury Villa"
   },
   {
     "id": 9,
     "title": "",
     "location": "Goa",
-    "category": "northeast",
+    "category": "islands",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/goa/goa.jpeg",
     "alt": "South Goa Resort"
   }
 ];

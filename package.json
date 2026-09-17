@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && rm -rf dist && cp -R out dist && find dist -name '.DS_Store' -delete",
+    "zip": "npm run build && rm -f dist.zip && zip -r -q dist.zip dist -x '*.DS_Store*'",
     "start": "next start"
   },
   "dependencies": {

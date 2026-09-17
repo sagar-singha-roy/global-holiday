@@ -68,7 +68,7 @@ export default function Page() {
                   alt="Mayfair Tea Resort &amp; Spa"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/darjeeling-west-bengal/darjeeling_3.jpeg"
                   width="400"
                 />
               </div>
@@ -104,10 +104,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹14,500 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -135,7 +135,7 @@ export default function Page() {
                   alt="Ri Kynjai Lake Resort"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/meghalaya/Meghalaya_2.jpeg"
                   width="400"
                 />
               </div>
@@ -173,10 +173,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹12,800 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export default function Page() {
                   alt="The Elgin Nor-Khill Gangtok"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/sikkim/Sikkim_2.jpeg"
                   width="400"
                 />
               </div>
@@ -242,10 +242,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹16,200 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -273,7 +273,7 @@ export default function Page() {
                   alt="Polo Orchid Cliff Haven"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/meghalaya/Meghalaya_3.jpeg"
                   width="400"
                 />
               </div>
@@ -309,10 +309,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹15,000 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -340,7 +340,7 @@ export default function Page() {
                   alt="Vivanta Meghalaya Shillong"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/meghalaya/Meghalaya_1.jpeg"
                   width="400"
                 />
               </div>
@@ -376,10 +376,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹13,500 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -407,7 +407,7 @@ export default function Page() {
                   alt="Denzong Regency Mountain Resort"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/sikkim/Sikkim_1.jpeg"
                   width="400"
                 />
               </div>
@@ -443,10 +443,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹14,000 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -474,7 +474,7 @@ export default function Page() {
                   alt="Heritage Club Tripura Castle"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/tripura/Tripura_2.jpeg"
                   width="400"
                 />
               </div>
@@ -512,10 +512,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹11,500 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>
@@ -543,7 +543,7 @@ export default function Page() {
                   alt="Hotel Polo Towers Agartala"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/tripura/Tripura_3.jpeg"
                   width="400"
                 />
               </div>
@@ -580,10 +580,10 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹7,500 <small>/ night</small>
+                        Custom Tariff
                       </span>
                       <span className="revealing-soon-badge">
-                        Revealing Soon
+                        On Request
                       </span>
                     </div>
                   </div>

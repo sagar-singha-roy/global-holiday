@@ -6,9 +6,9 @@ export const HERO_SLIDES = [
     "isNortheast": true,
     "dest": "Meghalaya",
     "badge": "Signature Northeast Circuit",
-    "route": "Shillong \u2022 Cherrapunji \u2022 Dawki \u2022 Mawlynnong",
-    "thumb": "/images/meghalaya.jpg",
-    "src": "/images/meghalaya.jpg",
+    "route": "Shillong • Cherrapunji • Dawki • Mawlynnong",
+    "thumb": "/images/india/meghalaya/Meghalaya.jpeg",
+    "src": "/images/india/meghalaya/Meghalaya.jpeg",
     "alt": "Meghalaya Living Root Bridge & Waterfalls"
   },
   {
@@ -17,9 +17,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Kashmir Valley",
     "badge": "Paradise On Earth",
-    "route": "Srinagar \u2022 Dal Lake \u2022 Gulmarg \u2022 Pahalgam",
-    "thumb": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=2000&auto=format&fit=crop",
+    "route": "Srinagar • Dal Lake • Gulmarg • Pahalgam",
+    "thumb": "/images/india/kashmir/Kashmir.jpeg",
+    "src": "/images/india/kashmir/Kashmir.jpeg",
     "alt": "Kashmir Dal Lake Morning Shikara"
   },
   {
@@ -28,9 +28,9 @@ export const HERO_SLIDES = [
     "isNortheast": true,
     "dest": "Sikkim & Darjeeling",
     "badge": "Sacred Himalayan Pass",
-    "route": "Gangtok \u2022 Gurudongmar \u2022 Pelling \u2022 Tiger Hill",
-    "thumb": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2000&auto=format&fit=crop",
+    "route": "Gangtok • Gurudongmar • Pelling • Tiger Hill",
+    "thumb": "/images/india/sikkim/Sikkim.jpeg",
+    "src": "/images/india/sikkim/Sikkim.jpeg",
     "alt": "Sikkim Glacial Lake and Mountains"
   },
   {
@@ -39,9 +39,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Andaman Islands",
     "badge": "Pristine Coral Haven",
-    "route": "Port Blair \u2022 Havelock \u2022 Neil \u2022 Radhanagar",
-    "thumb": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop",
+    "route": "Port Blair • Havelock • Neil • Radhanagar",
+    "thumb": "/images/india/andaman-islands/andaman.jpg",
+    "src": "/images/india/andaman-islands/andaman.jpg",
     "alt": "Andaman Turquoise Island Waters"
   },
   {
@@ -50,9 +50,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Royal Rajasthan",
     "badge": "Echoes of Royalty",
-    "route": "Jaipur \u2022 Udaipur \u2022 Jaisalmer Dunes \u2022 Jodhpur",
-    "thumb": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=2000&auto=format&fit=crop",
+    "route": "Jaipur • Udaipur • Jaisalmer Dunes • Jodhpur",
+    "thumb": "/images/india/rajasthan/rajasthan.jpeg",
+    "src": "/images/india/rajasthan/rajasthan.jpeg",
     "alt": "Royal Rajasthan Desert Forts & Lake Palaces"
   },
   {
@@ -61,9 +61,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Kerala",
     "badge": "God's Own Country",
-    "route": "Munnar Hills \u2022 Alleppey Backwaters \u2022 Wayanad \u2022 Kochi",
-    "thumb": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop",
+    "route": "Munnar Hills • Alleppey Backwaters • Wayanad • Kochi",
+    "thumb": "/images/india/kerala/Kerala.jpeg",
+    "src": "/images/india/kerala/Kerala.jpeg",
     "alt": "Kerala Backwaters & Houseboat Sanctuary"
   },
   {
@@ -72,9 +72,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Himachal Pradesh",
     "badge": "Valley of the Gods",
-    "route": "Manali \u2022 Shimla \u2022 Spiti Valley \u2022 Dharamshala",
-    "thumb": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=2000&auto=format&fit=crop",
+    "route": "Manali • Shimla • Spiti Valley • Dharamshala",
+    "thumb": "/images/india/himachal-pradesh/himachal.jpeg",
+    "src": "/images/india/himachal-pradesh/himachal.jpeg",
     "alt": "Himachal Snow Passes and Pine Glades"
   },
   {
@@ -83,9 +83,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Goa",
     "badge": "Boutique Coastal Retreats",
-    "route": "Candolim \u2022 Palolem \u2022 Fontainhas \u2022 South Goa",
-    "thumb": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=2000&auto=format&fit=crop",
+    "route": "Candolim • Palolem • Fontainhas • South Goa",
+    "thumb": "/images/india/goa/goa.jpeg",
+    "src": "/images/india/goa/goa.jpeg",
     "alt": "Goa Coastal Palm Shores and Sunsets"
   },
   {
@@ -94,9 +94,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Uttarakhand",
     "badge": "Sacred Heights & Alpine Valleys",
-    "route": "Rishikesh \u2022 Mussoorie \u2022 Nainital \u2022 Auli Slopes",
-    "thumb": "https://images.unsplash.com/photo-1582650625119-3a31f8418365?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1582650625119-3a31f8418365?q=80&w=2000&auto=format&fit=crop",
+    "route": "Rishikesh • Mussoorie • Nainital • Auli Slopes",
+    "thumb": "/images/india/uttarakhand/Uttarakhand.jpeg",
+    "src": "/images/india/uttarakhand/Uttarakhand.jpeg",
     "alt": "Uttarakhand Himalayan Peaks and Rivers"
   },
   {
@@ -105,9 +105,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Ladakh",
     "badge": "Land of High Passes",
-    "route": "Leh \u2022 Pangong Tso \u2022 Nubra Valley \u2022 Khardung La",
-    "thumb": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=2000&auto=format&fit=crop",
+    "route": "Leh • Pangong Tso • Nubra Valley • Khardung La",
+    "thumb": "/images/india/ladakh/ladakh.jpeg",
+    "src": "/images/india/ladakh/ladakh.jpeg",
     "alt": "Ladakh Pangong Lake and Monasteries"
   },
   {
@@ -116,9 +116,9 @@ export const HERO_SLIDES = [
     "isNortheast": true,
     "dest": "Arunachal Pradesh",
     "badge": "Land of Dawn-Lit Mountains",
-    "route": "Tawang \u2022 Sela Pass \u2022 Bomdila \u2022 Ziro Valley",
-    "thumb": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop",
+    "route": "Tawang • Sela Pass • Bomdila • Ziro Valley",
+    "thumb": "/images/india/arunachal-pradesh/arunachal.jpeg",
+    "src": "/images/india/arunachal-pradesh/arunachal.jpeg",
     "alt": "Arunachal Monasteries and Mist-Shrouded Valleys"
   },
   {
@@ -127,9 +127,9 @@ export const HERO_SLIDES = [
     "isNortheast": true,
     "dest": "Tripura",
     "badge": "Royal Water Palace & Antiquity",
-    "route": "Agartala \u2022 Neermahal \u2022 Unakoti \u2022 Sepahijala",
-    "thumb": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=2000&auto=format&fit=crop",
+    "route": "Agartala • Neermahal • Unakoti • Sepahijala",
+    "thumb": "/images/india/tripura/Tripura.jpeg",
+    "src": "/images/india/tripura/Tripura.jpeg",
     "alt": "Tripura Neermahal Water Palace and Heritage"
   },
   {
@@ -138,9 +138,9 @@ export const HERO_SLIDES = [
     "isNortheast": true,
     "dest": "Assam Wildlife",
     "badge": "Gateway to the Northeast",
-    "route": "Kaziranga Safari \u2022 Majuli Island \u2022 Brahmaputra Cruise",
-    "thumb": "https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&w=2000&auto=format&fit=crop",
+    "route": "Kaziranga Safari • Majuli Island • Brahmaputra Cruise",
+    "thumb": "/images/india/assam/assam.jpeg",
+    "src": "/images/india/assam/assam.jpeg",
     "alt": "Assam Kaziranga Wildlife and Tea Estates"
   },
   {
@@ -149,9 +149,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Tamil Nadu",
     "badge": "Temple Towns & Blue Mountains",
-    "route": "Ooty Nilgiris \u2022 Kodaikanal \u2022 Rameshwaram \u2022 Madurai",
-    "thumb": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2000&auto=format&fit=crop",
+    "route": "Ooty Nilgiris • Kodaikanal • Rameshwaram • Madurai",
+    "thumb": "/images/india/tamil-nadu/tamilnadu.jpeg",
+    "src": "/images/india/tamil-nadu/tamilnadu.jpeg",
     "alt": "Tamil Nadu Ooty Nilgiri Tea Mountains"
   },
   {
@@ -160,9 +160,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Karnataka Heritage",
     "badge": "Monolithic Wonders & Coffee Hills",
-    "route": "Coorg Coffee Valleys \u2022 Kabini Safari \u2022 Hampi Ruins",
-    "thumb": "https://images.unsplash.com/photo-1600100397608-f010e42e4720?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1600100397608-f010e42e4720?q=80&w=2000&auto=format&fit=crop",
+    "route": "Coorg Coffee Valleys • Kabini Safari • Hampi Ruins",
+    "thumb": "/images/india/karnataka/karnatak.jpeg",
+    "src": "/images/india/karnataka/karnatak.jpeg",
     "alt": "Karnataka Hampi Ruins and Ancient Temples"
   },
   {
@@ -171,7 +171,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Thailand",
     "badge": "Tropical Kingdom",
-    "route": "Bangkok \u2022 Phuket Luxury \u2022 Krabi \u2022 Phi Phi Islands",
+    "route": "Bangkok • Phuket Luxury • Krabi • Phi Phi Islands",
     "thumb": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=2000&auto=format&fit=crop",
     "alt": "Thailand Emerald Bays and Longtail Boats"
@@ -182,9 +182,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Bali & Indonesia",
     "badge": "Island of the Gods",
-    "route": "Ubud Jungle Villas \u2022 Nusa Penida \u2022 Seminyak \u2022 Uluwatu",
-    "thumb": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2000&auto=format&fit=crop",
+    "route": "Ubud Jungle Villas • Nusa Penida • Seminyak • Uluwatu",
+    "thumb": "/images/international/bali-indonesia/Bali.jpeg",
+    "src": "/images/international/bali-indonesia/Bali.jpeg",
     "alt": "Bali Tropical Temple and Sacred Forest"
   },
   {
@@ -193,9 +193,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Dubai & UAE",
     "badge": "Futuristic Luxury Oasis",
-    "route": "Burj Khalifa \u2022 Desert Dunes \u2022 Palm Jumeirah \u2022 Marina",
-    "thumb": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000&auto=format&fit=crop",
+    "route": "Burj Khalifa • Desert Dunes • Palm Jumeirah • Marina",
+    "thumb": "/images/international/dubai-uae/Dubai.jpeg",
+    "src": "/images/international/dubai-uae/Dubai.jpeg",
     "alt": "Dubai Skyline and Burj Khalifa Grandeur"
   },
   {
@@ -204,7 +204,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Switzerland",
     "badge": "Alpine Grandeur",
-    "route": "Interlaken \u2022 Lucerne \u2022 Zermatt \u2022 Matterhorn Glacier",
+    "route": "Interlaken • Lucerne • Zermatt • Matterhorn Glacier",
     "thumb": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?q=80&w=2000&auto=format&fit=crop",
     "alt": "Swiss Alps and Glacier Lakes"
@@ -215,7 +215,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Maldives",
     "badge": "Overwater Paradise",
-    "route": "Private Coral Atolls \u2022 Water Bungalows \u2022 Sunset Cruises",
+    "route": "Private Coral Atolls • Water Bungalows • Sunset Cruises",
     "thumb": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=2000&auto=format&fit=crop",
     "alt": "Maldives Turquoise Waters and Overwater Villas"
@@ -226,7 +226,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Kazakhstan",
     "badge": "The Silk Road Steppes",
-    "route": "Almaty Mountains \u2022 Charyn Canyon \u2022 Kolsai Lake \u2022 Astana",
+    "route": "Almaty Mountains • Charyn Canyon • Kolsai Lake • Astana",
     "thumb": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=2000&auto=format&fit=crop",
     "alt": "Kazakhstan Dramatic Alpine Canyons and Lakes"
@@ -237,7 +237,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Turkey",
     "badge": "Where Continents Meet",
-    "route": "Istanbul Bosphorus \u2022 Cappadocia Balloons \u2022 Antalya Coast",
+    "route": "Istanbul Bosphorus • Cappadocia Balloons • Antalya Coast",
     "thumb": "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=2000&auto=format&fit=crop",
     "alt": "Turkey Cappadocia Sunrise Hot Air Balloons"
@@ -248,9 +248,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "France & Paris",
     "badge": "Romance & Riviera",
-    "route": "Paris Eiffel \u2022 Nice \u2022 Cannes \u2022 French Riviera",
-    "thumb": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2000&auto=format&fit=crop",
+    "route": "Paris Eiffel • Nice • Cannes • French Riviera",
+    "thumb": "/images/international/france/france.jpeg",
+    "src": "/images/international/france/france.jpeg",
     "alt": "Parisian Architecture and Eiffel Vista"
   },
   {
@@ -259,9 +259,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Italy",
     "badge": "Bella Italia",
-    "route": "Rome Colosseum \u2022 Venice Canals \u2022 Florence \u2022 Amalfi Coast",
-    "thumb": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2000&auto=format&fit=crop",
+    "route": "Rome Colosseum • Venice Canals • Florence • Amalfi Coast",
+    "thumb": "/images/international/italy/italy.jpeg",
+    "src": "/images/international/italy/italy.jpeg",
     "alt": "Italy Amalfi Cliffside Villas"
   },
   {
@@ -270,7 +270,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "United Kingdom",
     "badge": "Regal Heritage",
-    "route": "London \u2022 Edinburgh \u2022 Cotswolds \u2022 Scottish Highlands",
+    "route": "London • Edinburgh • Cotswolds • Scottish Highlands",
     "thumb": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2000&auto=format&fit=crop",
     "alt": "London Westminster and Regal Palaces"
@@ -281,9 +281,9 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Greece",
     "badge": "Aegean Odyssey",
-    "route": "Santorini Domes \u2022 Mykonos \u2022 Athens Acropolis \u2022 Crete",
-    "thumb": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=200&auto=format&fit=crop",
-    "src": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=2000&auto=format&fit=crop",
+    "route": "Santorini Domes • Mykonos • Athens Acropolis • Crete",
+    "thumb": "/images/international/greece/greece.jpeg",
+    "src": "/images/international/greece/greece.jpeg",
     "alt": "Santorini White Domes and Turquoise Aegean Sea"
   },
   {
@@ -292,7 +292,7 @@ export const HERO_SLIDES = [
     "isNortheast": false,
     "dest": "Spain",
     "badge": "Iberian Splendour",
-    "route": "Barcelona Sagrada \u2022 Madrid \u2022 Seville \u2022 Balearic Isles",
+    "route": "Barcelona Sagrada • Madrid • Seville • Balearic Isles",
     "thumb": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=200&auto=format&fit=crop",
     "src": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2000&auto=format&fit=crop",
     "alt": "Spain Historic Architecture and Sunny Plazas"

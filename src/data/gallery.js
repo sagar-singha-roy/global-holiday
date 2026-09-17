@@ -6,7 +6,7 @@ export const GALLERY_ITEMS = [
     "location": "Meghalaya",
     "category": "meghalaya",
     "isTall": false,
-    "src": "/images/meghalaya.jpg",
+    "src": "/images/india/meghalaya/Meghalaya.jpeg",
     "alt": "Meghalaya Living Root Bridge"
   },
   {
@@ -15,7 +15,7 @@ export const GALLERY_ITEMS = [
     "location": "Sikkim",
     "category": "sikkim",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/sikkim/Sikkim.jpeg",
     "alt": "Gurudongmar Lake Sikkim"
   },
   {
@@ -24,7 +24,7 @@ export const GALLERY_ITEMS = [
     "location": "Tripura",
     "category": "tripura",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/tripura/Tripura.jpeg",
     "alt": "Tripura Neermahal Water Palace"
   },
   {
@@ -33,7 +33,7 @@ export const GALLERY_ITEMS = [
     "location": "Boutique Stay",
     "category": "hotels",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/darjeeling-west-bengal/darjeeling_3.jpeg",
     "alt": "Mayfair Tea Estate Hotel"
   },
   {
@@ -42,7 +42,7 @@ export const GALLERY_ITEMS = [
     "location": "Meghalaya",
     "category": "meghalaya",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/meghalaya/Meghalaya_1.jpeg",
     "alt": "Crystal Dawki River"
   },
   {
@@ -51,7 +51,7 @@ export const GALLERY_ITEMS = [
     "location": "Andaman",
     "category": "coastal",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/andaman-islands/andaman.jpg",
     "alt": "Radhanagar Beach Andaman"
   },
   {
@@ -60,7 +60,7 @@ export const GALLERY_ITEMS = [
     "location": "Kashmir Valley",
     "category": "sikkim",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/kashmir/Kashmir.jpeg",
     "alt": "Kashmir Dal Lake"
   },
   {
@@ -69,7 +69,7 @@ export const GALLERY_ITEMS = [
     "location": "Luxury Resort",
     "category": "hotels",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/meghalaya/Meghalaya_2.jpeg",
     "alt": "Ri Kynjai Lake Chalet"
   },
   {
@@ -78,7 +78,7 @@ export const GALLERY_ITEMS = [
     "location": "Tripura",
     "category": "tripura",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/tripura/Tripura_1.jpeg",
     "alt": "Ujjayanta Palace Agartala"
   },
   {
@@ -87,7 +87,7 @@ export const GALLERY_ITEMS = [
     "location": "Meghalaya",
     "category": "meghalaya",
     "isTall": true,
-    "src": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/meghalaya/Meghalaya_3.jpeg",
     "alt": "Nohkalikai Falls Cherrapunji"
   },
   {
@@ -96,7 +96,7 @@ export const GALLERY_ITEMS = [
     "location": "Sikkim",
     "category": "sikkim",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=600&auto=format&fit=crop",
+    "src": "/images/india/sikkim/Sikkim_1.jpeg",
     "alt": "Kanchenjunga Golden Sunrise"
   },
   {
@@ -105,7 +105,7 @@ export const GALLERY_ITEMS = [
     "location": "Coastal",
     "category": "coastal",
     "isTall": false,
-    "src": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=600&auto=format&fit=crop",
-    "alt": "Andaman Coral Reef Exploration"
+    "src": "/images/india/goa/goa.jpeg",
+    "alt": "Goa Coastal Palms"
   }
 ];

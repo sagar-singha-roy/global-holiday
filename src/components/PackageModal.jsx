@@ -66,13 +66,13 @@ export default function PackageModal() {
               <span>•</span>
               <div className="price-reveal-wrap">
                 <span className="blurred-price" style={{ fontSize: "0.82rem" }}>
-                  {data.price} / person
+                  {data.price}
                 </span>
                 <span
                   className="revealing-soon-badge"
                   style={{ fontSize: "0.65rem", padding: "0.1rem 0.4rem" }}
                 >
-                  Revealing Soon
+                  On Request
                 </span>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function PackageModal() {
                   fontWeight: "600",
                 }}
               >
-                Starting Price
+                Tariff Plan
               </span>
               <div
                 className="price-reveal-wrap"
@@ -282,23 +282,14 @@ export default function PackageModal() {
                 <div
                   className="blurred-price"
                   style={{
-                    fontSize: "1.5rem",
+                    fontSize: "1.25rem",
                     fontWeight: "700",
                     color: "var(--text-gold)",
                   }}
                 >
-                  {data.price}{" "}
-                  <small
-                    style={{
-                      fontSize: "0.8rem",
-                      fontWeight: "400",
-                      color: "var(--text-muted)",
-                    }}
-                  >
-                    / person
-                  </small>
+                  {data.price}
                 </div>
-                <span className="revealing-soon-badge">Revealing Soon</span>
+                <span className="revealing-soon-badge">On Request</span>
               </div>
             </div>
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

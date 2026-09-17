@@ -1,336 +1,522 @@
-'use client';
+"use client";
 
-import { FaStar } from 'react-icons/fa6';
+import { useState } from "react";
+import { FaStar } from "react-icons/fa6";
+import Link from "next/link";
 
-import Link from 'next/link';
+const ALL_PACKAGES = [
+  {
+    id: "meghalaya-escape",
+    title: "Meghalaya Cloud Sanctuary",
+    duration: "5 Days / 4 Nights",
+    dest: "Meghalaya",
+    category: "northeast",
+    rating: "4.9 (48 Reviews)",
+    itinerary: "Shillong • Cherrapunji • Dawki • Mawlynnong",
+    highlights: [
+      "Double Decker Root Bridge",
+      "Crystal River Boating",
+      "Boutique Pine Retreats",
+    ],
+    img: "/images/india/meghalaya/Meghalaya.jpeg",
+  },
+  {
+    id: "sikkim-grandeur",
+    title: "Sikkim & Gangtok Grandeur",
+    duration: "6 Days / 5 Nights",
+    dest: "Sikkim",
+    category: "northeast",
+    rating: "5.0 (62 Reviews)",
+    itinerary: "Gangtok • Tsomgo Lake • Lachung • Zero Point",
+    highlights: [
+      "Alpine Glacial Lakes",
+      "Snow Pass Excursion",
+      "Buddhist Gompas",
+    ],
+    img: "/images/india/sikkim/Sikkim.jpeg",
+  },
+  {
+    id: "kashmir-odyssey",
+    title: "Kashmir Valley Odyssey",
+    duration: "7 Days / 6 Nights",
+    dest: "Kashmir",
+    category: "pan-india",
+    rating: "4.9 (56 Reviews)",
+    itinerary: "Srinagar • Pahalgam • Gulmarg • Sonmarg • Doodhpathri",
+    highlights: [
+      "Luxury Houseboat Stay",
+      "Gulmarg Gondola Ride",
+      "Betaab & Aru Valleys",
+    ],
+    img: "/images/india/kashmir/Kashmir.jpeg",
+  },
+  {
+    id: "himachal-splendour",
+    title: "Himachal & Manali Splendour",
+    duration: "7 Days / 6 Nights",
+    dest: "Himachal Pradesh",
+    category: "pan-india",
+    rating: "4.9 (51 Reviews)",
+    itinerary: "Delhi • Shimla • Manali • Solang • Atal Tunnel & Sissu",
+    highlights: [
+      "Atal Tunnel Marvel",
+      "Kufri Pine Glades",
+      "Solang Valley Snow",
+    ],
+    img: "/images/india/himachal-pradesh/himachal.jpeg",
+  },
+  {
+    id: "goa-escape",
+    title: "Goa Boutique Coastal Retreat",
+    duration: "5 Days / 4 Nights",
+    dest: "Goa",
+    category: "pan-india",
+    rating: "4.8 (44 Reviews)",
+    itinerary: "Baga • Calangute • Fort Aguada • Old Goa • Mandovi River",
+    highlights: [
+      "Boutique Beach Resort",
+      "Portuguese Forts",
+      "Mandovi Sunset Cruise",
+    ],
+    img: "/images/india/goa/goa.jpeg",
+  },
+  {
+    id: "thailand-gateway",
+    title: "Thailand Tropical Escape",
+    duration: "5 Days / 4 Nights",
+    dest: "Thailand",
+    category: "international",
+    rating: "4.9 (58 Reviews)",
+    itinerary: "Pattaya (2N) • Bangkok (2N) • Coral Island Speedboat",
+    highlights: [
+      "Coral Island Speedboat",
+      "Golden Buddha Temple",
+      "Gems Gallery",
+    ],
+    img: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=700&auto=format&fit=crop",
+  },
+  {
+    id: "aizawl-escape",
+    title: "Mizoram Cloud Realm",
+    duration: "4 Days / 3 Nights",
+    dest: "Mizoram",
+    category: "northeast",
+    rating: "4.9 (32 Reviews)",
+    itinerary: "Aizawl • Thenzawl • Hmuifang • Reiek Tlang Peak",
+    highlights: [
+      "Reiek Sunrise Trek",
+      "Vantawng 750ft Falls",
+      "Aizawl Skywalk",
+    ],
+    img: "/images/india/meghalaya/Meghalaya_1.jpeg",
+  },
+  {
+    id: "darjeeling-escape",
+    title: "Darjeeling & Kalimpong Valleys",
+    duration: "4 Days / 3 Nights",
+    dest: "West Bengal",
+    category: "northeast",
+    rating: "4.8 (39 Reviews)",
+    itinerary: "Darjeeling • Kalimpong • Tiger Hill • Mirik Lake",
+    highlights: [
+      "Tiger Hill Sunrise",
+      "Colonial Tea Estates",
+      "Lamahatta Eco Pine Park",
+    ],
+    img: "/images/india/darjeeling-west-bengal/darjeeling.jpeg",
+  },
+  {
+    id: "grand-bharat-circuit",
+    title: "Grand Bharat Sacred Pilgrimage",
+    duration: "11 Days / 10 Nights",
+    dest: "Pan-India Sacred Trail",
+    category: "pan-india",
+    rating: "5.0 (73 Reviews)",
+    itinerary: "Delhi • Vrindavan • Ayodhya • Varanasi • Deoghar • Gaya",
+    highlights: [
+      "Kashi Vishwanath Darshan",
+      "Ram Mandir Ayodhya",
+      "Ganga Aarti Charter",
+    ],
+    img: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=700&auto=format&fit=crop",
+  },
+  {
+    id: "delhi-heritage",
+    title: "Delhi Capital Heritage Weekend",
+    duration: "3 Days / 2 Nights",
+    dest: "Delhi NCR",
+    category: "pan-india",
+    rating: "4.8 (35 Reviews)",
+    itinerary: "Old Delhi • New Delhi • Akshardham • India Gate",
+    highlights: [
+      "Qutub Minar & Red Fort",
+      "Akshardham Laser Show",
+      "Private AC Vehicle",
+    ],
+    img: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=700&auto=format&fit=crop",
+  },
+  {
+    id: "andaman-azure",
+    title: "Andaman Azure Haven & Reefs",
+    duration: "6 Days / 5 Nights",
+    dest: "Andaman Islands",
+    category: "pan-india",
+    rating: "4.9 (52 Reviews)",
+    itinerary: "Port Blair • Havelock • Neil • Radhanagar Beach",
+    highlights: [
+      "High-Speed Catamaran",
+      "Coral Snorkeling",
+      "Asia's Best Beach",
+    ],
+    img: "/images/india/andaman-islands/andaman.jpg",
+  },
+  {
+    id: "rajasthan-splendour",
+    title: "Royal Rajasthan & Desert Camps",
+    duration: "7 Days / 6 Nights",
+    dest: "Rajasthan",
+    category: "pan-india",
+    rating: "4.9 (65 Reviews)",
+    itinerary: "Jaipur • Jodhpur • Jaisalmer Dunes • Udaipur Lakes",
+    highlights: [
+      "Sam Dunes Desert Camp",
+      "Lake Pichola Cruise",
+      "Golden Living Fort",
+    ],
+    img: "/images/india/rajasthan/rajasthan.jpeg",
+  },
+  {
+    id: "tripura-heritage",
+    title: "Tripura Royal Palaces & Unakoti",
+    duration: "4 Days / 3 Nights",
+    dest: "Tripura",
+    category: "northeast",
+    rating: "5.0 (41 Reviews)",
+    itinerary: "Agartala • Neermahal Palace • Unakoti Rock Bas-Relief",
+    highlights: [
+      "Floating Water Palace",
+      "Colossal Rock Carvings",
+      "Royal Banquet Dinner",
+    ],
+    img: "/images/india/tripura/Tripura.jpeg",
+  },
+];
 
 export default function Page() {
+  const [filter, setFilter] = useState("all");
+
+  const filteredPackages =
+    filter === "all"
+      ? ALL_PACKAGES
+      : ALL_PACKAGES.filter((pkg) => pkg.category === filter);
+
   return (
     <>
-<section className="section text-center" style={{'paddingBottom': '2rem'}}>
-<div className="container">
-<span className="section-eyebrow gold-text">HANDCRAFTED LUXURY ITINERARIES</span>
-<h1 className="editorial-title" style={{'margin': '0.5rem 0 1.25rem'}}>
+      <section
+        className="section text-center"
+        style={{ paddingBottom: "1.5rem" }}
+      >
+        <div className="container">
+          <span className="section-eyebrow gold-text">
+            HANDCRAFTED LUXURY ITINERARIES
+          </span>
+          <h1
+            className="editorial-title"
+            style={{ margin: "0.5rem 0 1.25rem" }}
+          >
             Journeys Worth Remembering
           </h1>
-<p className="section-desc" style={{'margin': '0 auto', 'maxWidth': '760px'}}>
+          <p
+            className="section-desc"
+            style={{ margin: "0 auto 1.75rem", maxWidth: "760px" }}
+          >
             Every package is completely private and customizable. Enjoy verified
             boutique accommodations, dedicated private SUVs, and 24/7 on-trip
             concierge assistance.
           </p>
-</div>
-</section>
-<section className="section" style={{'paddingTop': '1rem'}}>
-<div className="container">
-<div style={{'display': 'grid', 'gridTemplateColumns': 'repeat(auto-fit, minmax(350px, 1fr))', 'gap': '2rem'}}>
 
-<div className="pkg-card" style={{'width': '100%'}}>
-<div className="pkg-image-wrapper">
-<img alt="Meghalaya Tour" loading="lazy" src="/images/meghalaya.jpg"/>
-<span className="pkg-duration-badge">5 Days / 4 Nights</span>
-<span className="pkg-dest-badge">Meghalaya</span>
-</div>
-<div className="pkg-body">
-<div className="pkg-rating-row">
-<div className="stars-gold"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-<span className="rating-num">4.9 (48 Reviews)</span>
-</div>
-<h3 className="pkg-title">Meghalaya Cloud Sanctuary</h3>
-<p className="pkg-itinerary-line">
-                  Shillong • Cherrapunji • Dawki • Mawlynnong
-                </p>
-<div className="pkg-highlights-pills">
-<span>Double Decker Root Bridge</span>
-<span>Crystal River Boating</span>
-<span>Boutique Pine Retreats</span>
-</div>
-<div className="pkg-footer">
-<div className="pkg-price-block">
-<span className="price-label">Starting From</span>
-<div className="price-reveal-wrap">
-<span className="price-amount blurred-price">₹18,500 <small>/ person</small></span>
-<span className="revealing-soon-badge">Revealing Soon</span>
-</div>
-</div>
-<button className="btn btn-outline-gold view-pkg-details" data-pkg="meghalaya-escape">
-<span>View Package</span>
-<span className="btn-arrow">→</span>
-</button>
-</div>
-</div>
-</div>
+          <div
+            className="filter-tabs"
+            style={{ justifyContent: "center", marginBottom: "0.5rem" }}
+            role="tablist"
+          >
+            <button
+              className={`filter-tab ${filter === "all" ? "active" : ""}`}
+              onClick={() => setFilter("all")}
+            >
+              All Packages ({ALL_PACKAGES.length})
+            </button>
+            <button
+              className={`filter-tab ${filter === "northeast" ? "active" : ""}`}
+              onClick={() => setFilter("northeast")}
+            >
+              Northeast Escapes
+            </button>
+            <button
+              className={`filter-tab ${filter === "pan-india" ? "active" : ""}`}
+              onClick={() => setFilter("pan-india")}
+            >
+              Pan-India Circuits
+            </button>
+            <button
+              className={`filter-tab ${filter === "international" ? "active" : ""}`}
+              onClick={() => setFilter("international")}
+            >
+              International
+            </button>
+          </div>
+        </div>
+      </section>
 
-<div className="pkg-card" style={{'width': '100%'}}>
-<div className="pkg-image-wrapper">
-<img alt="Sikkim Grandeur" loading="lazy" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=700&amp;auto=format&amp;fit=crop"/>
-<span className="pkg-duration-badge">7 Days / 6 Nights</span>
-<span className="pkg-dest-badge">Sikkim &amp; Darjeeling</span>
-</div>
-<div className="pkg-body">
-<div className="pkg-rating-row">
-<div className="stars-gold"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-<span className="rating-num">5.0 (62 Reviews)</span>
-</div>
-<h3 className="pkg-title">Sikkim &amp; Darjeeling Grandeur</h3>
-<p className="pkg-itinerary-line">
-                  Gangtok • Tsomgo Lake • Pelling • Tiger Hill
-                </p>
-<div className="pkg-highlights-pills">
-<span>High Altitude Sacred Lake</span>
-<span>Kanchenjunga Sunrise</span>
-<span>Heritage Tea Bungalow</span>
-</div>
-<div className="pkg-footer">
-<div className="pkg-price-block">
-<span className="price-label">Starting From</span>
-<div className="price-reveal-wrap">
-<span className="price-amount blurred-price">₹26,500 <small>/ person</small></span>
-<span className="revealing-soon-badge">Revealing Soon</span>
-</div>
-</div>
-<button className="btn btn-outline-gold view-pkg-details" data-pkg="sikkim-grandeur">
-<span>View Package</span>
-<span className="btn-arrow">→</span>
-</button>
-</div>
-</div>
-</div>
+      <section className="section" style={{ paddingTop: "0.5rem" }}>
+        <div className="container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+              gap: "2rem",
+            }}
+          >
+            {filteredPackages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="pkg-card"
+                style={{ width: "100%" }}
+                data-pkg-id={pkg.id}
+              >
+                <div className="pkg-image-wrapper">
+                  <img alt={pkg.title} loading="lazy" src={pkg.img} />
+                  <span className="pkg-duration-badge">{pkg.duration}</span>
+                  <span className="pkg-dest-badge">{pkg.dest}</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">{pkg.rating}</span>
+                  </div>
+                  <h3 className="pkg-title">{pkg.title}</h3>
+                  <p className="pkg-itinerary-line">{pkg.itinerary}</p>
+                  <div className="pkg-highlights-pills">
+                    {pkg.highlights.map((h, i) => (
+                      <span key={i}>{h}</span>
+                    ))}
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg={pkg.id}
+                      type="button"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-<div className="pkg-card" style={{'width': '100%'}}>
-<div className="pkg-image-wrapper">
-<img alt="Kashmir Odyssey" loading="lazy" src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=700&amp;auto=format&amp;fit=crop"/>
-<span className="pkg-duration-badge">6 Days / 5 Nights</span>
-<span className="pkg-dest-badge">Kashmir</span>
-</div>
-<div className="pkg-body">
-<div className="pkg-rating-row">
-<div className="stars-gold"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-<span className="rating-num">4.9 (54 Reviews)</span>
-</div>
-<h3 className="pkg-title">Enchanted Kashmir Odyssey</h3>
-<p className="pkg-itinerary-line">
-                  Srinagar • Gulmarg • Pahalgam • Sonmarg
-                </p>
-<div className="pkg-highlights-pills">
-<span>Luxury Dal Lake Houseboat</span>
-<span>Gulmarg Gondola Phase 2</span>
-<span>Private Saffron Valley Tour</span>
-</div>
-<div className="pkg-footer">
-<div className="pkg-price-block">
-<span className="price-label">Starting From</span>
-<div className="price-reveal-wrap">
-<span className="price-amount blurred-price">₹32,000 <small>/ person</small></span>
-<span className="revealing-soon-badge">Revealing Soon</span>
-</div>
-</div>
-<button className="btn btn-outline-gold view-pkg-details" data-pkg="kashmir-paradise">
-<span>View Package</span>
-<span className="btn-arrow">→</span>
-</button>
-</div>
-</div>
-</div>
-
-<div className="pkg-card" style={{'width': '100%'}}>
-<div className="pkg-image-wrapper">
-<img alt="Andaman Haven" loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=700&amp;auto=format&amp;fit=crop"/>
-<span className="pkg-duration-badge">6 Days / 5 Nights</span>
-<span className="pkg-dest-badge">Andaman</span>
-</div>
-<div className="pkg-body">
-<div className="pkg-rating-row">
-<div className="stars-gold"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-<span className="rating-num">5.0 (39 Reviews)</span>
-</div>
-<h3 className="pkg-title">Andaman Azure Haven</h3>
-<p className="pkg-itinerary-line">
-                  Port Blair • Havelock • Neil Island • Radhanagar
-                </p>
-<div className="pkg-highlights-pills">
-<span>Catamaran Cruise Transfers</span>
-<span>Private Reef Scuba Guide</span>
-<span>Beachfront Luxury Villa</span>
-</div>
-<div className="pkg-footer">
-<div className="pkg-price-block">
-<span className="price-label">Starting From</span>
-<div className="price-reveal-wrap">
-<span className="price-amount blurred-price">₹38,500 <small>/ person</small></span>
-<span className="revealing-soon-badge">Revealing Soon</span>
-</div>
-</div>
-<button className="btn btn-outline-gold view-pkg-details" data-pkg="andaman-luxury">
-<span>View Package</span>
-<span className="btn-arrow">→</span>
-</button>
-</div>
-</div>
-</div>
-
-<div className="pkg-card" style={{'width': '100%'}}>
-<div className="pkg-image-wrapper">
-<img alt="Rajasthan Splendour" loading="lazy" src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=700&amp;auto=format&amp;fit=crop"/>
-<span className="pkg-duration-badge">7 Days / 6 Nights</span>
-<span className="pkg-dest-badge">Rajasthan</span>
-</div>
-<div className="pkg-body">
-<div className="pkg-rating-row">
-<div className="stars-gold"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-<span className="rating-num">4.8 (41 Reviews)</span>
-</div>
-<h3 className="pkg-title">Royal Rajasthan Splendour</h3>
-<p className="pkg-itinerary-line">
-                  Jaipur • Jodhpur • Udaipur • Jaisalmer Dunes
-                </p>
-<div className="pkg-highlights-pills">
-<span>Heritage Palace Stays</span>
-<span>Private Desert Camp &amp; Stargazing</span>
-<span>Lake Pichola Boat Charter</span>
-</div>
-<div className="pkg-footer">
-<div className="pkg-price-block">
-<span className="price-label">Starting From</span>
-<div className="price-reveal-wrap">
-<span className="price-amount blurred-price">₹34,000 <small>/ person</small></span>
-<span className="revealing-soon-badge">Revealing Soon</span>
-</div>
-</div>
-<button className="btn btn-outline-gold view-pkg-details" data-pkg="rajasthan-royal">
-<span>View Package</span>
-<span className="btn-arrow">→</span>
-</button>
-</div>
-</div>
-</div>
-
-<div className="pkg-card" style={{'width': '100%'}}>
-<div className="pkg-image-wrapper">
-<img alt="Tripura Heritage" loading="lazy" src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&amp;w=800&amp;auto=format&amp;fit=crop"/>
-<span className="pkg-duration-badge">4 Days / 3 Nights</span>
-<span className="pkg-dest-badge">Tripura Exclusive</span>
-</div>
-<div className="pkg-body">
-<div className="pkg-rating-row">
-<div className="stars-gold"><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></div>
-<span className="rating-num">5.0 (31 Reviews)</span>
-</div>
-<h3 className="pkg-title">Tripura Royal Palaces &amp; Unakoti</h3>
-<p className="pkg-itinerary-line">
-                  Agartala • Neermahal • Sepahijala • Unakoti
-                </p>
-<div className="pkg-highlights-pills">
-<span>Water Palace Boat Excursion</span>
-<span>Ancient Rock Carvings</span>
-<span>Tripuri Cultural Banquet</span>
-</div>
-<div className="pkg-footer">
-<div className="pkg-price-block">
-<span className="price-label">Starting From</span>
-<div className="price-reveal-wrap">
-<span className="price-amount blurred-price">₹14,500 <small>/ person</small></span>
-<span className="revealing-soon-badge">Revealing Soon</span>
-</div>
-</div>
-<button className="btn btn-outline-gold view-pkg-details" data-pkg="tripura-heritage">
-<span>View Package</span>
-<span className="btn-arrow">→</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section className="section" style={{'background': 'var(--bg-surface)'}}>
-<div className="container">
-<div className="text-center mb-5">
-<span className="section-eyebrow gold-text">THE BOUTIQUE STANDARD</span>
-<h2 className="section-heading">Why Choose Our Curated Packages?</h2>
-<p className="section-desc" style={{'margin': '0 auto'}}>
+      <section className="section" style={{ background: "var(--bg-surface)" }}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="section-eyebrow gold-text">
+              THE BOUTIQUE STANDARD
+            </span>
+            <h2 className="section-heading">
+              Why Choose Our Curated Packages?
+            </h2>
+            <p className="section-desc" style={{ margin: "0 auto" }}>
               See how our bespoke travel planning differs from mass-market
               commercial tour operators.
             </p>
-</div>
-<div className="glass-panel" style={{'overflowX': 'auto', 'padding': '2rem'}}>
-<table style={{'width': '100%', 'borderCollapse': 'collapse', 'minWidth': '600px', 'textAlign': 'left'}}>
-<thead>
-<tr style={{'borderBottom': '1px solid var(--border-gold)'}}>
-<th style={{'padding': '1.25rem 1rem', 'color': 'var(--text-primary)', 'fontSize': '1.1rem', 'fontFamily': 'var(--font-serif)'}}>
+          </div>
+          <div
+            className="glass-panel"
+            style={{ overflowX: "auto", padding: "2rem" }}
+          >
+            <table
+              style={{
+                width: "100%",
+                borderCollapse: "collapse",
+                minWidth: "600px",
+                textAlign: "left",
+              }}
+            >
+              <thead>
+                <tr style={{ borderBottom: "1px solid var(--border-gold)" }}>
+                  <th
+                    style={{
+                      padding: "1.25rem 1rem",
+                      color: "var(--text-primary)",
+                      fontSize: "1.1rem",
+                      fontFamily: "var(--font-serif)",
+                    }}
+                  >
                     Travel Feature
                   </th>
-<th style={{'padding': '1.25rem 1rem', 'color': 'var(--text-muted)', 'fontSize': '0.95rem'}}>
+                  <th
+                    style={{
+                      padding: "1.25rem 1rem",
+                      color: "var(--text-muted)",
+                      fontSize: "0.95rem",
+                    }}
+                  >
                     Typical Mass Tour Operators
                   </th>
-<th style={{'padding': '1.25rem 1rem', 'color': 'var(--gold-light)', 'fontSize': '1.1rem', 'fontFamily': 'var(--font-serif)'}}>
-                    Global Holidays (Agartala)
+                  <th
+                    style={{
+                      padding: "1.25rem 1rem",
+                      color: "var(--gold-light)",
+                      fontSize: "1.1rem",
+                      fontFamily: "var(--font-serif)",
+                    }}
+                  >
+                    Global Holidays Tour &amp; Travels
                   </th>
-</tr>
-</thead>
-<tbody>
-<tr style={{'borderBottom': '1px solid var(--border-subtle)'}}>
-<td style={{'padding': '1rem', 'fontWeight': '600', 'color': 'var(--text-primary)'}}>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: "1px solid var(--border-subtle)" }}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontWeight: "600",
+                      color: "var(--text-primary)",
+                    }}
+                  >
                     Group Size &amp; Privacy
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--text-muted)'}}>
+                  <td style={{ padding: "1rem", color: "var(--text-muted)" }}>
                     Crowded 30-50 person bus tours with rigid fixed timings
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--gold-light)', 'fontWeight': '600'}}>
-                    100% Private, flexible departures &amp; custom itinerary pace
+                  <td
+                    style={{
+                      padding: "1rem",
+                      color: "var(--gold-light)",
+                      fontWeight: "600",
+                    }}
+                  >
+                    100% Private, flexible departures &amp; custom itinerary
+                    pace
                   </td>
-</tr>
-<tr style={{'borderBottom': '1px solid var(--border-subtle)'}}>
-<td style={{'padding': '1rem', 'fontWeight': '600', 'color': 'var(--text-primary)'}}>
+                </tr>
+                <tr style={{ borderBottom: "1px solid var(--border-subtle)" }}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontWeight: "600",
+                      color: "var(--text-primary)",
+                    }}
+                  >
                     Accommodations
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--text-muted)'}}>
+                  <td style={{ padding: "1rem", color: "var(--text-muted)" }}>
                     Generic highway hotels far from sights
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--gold-light)', 'fontWeight': '600'}}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      color: "var(--gold-light)",
+                      fontWeight: "600",
+                    }}
+                  >
                     Handpicked luxury boutique resorts, villas &amp; heritage
                     havelis
                   </td>
-</tr>
-<tr style={{'borderBottom': '1px solid var(--border-subtle)'}}>
-<td style={{'padding': '1rem', 'fontWeight': '600', 'color': 'var(--text-primary)'}}>
+                </tr>
+                <tr style={{ borderBottom: "1px solid var(--border-subtle)" }}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontWeight: "600",
+                      color: "var(--text-primary)",
+                    }}
+                  >
                     Transportation
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--text-muted)'}}>
+                  <td style={{ padding: "1rem", color: "var(--text-muted)" }}>
                     Shared taxis or crowded vans
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--gold-light)', 'fontWeight': '600'}}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      color: "var(--gold-light)",
+                      fontWeight: "600",
+                    }}
+                  >
                     Dedicated premium SUV (Crysta/Innova) with verified polite
                     drivers
                   </td>
-</tr>
-<tr style={{'borderBottom': '1px solid var(--border-subtle)'}}>
-<td style={{'padding': '1rem', 'fontWeight': '600', 'color': 'var(--text-primary)'}}>
+                </tr>
+                <tr style={{ borderBottom: "1px solid var(--border-subtle)" }}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontWeight: "600",
+                      color: "var(--text-primary)",
+                    }}
+                  >
                     On-Trip Support
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--text-muted)'}}>
+                  <td style={{ padding: "1rem", color: "var(--text-muted)" }}>
                     Automated call centers &amp; generic email tickets
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--gold-light)', 'fontWeight': '600'}}>
-                    Direct 24/7 dedicated travel designer on WhatsApp &amp; phone
+                  <td
+                    style={{
+                      padding: "1rem",
+                      color: "var(--gold-light)",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Direct 24/7 dedicated travel designer on WhatsApp &amp;
+                    phone
                   </td>
-</tr>
-<tr>
-<td style={{'padding': '1rem', 'fontWeight': '600', 'color': 'var(--text-primary)'}}>
+                </tr>
+                <tr>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontWeight: "600",
+                      color: "var(--text-primary)",
+                    }}
+                  >
                     Pricing Transparency
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--text-muted)'}}>
+                  <td style={{ padding: "1rem", color: "var(--text-muted)" }}>
                     Hidden permit charges &amp; surprise shopping stops
                   </td>
-<td style={{'padding': '1rem', 'color': 'var(--gold-light)', 'fontWeight': '600'}}>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      color: "var(--gold-light)",
+                      fontWeight: "600",
+                    }}
+                  >
                     Zero hidden costs, verified vouchers, clear itemized billing
                   </td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

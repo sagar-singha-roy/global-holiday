@@ -23,8 +23,8 @@ export default function Page() {
 <div className="container">
 <div className="masonry-gallery" id="masonry-gallery">
 
-<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Ancient Living Root Bridge • Meghalaya" data-img="/images/meghalaya.jpg">
-<img alt="Meghalaya Living Root Bridge" loading="lazy" src="/images/meghalaya.jpg"/>
+<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Ancient Living Root Bridge • Meghalaya" data-img="/images/india/meghalaya/Meghalaya.jpeg">
+<img alt="Meghalaya Living Root Bridge" loading="lazy" src="/images/india/meghalaya/Meghalaya.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Meghalaya</span>
 <h4>Living Root Bridge</h4>
@@ -32,8 +32,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item item-tall" data-author="Global Holidays Guest" data-caption="Dal Lake Shikara Morning • Srinagar, Kashmir" data-img="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="Kashmir Shikara" loading="lazy" src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item item-tall" data-author="Global Holidays Guest" data-caption="Dal Lake Shikara Morning • Srinagar, Kashmir" data-img="/images/india/kashmir/Kashmir_1.jpeg">
+<img alt="Kashmir Shikara" loading="lazy" src="/images/india/kashmir/Kashmir_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Kashmir</span>
 <h4>Dal Lake Morning Mist</h4>
@@ -41,8 +41,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Gurudongmar High Altitude Lake • North Sikkim" data-img="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="North Sikkim Lake" loading="lazy" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Gurudongmar High Altitude Lake • North Sikkim" data-img="/images/india/sikkim/Sikkim_1.jpeg">
+<img alt="North Sikkim Lake" loading="lazy" src="/images/india/sikkim/Sikkim_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Sikkim</span>
 <h4>Gurudongmar 17,800 ft</h4>
@@ -50,8 +50,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item item-tall" data-author="Global Holidays Guest" data-caption="Radhanagar Beach Sunset • Havelock Island, Andaman" data-img="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="Andaman Radhanagar Beach" loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item item-tall" data-author="Global Holidays Guest" data-caption="Radhanagar Beach Sunset • Havelock Island, Andaman" data-img="/images/india/andaman-islands/andaman_1.jpeg">
+<img alt="Andaman Radhanagar Beach" loading="lazy" src="/images/india/andaman-islands/andaman_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Andaman</span>
 <h4>Radhanagar Beach Glow</h4>
@@ -59,8 +59,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Udaipur City Palace • Rajasthan" data-img="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="Rajasthan Udaipur" loading="lazy" src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Udaipur City Palace • Rajasthan" data-img="/images/india/rajasthan/rajasthan_1.jpeg">
+<img alt="Rajasthan Udaipur" loading="lazy" src="/images/india/rajasthan/rajasthan_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Rajasthan</span>
 <h4>City Palace Grandeur</h4>
@@ -68,8 +68,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Darjeeling Heritage Tea Valley Vista" data-img="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="Darjeeling Tea Valley" loading="lazy" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Darjeeling Heritage Tea Valley Vista" data-img="/images/india/darjeeling-west-bengal/darjeeling_1.jpeg">
+<img alt="Darjeeling Tea Valley" loading="lazy" src="/images/india/darjeeling-west-bengal/darjeeling_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Darjeeling</span>
 <h4>Misty Tea Slopes</h4>
@@ -77,8 +77,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Neermahal Water Palace • Melaghar, Tripura" data-img="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="Tripura Neermahal" loading="lazy" src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item" data-author="Global Holidays Guest" data-caption="Neermahal Water Palace • Melaghar, Tripura" data-img="/images/india/tripura/Tripura_1.jpeg">
+<img alt="Tripura Neermahal" loading="lazy" src="/images/india/tripura/Tripura_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Tripura Exclusive</span>
 <h4>Neermahal Water Palace</h4>
@@ -86,8 +86,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item item-tall" data-author="Global Holidays Guest" data-caption="Ubud Rainforest Infinity Pool • Bali" data-img="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="Bali Luxury Villa" loading="lazy" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item item-tall" data-author="Global Holidays Guest" data-caption="Ubud Rainforest Infinity Pool • Bali" data-img="/images/international/bali-indonesia/bali_1.jpeg">
+<img alt="Bali Luxury Villa" loading="lazy" src="/images/international/bali-indonesia/bali_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">International Haven</span>
 <h4>Bali Jungle Sanctuary</h4>
@@ -95,8 +95,8 @@ export default function Page() {
 </div>
 </div>
 
-<div className="gallery-item" data-author="Global Holidays Guest" data-caption="South Goa Coastal Villa Sunset" data-img="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
-<img alt="South Goa Resort" loading="lazy" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&amp;w=600&amp;auto=format&amp;fit=crop"/>
+<div className="gallery-item" data-author="Global Holidays Guest" data-caption="South Goa Coastal Villa Sunset" data-img="/images/india/goa/goa_1.jpeg">
+<img alt="South Goa Resort" loading="lazy" src="/images/india/goa/goa_1.jpeg"/>
 <div className="gallery-caption-overlay">
 <span className="cap-tag">Goa</span>
 <h4>Secluded Coastal Cabana</h4>

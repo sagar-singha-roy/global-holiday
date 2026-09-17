@@ -153,7 +153,7 @@ export default function Footer() {
               <a
                 aria-label="Instagram"
                 className="social-circle"
-                href="https://instagram.com"
+                href="https://www.instagram.com/globalholidaysagt/"
                 rel="noopener"
                 target="_blank"
               >
@@ -173,7 +173,7 @@ export default function Footer() {
               <a
                 aria-label="Facebook"
                 className="social-circle"
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61587740006818"
                 rel="noopener"
                 target="_blank"
               >

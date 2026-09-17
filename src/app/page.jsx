@@ -15,13 +15,13 @@ export default function Page() {
             data-dest="Meghalaya"
             data-route="Shillong • Cherrapunji • Dawki • Mawlynnong"
             data-slide="0"
-            data-thumb="/images/meghalaya.jpg"
+            data-thumb="/images/india/meghalaya/Meghalaya.jpeg"
           >
             <img
               alt="Meghalaya Living Root Bridge &amp; Waterfalls"
               className="hero-slide-img"
               fetchPriority="high"
-              src="/images/meghalaya.jpg"
+              src="/images/india/meghalaya/Meghalaya.jpeg"
             />
           </div>
 
@@ -31,13 +31,13 @@ export default function Page() {
             data-dest="Kashmir Valley"
             data-route="Srinagar • Dal Lake • Gulmarg • Pahalgam"
             data-slide="1"
-            data-thumb="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/kashmir/Kashmir.jpeg"
           >
             <img
               alt="Kashmir Dal Lake Morning Shikara"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/kashmir/Kashmir.jpeg"
             />
           </div>
 
@@ -47,13 +47,13 @@ export default function Page() {
             data-dest="Sikkim &amp; Darjeeling"
             data-route="Gangtok • Gurudongmar • Pelling • Tiger Hill"
             data-slide="2"
-            data-thumb="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/sikkim/Sikkim.jpeg"
           >
             <img
               alt="Sikkim Glacial Lake and Mountains"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/sikkim/Sikkim.jpeg"
             />
           </div>
 
@@ -63,13 +63,13 @@ export default function Page() {
             data-dest="Andaman Islands"
             data-route="Port Blair • Havelock • Neil • Radhanagar"
             data-slide="3"
-            data-thumb="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/andaman-islands/andaman.jpg"
           >
             <img
               alt="Andaman Turquoise Island Waters"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/andaman-islands/andaman.jpg"
             />
           </div>
 
@@ -79,13 +79,13 @@ export default function Page() {
             data-dest="Royal Rajasthan"
             data-route="Jaipur • Udaipur • Jaisalmer Dunes • Jodhpur"
             data-slide="4"
-            data-thumb="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/rajasthan/rajasthan.jpeg"
           >
             <img
               alt="Royal Rajasthan Desert Forts &amp; Lake Palaces"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/rajasthan/rajasthan.jpeg"
             />
           </div>
 
@@ -95,13 +95,13 @@ export default function Page() {
             data-dest="Kerala"
             data-route="Munnar Hills • Alleppey Backwaters • Wayanad • Kochi"
             data-slide="5"
-            data-thumb="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/kerala/Kerala.jpeg"
           >
             <img
               alt="Kerala Backwaters &amp; Houseboat Sanctuary"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/kerala/Kerala.jpeg"
             />
           </div>
 
@@ -111,13 +111,13 @@ export default function Page() {
             data-dest="Himachal Pradesh"
             data-route="Manali • Shimla • Spiti Valley • Dharamshala"
             data-slide="6"
-            data-thumb="https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/himachal-pradesh/himachal.jpeg"
           >
             <img
               alt="Himachal Snow Passes and Pine Glades"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/himachal-pradesh/himachal.jpeg"
             />
           </div>
 
@@ -127,13 +127,13 @@ export default function Page() {
             data-dest="Goa"
             data-route="Candolim • Palolem • Fontainhas • South Goa"
             data-slide="7"
-            data-thumb="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/goa/goa.jpeg"
           >
             <img
               alt="Goa Coastal Palm Shores and Sunsets"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/goa/goa.jpeg"
             />
           </div>
 
@@ -143,13 +143,13 @@ export default function Page() {
             data-dest="Uttarakhand"
             data-route="Rishikesh • Mussoorie • Nainital • Auli Slopes"
             data-slide="8"
-            data-thumb="https://images.unsplash.com/photo-1582650625119-3a31f8418365?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/uttarakhand/Uttarakhand.jpeg"
           >
             <img
               alt="Uttarakhand Himalayan Peaks and Rivers"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1582650625119-3a31f8418365?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/uttarakhand/Uttarakhand.jpeg"
             />
           </div>
 
@@ -159,13 +159,13 @@ export default function Page() {
             data-dest="Ladakh"
             data-route="Leh • Pangong Tso • Nubra Valley • Khardung La"
             data-slide="9"
-            data-thumb="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/ladakh/ladakh.jpeg"
           >
             <img
               alt="Ladakh Pangong Lake and Monasteries"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/ladakh/ladakh.jpeg"
             />
           </div>
 
@@ -175,13 +175,13 @@ export default function Page() {
             data-dest="Arunachal Pradesh"
             data-route="Tawang • Sela Pass • Bomdila • Ziro Valley"
             data-slide="10"
-            data-thumb="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/arunachal-pradesh/arunachal.jpeg"
           >
             <img
               alt="Arunachal Monasteries and Mist-Shrouded Valleys"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/arunachal-pradesh/arunachal.jpeg"
             />
           </div>
 
@@ -191,13 +191,13 @@ export default function Page() {
             data-dest="Tripura"
             data-route="Agartala • Neermahal • Unakoti • Sepahijala"
             data-slide="11"
-            data-thumb="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/tripura/Tripura.jpeg"
           >
             <img
               alt="Tripura Neermahal Water Palace and Heritage"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/tripura/Tripura.jpeg"
             />
           </div>
 
@@ -208,13 +208,13 @@ export default function Page() {
             data-region="india"
             data-route="Kaziranga Safari • Majuli Island • Brahmaputra Cruise"
             data-slide="12"
-            data-thumb="https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/assam/assam.jpeg"
           >
             <img
               alt="Assam Kaziranga Wildlife and Tea Estates"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1571536802807-30451e3955d8?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/assam/assam.jpeg"
             />
           </div>
 
@@ -225,13 +225,13 @@ export default function Page() {
             data-region="india"
             data-route="Ooty Nilgiris • Kodaikanal • Rameshwaram • Madurai"
             data-slide="13"
-            data-thumb="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/tamil-nadu/tamilnadu.jpeg"
           >
             <img
               alt="Tamil Nadu Ooty Nilgiri Tea Mountains"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/tamil-nadu/tamilnadu.jpeg"
             />
           </div>
 
@@ -242,13 +242,13 @@ export default function Page() {
             data-region="india"
             data-route="Coorg Coffee Valleys • Kabini Safari • Hampi Ruins"
             data-slide="14"
-            data-thumb="https://images.unsplash.com/photo-1600100397608-f010e42e4720?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/india/karnataka/karnatak.jpeg"
           >
             <img
               alt="Karnataka Hampi Ruins and Ancient Temples"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1600100397608-f010e42e4720?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/india/karnataka/karnatak.jpeg"
             />
           </div>
 
@@ -276,13 +276,13 @@ export default function Page() {
             data-region="intl"
             data-route="Ubud Jungle Villas • Nusa Penida • Seminyak • Uluwatu"
             data-slide="16"
-            data-thumb="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/international/bali-indonesia/Bali.jpeg"
           >
             <img
               alt="Bali Tropical Temple and Sacred Forest"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/international/bali-indonesia/Bali.jpeg"
             />
           </div>
 
@@ -293,13 +293,13 @@ export default function Page() {
             data-region="intl"
             data-route="Burj Khalifa • Desert Dunes • Palm Jumeirah • Marina"
             data-slide="17"
-            data-thumb="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/international/dubai-uae/Dubai.jpeg"
           >
             <img
               alt="Dubai Skyline and Burj Khalifa Grandeur"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/international/dubai-uae/Dubai.jpeg"
             />
           </div>
 
@@ -378,13 +378,13 @@ export default function Page() {
             data-region="intl"
             data-route="Paris Eiffel • Nice • Cannes • French Riviera"
             data-slide="22"
-            data-thumb="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/international/france/france.jpeg"
           >
             <img
               alt="Parisian Architecture and Eiffel Vista"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/international/france/france.jpeg"
             />
           </div>
 
@@ -395,13 +395,13 @@ export default function Page() {
             data-region="intl"
             data-route="Rome Colosseum • Venice Canals • Florence • Amalfi Coast"
             data-slide="23"
-            data-thumb="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/international/italy/italy.jpeg"
           >
             <img
               alt="Italy Amalfi Cliffside Villas"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/international/italy/italy.jpeg"
             />
           </div>
 
@@ -429,13 +429,13 @@ export default function Page() {
             data-region="intl"
             data-route="Santorini Domes • Mykonos • Athens Acropolis • Crete"
             data-slide="25"
-            data-thumb="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&amp;w=200&amp;auto=format&amp;fit=crop"
+            data-thumb="/images/international/greece/greece.jpeg"
           >
             <img
               alt="Santorini White Domes and Turquoise Aegean Sea"
               className="hero-slide-img"
               loading="lazy"
-              src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+              src="/images/international/greece/greece.jpeg"
             />
           </div>
 
@@ -553,7 +553,7 @@ export default function Page() {
               <img
                 alt="Current Featured Destination"
                 id="floating-thumb-img"
-                src="/images/meghalaya.jpg"
+                src="/images/india/meghalaya/Meghalaya.jpeg"
               />
             </div>
             <div className="floating-badge-text">
@@ -604,10 +604,7 @@ export default function Page() {
               <span className="region-tab-icon">
                 <FaPlane />
               </span>
-              <span className="region-tab-text">
-                International &amp; Europe
-              </span>
-              <span className="region-tab-badge">Global</span>
+              <span className="region-tab-text">International</span>
             </button>
           </div>
 
@@ -944,7 +941,7 @@ export default function Page() {
                   <img
                     alt="High Altitude Himalayan Valley Experience"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+                    src="/images/india/sikkim/Sikkim_1.jpeg"
                   />
                   <div className="frame-caption">
                     <span>Eastern Himalayas • Sacred Monasteries</span>
@@ -954,7 +951,7 @@ export default function Page() {
                   <img
                     alt="Luxury Coastal Sunset Villa"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                    src="/images/india/goa/goa_1.jpeg"
                   />
                   <div className="secondary-badge">
                     <span className="stars">
@@ -1040,7 +1037,7 @@ export default function Page() {
                 <img
                   alt="Meghalaya Living Root Bridge &amp; Waterfalls"
                   loading="lazy"
-                  src="/images/meghalaya.jpg"
+                  src="/images/india/meghalaya/Meghalaya.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1066,7 +1063,7 @@ export default function Page() {
                 <img
                   alt="Sikkim High Altitude Mountain Passes"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/sikkim/Sikkim.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1089,7 +1086,7 @@ export default function Page() {
                 <img
                   alt="Darjeeling Emerald Tea Gardens"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/darjeeling-west-bengal/darjeeling.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1118,7 +1115,7 @@ export default function Page() {
                 <img
                   alt="Kashmir Dal Lake Shikara and Mountains"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"
+                  src="/images/india/kashmir/Kashmir.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1144,7 +1141,7 @@ export default function Page() {
                 <img
                   alt="Andaman Pristine Turquoise Waters"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/andaman-islands/andaman.jpg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1170,7 +1167,7 @@ export default function Page() {
                 <img
                   alt="Rajasthan Royal Palace Architecture"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/rajasthan/rajasthan.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1196,7 +1193,7 @@ export default function Page() {
                 <img
                   alt="Himachal Mountain Passes and Cedar Forests"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/himachal-pradesh/himachal.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1222,7 +1219,7 @@ export default function Page() {
                 <img
                   alt="Goa Luxury Coastal Resort"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/goa/goa.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1248,7 +1245,7 @@ export default function Page() {
                 <img
                   alt="Bali Luxury Tropical Forest Villa"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"
+                  src="/images/international/bali-indonesia/Bali.jpeg"
                 />
                 <div className="dest-overlay"></div>
               </div>
@@ -1259,8 +1256,11 @@ export default function Page() {
                   Private pool jungle villas in Ubud, cliffside temples
                   overlooking the Indian Ocean, and tailored island hopping.
                 </p>
-                <button className="dest-btn open-pkg-filter" data-dest="Bali">
-                  <span>Explore International</span>
+                <button
+                  className="dest-btn open-pkg-filter"
+                  data-dest="International"
+                >
+                  <span>Explore Bali</span>
                   <span className="arrow-icon">→</span>
                 </button>
               </div>
@@ -1329,7 +1329,7 @@ export default function Page() {
                   <img
                     alt="Meghalaya Escape Tour"
                     loading="lazy"
-                    src="/images/meghalaya.jpg"
+                    src="/images/india/meghalaya/Meghalaya.jpeg"
                   />
                   <span className="pkg-duration-badge">5 Days / 4 Nights</span>
                   <span className="pkg-dest-badge">Meghalaya</span>
@@ -1356,14 +1356,12 @@ export default function Page() {
                   </div>
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
-                      <span className="price-label">Starting From</span>
+                      <span className="price-label">Tariff Plan</span>
                       <div className="price-reveal-wrap">
                         <span className="price-amount blurred-price">
-                          ₹18,500 <small>/ person</small>
+                          Custom Tariff
                         </span>
-                        <span className="revealing-soon-badge">
-                          Revealing Soon
-                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
                       </div>
                     </div>
                     <button
@@ -1382,7 +1380,7 @@ export default function Page() {
                   <img
                     alt="Sikkim &amp; Darjeeling Tour"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
+                    src="/images/india/sikkim/Sikkim.jpeg"
                   />
                   <span className="pkg-duration-badge">7 Days / 6 Nights</span>
                   <span className="pkg-dest-badge">
@@ -1413,14 +1411,12 @@ export default function Page() {
                   </div>
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
-                      <span className="price-label">Starting From</span>
+                      <span className="price-label">Tariff Plan</span>
                       <div className="price-reveal-wrap">
                         <span className="price-amount blurred-price">
-                          ₹26,500 <small>/ person</small>
+                          Custom Tariff
                         </span>
-                        <span className="revealing-soon-badge">
-                          Revealing Soon
-                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
                       </div>
                     </div>
                     <button
@@ -1439,7 +1435,7 @@ export default function Page() {
                   <img
                     alt="Enchanted Kashmir Odyssey"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
+                    src="/images/india/kashmir/Kashmir.jpeg"
                   />
                   <span className="pkg-duration-badge">6 Days / 5 Nights</span>
                   <span className="pkg-dest-badge">Kashmir</span>
@@ -1466,14 +1462,12 @@ export default function Page() {
                   </div>
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
-                      <span className="price-label">Starting From</span>
+                      <span className="price-label">Tariff Plan</span>
                       <div className="price-reveal-wrap">
                         <span className="price-amount blurred-price">
-                          ₹32,000 <small>/ person</small>
+                          Custom Tariff
                         </span>
-                        <span className="revealing-soon-badge">
-                          Revealing Soon
-                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
                       </div>
                     </div>
                     <button
@@ -1492,7 +1486,7 @@ export default function Page() {
                   <img
                     alt="Andaman Tropical Luxury"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
+                    src="/images/india/andaman-islands/andaman.jpg"
                   />
                   <span className="pkg-duration-badge">6 Days / 5 Nights</span>
                   <span className="pkg-dest-badge">Andaman</span>
@@ -1519,14 +1513,12 @@ export default function Page() {
                   </div>
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
-                      <span className="price-label">Starting From</span>
+                      <span className="price-label">Tariff Plan</span>
                       <div className="price-reveal-wrap">
                         <span className="price-amount blurred-price">
-                          ₹38,500 <small>/ person</small>
+                          Custom Tariff
                         </span>
-                        <span className="revealing-soon-badge">
-                          Revealing Soon
-                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
                       </div>
                     </div>
                     <button
@@ -1545,7 +1537,7 @@ export default function Page() {
                   <img
                     alt="Royal Rajasthan Splendour"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
+                    src="/images/india/rajasthan/rajasthan.jpeg"
                   />
                   <span className="pkg-duration-badge">7 Days / 6 Nights</span>
                   <span className="pkg-dest-badge">Rajasthan</span>
@@ -1572,14 +1564,12 @@ export default function Page() {
                   </div>
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
-                      <span className="price-label">Starting From</span>
+                      <span className="price-label">Tariff Plan</span>
                       <div className="price-reveal-wrap">
                         <span className="price-amount blurred-price">
-                          ₹34,000 <small>/ person</small>
+                          Custom Tariff
                         </span>
-                        <span className="revealing-soon-badge">
-                          Revealing Soon
-                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
                       </div>
                     </div>
                     <button
@@ -1598,7 +1588,7 @@ export default function Page() {
                   <img
                     alt="Tripura Heritage and Royal Palaces"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                    src="/images/india/tripura/Tripura.jpeg"
                   />
                   <span className="pkg-duration-badge">4 Days / 3 Nights</span>
                   <span className="pkg-dest-badge">Tripura Exclusive</span>
@@ -1627,19 +1617,327 @@ export default function Page() {
                   </div>
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
-                      <span className="price-label">Starting From</span>
+                      <span className="price-label">Tariff Plan</span>
                       <div className="price-reveal-wrap">
                         <span className="price-amount blurred-price">
-                          ₹14,500 <small>/ person</small>
+                          Custom Tariff
                         </span>
-                        <span className="revealing-soon-badge">
-                          Revealing Soon
-                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
                       </div>
                     </div>
                     <button
                       className="btn btn-outline-gold view-pkg-details"
                       data-pkg="tripura-heritage"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="himachal-splendour">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Himachal &amp; Manali Splendour"
+                    loading="lazy"
+                    src="/images/india/himachal-pradesh/himachal.jpeg"
+                  />
+                  <span className="pkg-duration-badge">7 Days / 6 Nights</span>
+                  <span className="pkg-dest-badge">Himachal Pradesh</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">4.9 (51 Reviews)</span>
+                  </div>
+                  <h3 className="pkg-title">Himachal &amp; Manali Splendour</h3>
+                  <p className="pkg-itinerary-line">
+                    Delhi • Shimla • Manali • Solang • Atal Tunnel &amp; Sissu
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Atal Tunnel Marvel</span>
+                    <span>Kufri Pine Glades</span>
+                    <span>Solang Valley Snow</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="himachal-splendour"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="goa-escape">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Goa Coastal Retreat"
+                    loading="lazy"
+                    src="/images/india/goa/goa.jpeg"
+                  />
+                  <span className="pkg-duration-badge">5 Days / 4 Nights</span>
+                  <span className="pkg-dest-badge">Goa</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">4.8 (44 Reviews)</span>
+                  </div>
+                  <h3 className="pkg-title">Goa Boutique Coastal Retreat</h3>
+                  <p className="pkg-itinerary-line">
+                    Baga • Calangute • Fort Aguada • Old Goa • Mandovi River
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Boutique Beach Resort</span>
+                    <span>Portuguese Forts</span>
+                    <span>Mandovi Sunset Cruise</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="goa-escape"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="thailand-gateway">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Thailand Tropical Escape"
+                    loading="lazy"
+                    src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
+                  />
+                  <span className="pkg-duration-badge">5 Days / 4 Nights</span>
+                  <span className="pkg-dest-badge">Thailand</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">4.9 (58 Reviews)</span>
+                  </div>
+                  <h3 className="pkg-title">Thailand Tropical Escape</h3>
+                  <p className="pkg-itinerary-line">
+                    Pattaya (2N) • Bangkok (2N) • Coral Island Speedboat
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Coral Island Speedboat</span>
+                    <span>Golden Buddha Temple</span>
+                    <span>Gems Gallery</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="thailand-gateway"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="aizawl-escape">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Mizoram Cloud Realm"
+                    loading="lazy"
+                    src="/images/india/meghalaya/Meghalaya_1.jpeg"
+                  />
+                  <span className="pkg-duration-badge">4 Days / 3 Nights</span>
+                  <span className="pkg-dest-badge">Mizoram</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">4.9 (32 Reviews)</span>
+                  </div>
+                  <h3 className="pkg-title">Mizoram Cloud Realm</h3>
+                  <p className="pkg-itinerary-line">
+                    Aizawl • Thenzawl • Hmuifang • Reiek Tlang Peak
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Reiek Sunrise Trek</span>
+                    <span>Vantawng 750ft Falls</span>
+                    <span>Aizawl Skywalk</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="aizawl-escape"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="darjeeling-escape">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Darjeeling &amp; Kalimpong Valleys"
+                    loading="lazy"
+                    src="/images/india/darjeeling-west-bengal/darjeeling.jpeg"
+                  />
+                  <span className="pkg-duration-badge">4 Days / 3 Nights</span>
+                  <span className="pkg-dest-badge">West Bengal</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">4.8 (39 Reviews)</span>
+                  </div>
+                  <h3 className="pkg-title">
+                    Darjeeling &amp; Kalimpong Valleys
+                  </h3>
+                  <p className="pkg-itinerary-line">
+                    Darjeeling • Kalimpong • Tiger Hill • Mirik Lake
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Tiger Hill Sunrise</span>
+                    <span>Colonial Tea Estates</span>
+                    <span>Lamahatta Eco Pine Park</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="darjeeling-escape"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="grand-bharat-circuit">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Grand Bharat Sacred Pilgrimage"
+                    loading="lazy"
+                    src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
+                  />
+                  <span className="pkg-duration-badge">
+                    11 Days / 10 Nights
+                  </span>
+                  <span className="pkg-dest-badge">Pan-India Sacred Trail</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">5.0 (73 Reviews)</span>
+                  </div>
+                  <h3 className="pkg-title">Grand Bharat Sacred Pilgrimage</h3>
+                  <p className="pkg-itinerary-line">
+                    Delhi • Vrindavan • Ayodhya • Varanasi • Deoghar • Gaya
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Kashi Vishwanath Darshan</span>
+                    <span>Ram Mandir Ayodhya</span>
+                    <span>Ganga Aarti Charter</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="grand-bharat-circuit"
                     >
                       <span>View Package</span>
                       <span className="btn-arrow">→</span>
@@ -1686,7 +1984,7 @@ export default function Page() {
                   alt="Mayfair Tea Resort &amp; Spa"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/darjeeling-west-bengal/darjeeling_3.jpeg"
                   width="400"
                 />
               </div>
@@ -1722,11 +2020,9 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹14,500 <small>/ night</small>
+                        Custom Tariff
                       </span>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -1753,7 +2049,7 @@ export default function Page() {
                   alt="Ri Kynjai Lake Resort"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/meghalaya/Meghalaya_2.jpeg"
                   width="400"
                 />
               </div>
@@ -1789,11 +2085,9 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹12,800 <small>/ night</small>
+                        Custom Tariff
                       </span>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -1820,7 +2114,7 @@ export default function Page() {
                   alt="The Elgin Nor-Khill Gangtok"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/sikkim/Sikkim_2.jpeg"
                   width="400"
                 />
               </div>
@@ -1858,11 +2152,9 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹16,200 <small>/ night</small>
+                        Custom Tariff
                       </span>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -1889,7 +2181,7 @@ export default function Page() {
                   alt="Polo Orchid Cliff Haven"
                   height="220"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/meghalaya/Meghalaya_3.jpeg"
                   width="400"
                 />
               </div>
@@ -1925,11 +2217,9 @@ export default function Page() {
                     <span className="hotel-price-label">Starting Rate</span>
                     <div className="price-reveal-wrap">
                       <span className="hotel-price-val blurred-price">
-                        ₹15,000 <small>/ night</small>
+                        Custom Tariff
                       </span>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -1977,7 +2267,7 @@ export default function Page() {
                   alt="Spring Himalayan Valley Trail"
                   height="210"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/sikkim/Sikkim_2.jpeg"
                   width="400"
                 />
               </div>
@@ -2038,18 +2328,10 @@ export default function Page() {
                 <div className="deal-footer">
                   <div className="deal-pricing">
                     <div className="price-reveal-wrap">
-                      <div
-                        className="blurred-price"
-                        style={{ display: "flex", flexDirection: "column" }}
-                      >
-                        <span className="deal-original-price">₹48,000</span>
-                        <span className="deal-final-price">
-                          ₹36,000 <small>/ person</small>
-                        </span>
+                      <div className="blurred-price">
+                        <span className="deal-final-price">Custom Tariff</span>
                       </div>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -2075,7 +2357,7 @@ export default function Page() {
                   alt="Cloud Realm &amp; Crystal Waters"
                   height="210"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/meghalaya/Meghalaya_2.jpeg"
                   width="400"
                 />
               </div>
@@ -2138,18 +2420,10 @@ export default function Page() {
                 <div className="deal-footer">
                   <div className="deal-pricing">
                     <div className="price-reveal-wrap">
-                      <div
-                        className="blurred-price"
-                        style={{ display: "flex", flexDirection: "column" }}
-                      >
-                        <span className="deal-original-price">₹38,000</span>
-                        <span className="deal-final-price">
-                          ₹29,500 <small>/ person</small>
-                        </span>
+                      <div className="blurred-price">
+                        <span className="deal-final-price">Custom Tariff</span>
                       </div>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -2171,7 +2445,7 @@ export default function Page() {
                   alt="Tripura Royal Kingdoms &amp; Heritage"
                   height="210"
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                  src="/images/india/tripura/Tripura_2.jpeg"
                   width="400"
                 />
               </div>
@@ -2237,18 +2511,10 @@ export default function Page() {
                 <div className="deal-footer">
                   <div className="deal-pricing">
                     <div className="price-reveal-wrap">
-                      <div
-                        className="blurred-price"
-                        style={{ display: "flex", flexDirection: "column" }}
-                      >
-                        <span className="deal-original-price">₹22,000</span>
-                        <span className="deal-final-price">
-                          ₹16,800 <small>/ person</small>
-                        </span>
+                      <div className="blurred-price">
+                        <span className="deal-final-price">Custom Tariff</span>
                       </div>
-                      <span className="revealing-soon-badge">
-                        Revealing Soon
-                      </span>
+                      <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
                   <a
@@ -2614,7 +2880,7 @@ export default function Page() {
                   <img
                     alt="Travellers exploring mountain peaks"
                     loading="lazy"
-                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&amp;w=1000&amp;auto=format&amp;fit=crop"
+                    src="/images/india/tripura/Tripura_1.jpeg"
                   />
                 </div>
                 <div className="about-overlay-badge glass-panel">
@@ -2901,7 +3167,15 @@ export default function Page() {
               </a>
               <a
                 className="btn btn-outline-glass"
-                href="https://instagram.com"
+                href="https://www.facebook.com/profile.php?id=61587740006818"
+                rel="noopener"
+                target="_blank"
+              >
+                <span>Facebook</span>
+              </a>
+              <a
+                className="btn btn-outline-glass"
+                href="https://www.instagram.com/globalholidaysagt/"
                 rel="noopener"
                 target="_blank"
               >
@@ -2914,12 +3188,12 @@ export default function Page() {
               className="gallery-item"
               data-author="Global Holidays Guest"
               data-caption="Ancient Living Root Bridge • Meghalaya"
-              data-img="/images/meghalaya.jpg"
+              data-img="/images/india/meghalaya/Meghalaya_3.jpeg"
             >
               <img
                 alt="Meghalaya Living Root Bridge"
                 loading="lazy"
-                src="/images/meghalaya.jpg"
+                src="/images/india/meghalaya/Meghalaya_3.jpeg"
               />
               <div className="gallery-caption-overlay">
                 <span className="cap-tag">Meghalaya</span>
@@ -2931,12 +3205,12 @@ export default function Page() {
               className="gallery-item item-tall"
               data-author="Global Holidays Guest"
               data-caption="Dal Lake Shikara Morning • Srinagar, Kashmir"
-              data-img="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+              data-img="/images/india/kashmir/Kashmir_2.jpeg"
             >
               <img
                 alt="Kashmir Shikara"
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                src="/images/india/kashmir/Kashmir_2.jpeg"
               />
               <div className="gallery-caption-overlay">
                 <span className="cap-tag">Kashmir</span>
@@ -2948,12 +3222,12 @@ export default function Page() {
               className="gallery-item"
               data-author="Global Holidays Guest"
               data-caption="Gurudongmar High Altitude Lake • North Sikkim"
-              data-img="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+              data-img="/images/india/sikkim/Sikkim_3.jpeg"
             >
               <img
                 alt="North Sikkim Lake"
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                src="/images/india/sikkim/Sikkim_3.jpeg"
               />
               <div className="gallery-caption-overlay">
                 <span className="cap-tag">Sikkim</span>
@@ -2965,12 +3239,12 @@ export default function Page() {
               className="gallery-item item-tall"
               data-author="Global Holidays Guest"
               data-caption="Radhanagar Beach Sunset • Havelock Island, Andaman"
-              data-img="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+              data-img="/images/india/andaman-islands/andaman_2.jpeg"
             >
               <img
                 alt="Andaman Radhanagar Beach"
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                src="/images/india/andaman-islands/andaman_2.jpeg"
               />
               <div className="gallery-caption-overlay">
                 <span className="cap-tag">Andaman</span>
@@ -2982,12 +3256,12 @@ export default function Page() {
               className="gallery-item"
               data-author="Global Holidays Guest"
               data-caption="Udaipur City Palace • Rajasthan"
-              data-img="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+              data-img="/images/india/rajasthan/rajasthan_2.jpeg"
             >
               <img
                 alt="Rajasthan Udaipur"
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                src="/images/india/rajasthan/rajasthan_2.jpeg"
               />
               <div className="gallery-caption-overlay">
                 <span className="cap-tag">Rajasthan</span>
@@ -2999,12 +3273,12 @@ export default function Page() {
               className="gallery-item"
               data-author="Global Holidays Guest"
               data-caption="Darjeeling Heritage Tea Valley Vista"
-              data-img="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+              data-img="/images/india/darjeeling-west-bengal/darjeeling_2.jpeg"
             >
               <img
                 alt="Darjeeling Tea Valley"
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                src="/images/india/darjeeling-west-bengal/darjeeling_2.jpeg"
               />
               <div className="gallery-caption-overlay">
                 <span className="cap-tag">Darjeeling</span>
@@ -3792,7 +4066,7 @@ export default function Page() {
           <img
             alt="Luxury Travel Horizon Vista"
             loading="lazy"
-            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&amp;w=2000&amp;auto=format&amp;fit=crop"
+            src="/images/india/kashmir/Kashmir_3.jpeg"
           />
           <div className="final-cta-overlay"></div>
         </div>

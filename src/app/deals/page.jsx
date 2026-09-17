@@ -42,7 +42,7 @@ export default function Page() {
 <span className="deal-badge-ribbon">25% OFF EARLY BIRD</span>
 <span className="deal-validity-badge">Valid until April 30, 2026</span>
 <div className="deal-image-wrapper">
-<img alt="Spring Himalayan Valley Trail" height="210" loading="lazy" src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&amp;w=800&amp;auto=format&amp;fit=crop" width="400"/>
+<img alt="Spring Himalayan Valley Trail" height="210" loading="lazy" src="/images/india/sikkim/Sikkim_2.jpeg" width="400"/>
 </div>
 <div className="deal-body">
 <span className="deal-tagline">SIKKIM &amp; NORTH BENGAL</span>
@@ -67,11 +67,10 @@ export default function Page() {
 <div className="deal-footer">
 <div className="deal-pricing">
 <div className="price-reveal-wrap">
-<div className="blurred-price" style={{'display': 'flex', 'flexDirection': 'column'}}>
-<span className="deal-original-price">₹48,000</span>
-<span className="deal-final-price">₹36,000 <small>/ person</small></span>
+<div className="blurred-price">
+<span className="deal-final-price">Custom Tariff</span>
 </div>
-<span className="revealing-soon-badge">Revealing Soon</span>
+<span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
 <a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Spring+Himalayan">
@@ -86,7 +85,7 @@ export default function Page() {
 <span className="deal-badge-ribbon">COMPLIMENTARY SPA &amp; CRUISE</span>
 <span className="deal-validity-badge">Limited Seasonal Slots</span>
 <div className="deal-image-wrapper">
-<img alt="Cloud Realm &amp; Crystal Waters" height="210" loading="lazy" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=800&amp;auto=format&amp;fit=crop" width="400"/>
+<img alt="Cloud Realm &amp; Crystal Waters" height="210" loading="lazy" src="/images/india/meghalaya/Meghalaya_2.jpeg" width="400"/>
 </div>
 <div className="deal-body">
 <span className="deal-tagline">SHILLONG • SOHRA • DAWKI</span>
@@ -111,11 +110,10 @@ export default function Page() {
 <div className="deal-footer">
 <div className="deal-pricing">
 <div className="price-reveal-wrap">
-<div className="blurred-price" style={{'display': 'flex', 'flexDirection': 'column'}}>
-<span className="deal-original-price">₹38,000</span>
-<span className="deal-final-price">₹29,500 <small>/ person</small></span>
+<div className="blurred-price">
+<span className="deal-final-price">Custom Tariff</span>
 </div>
-<span className="revealing-soon-badge">Revealing Soon</span>
+<span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
 <a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Cloud+Realm">
@@ -130,7 +128,7 @@ export default function Page() {
 <span className="deal-badge-ribbon">ROYAL CONCIERGE SPECIAL</span>
 <span className="deal-validity-badge">Year-Round Exclusive</span>
 <div className="deal-image-wrapper">
-<img alt="Tripura Royal Kingdoms &amp; Heritage" height="210" loading="lazy" src="https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&amp;w=800&amp;auto=format&amp;fit=crop" width="400"/>
+<img alt="Tripura Royal Kingdoms &amp; Heritage" height="210" loading="lazy" src="/images/india/tripura/Tripura_2.jpeg" width="400"/>
 </div>
 <div className="deal-body">
 <span className="deal-tagline">AGARTALA • UDAIPUR • UNAKOTI</span>
@@ -155,11 +153,10 @@ export default function Page() {
 <div className="deal-footer">
 <div className="deal-pricing">
 <div className="price-reveal-wrap">
-<div className="blurred-price" style={{'display': 'flex', 'flexDirection': 'column'}}>
-<span className="deal-original-price">₹22,000</span>
-<span className="deal-final-price">₹16,800 <small>/ person</small></span>
+<div className="blurred-price">
+<span className="deal-final-price">Custom Tariff</span>
 </div>
-<span className="revealing-soon-badge">Revealing Soon</span>
+<span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
 <a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Royal+Tripura">
@@ -174,7 +171,7 @@ export default function Page() {
 <span className="deal-badge-ribbon">20% OFF HONEYMOON SPECIAL</span>
 <span className="deal-validity-badge">Valid for May &amp; June</span>
 <div className="deal-image-wrapper">
-<img alt="Kashmir Valley of Flowers &amp; Houseboat" height="210" loading="lazy" src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&amp;w=800&amp;auto=format&amp;fit=crop" width="400"/>
+<img alt="Kashmir Valley of Flowers &amp; Houseboat" height="210" loading="lazy" src="/images/india/kashmir/Kashmir_2.jpeg" width="400"/>
 </div>
 <div className="deal-body">
 <span className="deal-tagline">SRINAGAR • GULMARG • PAHALGAM</span>
@@ -199,11 +196,10 @@ export default function Page() {
 <div className="deal-footer">
 <div className="deal-pricing">
 <div className="price-reveal-wrap">
-<div className="blurred-price" style={{'display': 'flex', 'flexDirection': 'column'}}>
-<span className="deal-original-price">₹42,000</span>
-<span className="deal-final-price">₹33,600 <small>/ person</small></span>
+<div className="blurred-price">
+<span className="deal-final-price">Custom Tariff</span>
 </div>
-<span className="revealing-soon-badge">Revealing Soon</span>
+<span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
 <a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Kashmir+Paradise">
@@ -218,7 +214,7 @@ export default function Page() {
 <span className="deal-badge-ribbon">FREE SCUBA &amp; GLAMPING</span>
 <span className="deal-validity-badge">Limited Island Slots</span>
 <div className="deal-image-wrapper">
-<img alt="Andaman Azure Islands Escape" height="210" loading="lazy" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&amp;w=800&amp;auto=format&amp;fit=crop" width="400"/>
+<img alt="Andaman Azure Islands Escape" height="210" loading="lazy" src="/images/india/andaman-islands/andaman_2.jpeg" width="400"/>
 </div>
 <div className="deal-body">
 <span className="deal-tagline">PORT BLAIR • HAVELOCK • NEIL</span>
@@ -243,11 +239,10 @@ export default function Page() {
 <div className="deal-footer">
 <div className="deal-pricing">
 <div className="price-reveal-wrap">
-<div className="blurred-price" style={{'display': 'flex', 'flexDirection': 'column'}}>
-<span className="deal-original-price">₹46,000</span>
-<span className="deal-final-price">₹36,800 <small>/ person</small></span>
+<div className="blurred-price">
+<span className="deal-final-price">Custom Tariff</span>
 </div>
-<span className="revealing-soon-badge">Revealing Soon</span>
+<span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
 <a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Andaman+Azure">
@@ -262,7 +257,7 @@ export default function Page() {
 <span className="deal-badge-ribbon">FREE 4X4 SUV UPGRADE</span>
 <span className="deal-validity-badge">Winter &amp; Autumn Early Bird</span>
 <div className="deal-image-wrapper">
-<img alt="Tawang Monastic &amp; High Altitude Trail" height="210" loading="lazy" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&amp;w=800&amp;auto=format&amp;fit=crop" width="400"/>
+<img alt="Tawang Monastic &amp; High Altitude Trail" height="210" loading="lazy" src="/images/india/arunachal-pradesh/arunachal.jpeg" width="400"/>
 </div>
 <div className="deal-body">
 <span className="deal-tagline">ARUNACHAL PRADESH</span>
@@ -287,11 +282,10 @@ export default function Page() {
 <div className="deal-footer">
 <div className="deal-pricing">
 <div className="price-reveal-wrap">
-<div className="blurred-price" style={{'display': 'flex', 'flexDirection': 'column'}}>
-<span className="deal-original-price">₹45,000</span>
-<span className="deal-final-price">₹35,000 <small>/ person</small></span>
+<div className="blurred-price">
+<span className="deal-final-price">Custom Tariff</span>
 </div>
-<span className="revealing-soon-badge">Revealing Soon</span>
+<span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
 <a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Tawang+Monastic">
