@@ -1,11 +1,12 @@
 "use client";
 
 import { FaEarthAsia, FaPlane, FaStar } from "react-icons/fa6";
-
 import Link from "next/link";
 import DumboorSlider from "@/components/DumboorSlider";
+import { useBackendPackages } from "@/lib/packagesApi";
 
 export default function Page() {
+  const { packages: dynamicPackages } = useBackendPackages();
   return (
     <>
       <section className="hero-section" id="hero">
@@ -1327,782 +1328,119 @@ export default function Page() {
           </div>
           <div className="packages-carousel-wrapper">
             <div className="packages-track" id="packages-track">
-              <div className="pkg-card" data-pkg-id="jammu-kashmir-grand-tour">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Jammu Kashmir Grand Tour"
-                    loading="lazy"
-                    src="/images/packages/kashmir-dal.jpg"
-                  />
-                  <span className="pkg-duration-badge">7 Nights / 8 Days</span>
-                  <span className="pkg-dest-badge">Kashmir Grand Tour</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
+              {dynamicPackages && dynamicPackages.length > 0 ? (
+                dynamicPackages.map((pkg) => (
+                  <div
+                    className="pkg-card"
+                    key={pkg.id || pkg.slug}
+                    data-pkg-id={pkg.id || pkg.slug}
+                  >
+                    <div className="pkg-image-wrapper">
+                      <img
+                        alt={pkg.title}
+                        loading="lazy"
+                        src={pkg.heroImg || pkg.img || "/images/hero-bg.jpg"}
+                      />
+                      <span className="pkg-duration-badge">{pkg.duration}</span>
+                      <span className="pkg-dest-badge">
+                        {pkg.dest || pkg.destination}
+                      </span>
                     </div>
-                    <span className="rating-num">5.0 (New)</span>
-                  </div>
-                  <h3 className="pkg-title">J&amp;K Grand Tour</h3>
-                  <p className="pkg-itinerary-line">
-                    Katra • Srinagar • Gulmarg • Pahalgam • Sonamarg
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Gulmarg Gondola</span>
-                    <span>Dal Lake Shikara</span>
-                    <span>Thajiwas Glacier</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
+                    <div className="pkg-body">
+                      <div className="pkg-rating-row">
+                        <div className="stars-gold">
+                          <FaStar />
+                          <FaStar />
+                          <FaStar />
+                          <FaStar />
+                          <FaStar />
+                        </div>
+                        <span className="rating-num">
+                          {pkg.rating || "5.0 ★★★★★"}
                         </span>
-                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                      <h3 className="pkg-title">{pkg.title}</h3>
+                      <p className="pkg-itinerary-line">
+                        {typeof pkg.itinerary === "string"
+                          ? pkg.itinerary
+                          : Array.isArray(pkg.itinerary) &&
+                              pkg.itinerary.length > 0
+                            ? pkg.itinerary
+                                .map((it) =>
+                                  typeof it === "string"
+                                    ? it
+                                    : it?.title
+                                      ? it.title
+                                          .split("—")[0]
+                                          .split("→")[0]
+                                          .trim()
+                                      : it?.day || "",
+                                )
+                                .filter(Boolean)
+                                .slice(0, 4)
+                                .join(" • ")
+                            : pkg.dest || pkg.destination || ""}
+                      </p>
+                      <div className="pkg-highlights-pills">
+                        {(pkg.highlights && pkg.highlights.length > 0
+                          ? pkg.highlights
+                          : Array.isArray(pkg.itinerary)
+                            ? pkg.itinerary
+                                .slice(0, 3)
+                                .map((it) =>
+                                  typeof it === "string"
+                                    ? it
+                                    : it?.title
+                                      ? it.title
+                                          .split("—")[0]
+                                          .split("→")[0]
+                                          .trim()
+                                      : "",
+                                )
+                                .filter(Boolean)
+                            : []
+                        )
+                          .slice(0, 3)
+                          .map((hl, i) => (
+                            <span key={i}>
+                              {typeof hl === "string" ? hl : hl?.title || ""}
+                            </span>
+                          ))}
+                      </div>
+                      <div className="pkg-footer">
+                        <div className="pkg-price-block">
+                          <span className="price-label">Tariff Plan</span>
+                          <div className="price-reveal-wrap">
+                            <span className="price-amount blurred-price">
+                              {pkg.price || "Custom Tariff"}
+                            </span>
+                            <span className="revealing-soon-badge">
+                              On Request
+                            </span>
+                          </div>
+                        </div>
+                        <button
+                          className="btn btn-outline-gold view-pkg-details"
+                          data-pkg={pkg.slug || pkg.id}
+                        >
+                          <span>View Package</span>
+                          <span className="btn-arrow">→</span>
+                        </button>
                       </div>
                     </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="jammu-kashmir-grand-tour"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
                   </div>
+                ))
+              ) : (
+                <div
+                  style={{
+                    padding: "3rem",
+                    textAlign: "center",
+                    color: "var(--text-muted)",
+                  }}
+                >
+                  Loading curated holiday packages...
                 </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="manali-shimla-kasol">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Manali Shimla Kasol Himalayan Escape"
-                    loading="lazy"
-                    src="/images/packages/manali-kasol.jpg"
-                  />
-                  <span className="pkg-duration-badge">6 Nights / 7 Days</span>
-                  <span className="pkg-dest-badge">
-                    Manali • Shimla • Kasol
-                  </span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">5.0 (New)</span>
-                  </div>
-                  <h3 className="pkg-title">Himalayan Escape</h3>
-                  <p className="pkg-itinerary-line">
-                    Shimla • Kufri • Kasol • Manikaran • Manali • Solang Valley
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Solang Valley Snow</span>
-                    <span>Parvati River</span>
-                    <span>Hadimba Temple</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="manali-shimla-kasol"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="vrindavan-braj-dham">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Vrindavan Mathura Braj Dham Spiritual Journey"
-                    loading="lazy"
-                    src="/images/packages/vrindavan.jpg"
-                  />
-                  <span className="pkg-duration-badge">5 Nights / 6 Days</span>
-                  <span className="pkg-dest-badge">Vrindavan • Mathura</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">5.0 (New)</span>
-                  </div>
-                  <h3 className="pkg-title">Braj Dham Spiritual Journey</h3>
-                  <p className="pkg-itinerary-line">
-                    Vrindavan • Mathura • Barsana • Nandgaon • Govardhan
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Govardhan Parikrama</span>
-                    <span>Radha Rani Temple</span>
-                    <span>Yamuna Aarti</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="vrindavan-braj-dham"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="meghalaya-escape">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Meghalaya Escape Tour"
-                    loading="lazy"
-                    src="/images/india/meghalaya/Meghalaya.jpeg"
-                  />
-                  <span className="pkg-duration-badge">5 Days / 4 Nights</span>
-                  <span className="pkg-dest-badge">Meghalaya</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.9 (48 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Meghalaya Cloud Sanctuary</h3>
-                  <p className="pkg-itinerary-line">
-                    Shillong • Cherrapunji • Dawki • Mawlynnong
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Double Decker Root Bridge</span>
-                    <span>Crystal River Boating</span>
-                    <span>Boutique Pine Retreats</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="meghalaya-escape"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="sikkim-grandeur">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Sikkim &amp; Darjeeling Tour"
-                    loading="lazy"
-                    src="/images/india/sikkim/Sikkim.jpeg"
-                  />
-                  <span className="pkg-duration-badge">7 Days / 6 Nights</span>
-                  <span className="pkg-dest-badge">
-                    Sikkim &amp; Darjeeling
-                  </span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">5.0 (62 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">
-                    Sikkim &amp; Darjeeling Grandeur
-                  </h3>
-                  <p className="pkg-itinerary-line">
-                    Gangtok • Tsomgo Lake • Pelling • Tiger Hill
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>High Altitude Sacred Lake</span>
-                    <span>Kanchenjunga Sunrise</span>
-                    <span>Heritage Tea Bungalow</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="sikkim-grandeur"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="kashmir-paradise">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Enchanted Kashmir Odyssey"
-                    loading="lazy"
-                    src="/images/india/kashmir/Kashmir.jpeg"
-                  />
-                  <span className="pkg-duration-badge">6 Days / 5 Nights</span>
-                  <span className="pkg-dest-badge">Kashmir</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.9 (54 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Enchanted Kashmir Odyssey</h3>
-                  <p className="pkg-itinerary-line">
-                    Srinagar • Gulmarg • Pahalgam • Sonmarg
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Luxury Dal Lake Houseboat</span>
-                    <span>Gulmarg Gondola Phase 2</span>
-                    <span>Private Saffron Valley Tour</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="kashmir-paradise"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="andaman-luxury">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Andaman Tropical Luxury"
-                    loading="lazy"
-                    src="/images/india/andaman-islands/andaman.jpg"
-                  />
-                  <span className="pkg-duration-badge">6 Days / 5 Nights</span>
-                  <span className="pkg-dest-badge">Andaman</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">5.0 (39 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Andaman Azure Haven</h3>
-                  <p className="pkg-itinerary-line">
-                    Port Blair • Havelock • Neil Island • Radhanagar
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Catamaran Cruise Transfers</span>
-                    <span>Private Reef Scuba Guide</span>
-                    <span>Beachfront Luxury Villa</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="andaman-luxury"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="rajasthan-royal">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Royal Rajasthan Splendour"
-                    loading="lazy"
-                    src="/images/india/rajasthan/rajasthan.jpeg"
-                  />
-                  <span className="pkg-duration-badge">7 Days / 6 Nights</span>
-                  <span className="pkg-dest-badge">Rajasthan</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.8 (41 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Royal Rajasthan Splendour</h3>
-                  <p className="pkg-itinerary-line">
-                    Jaipur • Jodhpur • Udaipur • Jaisalmer Dunes
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Heritage Palace Stays</span>
-                    <span>Private Desert Camp &amp; Stargazing</span>
-                    <span>Lake Pichola Boat Charter</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="rajasthan-royal"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="tripura-heritage">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Tripura Heritage and Royal Palaces"
-                    loading="lazy"
-                    src="/images/india/tripura/Tripura.jpeg"
-                  />
-                  <span className="pkg-duration-badge">4 Days / 3 Nights</span>
-                  <span className="pkg-dest-badge">Tripura Exclusive</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">5.0 (31 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">
-                    Tripura Royal Palaces &amp; Unakoti
-                  </h3>
-                  <p className="pkg-itinerary-line">
-                    Agartala • Neermahal • Sepahijala • Unakoti
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Water Palace Boat Excursion</span>
-                    <span>Ancient Rock Carvings</span>
-                    <span>Tripuri Cultural Banquet</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="tripura-heritage"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="himachal-splendour">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Himachal &amp; Manali Splendour"
-                    loading="lazy"
-                    src="/images/india/himachal-pradesh/himachal.jpeg"
-                  />
-                  <span className="pkg-duration-badge">7 Days / 6 Nights</span>
-                  <span className="pkg-dest-badge">Himachal Pradesh</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.9 (51 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Himachal &amp; Manali Splendour</h3>
-                  <p className="pkg-itinerary-line">
-                    Delhi • Shimla • Manali • Solang • Atal Tunnel &amp; Sissu
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Atal Tunnel Marvel</span>
-                    <span>Kufri Pine Glades</span>
-                    <span>Solang Valley Snow</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="himachal-splendour"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="goa-escape">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Goa Coastal Retreat"
-                    loading="lazy"
-                    src="/images/india/goa/goa.jpeg"
-                  />
-                  <span className="pkg-duration-badge">5 Days / 4 Nights</span>
-                  <span className="pkg-dest-badge">Goa</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.8 (44 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Goa Boutique Coastal Retreat</h3>
-                  <p className="pkg-itinerary-line">
-                    Baga • Calangute • Fort Aguada • Old Goa • Mandovi River
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Boutique Beach Resort</span>
-                    <span>Portuguese Forts</span>
-                    <span>Mandovi Sunset Cruise</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="goa-escape"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="thailand-gateway">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Thailand Tropical Escape"
-                    loading="lazy"
-                    src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
-                  />
-                  <span className="pkg-duration-badge">5 Days / 4 Nights</span>
-                  <span className="pkg-dest-badge">Thailand</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.9 (58 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Thailand Tropical Escape</h3>
-                  <p className="pkg-itinerary-line">
-                    Pattaya (2N) • Bangkok (2N) • Coral Island Speedboat
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Coral Island Speedboat</span>
-                    <span>Golden Buddha Temple</span>
-                    <span>Gems Gallery</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="thailand-gateway"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="aizawl-escape">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Mizoram Cloud Realm"
-                    loading="lazy"
-                    src="/images/india/meghalaya/Meghalaya_1.jpeg"
-                  />
-                  <span className="pkg-duration-badge">4 Days / 3 Nights</span>
-                  <span className="pkg-dest-badge">Mizoram</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.9 (32 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Mizoram Cloud Realm</h3>
-                  <p className="pkg-itinerary-line">
-                    Aizawl • Thenzawl • Hmuifang • Reiek Tlang Peak
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Reiek Sunrise Trek</span>
-                    <span>Vantawng 750ft Falls</span>
-                    <span>Aizawl Skywalk</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="aizawl-escape"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="darjeeling-escape">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Darjeeling &amp; Kalimpong Valleys"
-                    loading="lazy"
-                    src="/images/india/darjeeling-west-bengal/darjeeling.jpeg"
-                  />
-                  <span className="pkg-duration-badge">4 Days / 3 Nights</span>
-                  <span className="pkg-dest-badge">West Bengal</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">4.8 (39 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">
-                    Darjeeling &amp; Kalimpong Valleys
-                  </h3>
-                  <p className="pkg-itinerary-line">
-                    Darjeeling • Kalimpong • Tiger Hill • Mirik Lake
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Tiger Hill Sunrise</span>
-                    <span>Colonial Tea Estates</span>
-                    <span>Lamahatta Eco Pine Park</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="darjeeling-escape"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pkg-card" data-pkg-id="grand-bharat-circuit">
-                <div className="pkg-image-wrapper">
-                  <img
-                    alt="Grand Bharat Sacred Pilgrimage"
-                    loading="lazy"
-                    src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&amp;w=700&amp;auto=format&amp;fit=crop"
-                  />
-                  <span className="pkg-duration-badge">
-                    11 Days / 10 Nights
-                  </span>
-                  <span className="pkg-dest-badge">Pan-India Sacred Trail</span>
-                </div>
-                <div className="pkg-body">
-                  <div className="pkg-rating-row">
-                    <div className="stars-gold">
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                      <FaStar />
-                    </div>
-                    <span className="rating-num">5.0 (73 Reviews)</span>
-                  </div>
-                  <h3 className="pkg-title">Grand Bharat Sacred Pilgrimage</h3>
-                  <p className="pkg-itinerary-line">
-                    Delhi • Vrindavan • Ayodhya • Varanasi • Deoghar • Gaya
-                  </p>
-                  <div className="pkg-highlights-pills">
-                    <span>Kashi Vishwanath Darshan</span>
-                    <span>Ram Mandir Ayodhya</span>
-                    <span>Ganga Aarti Charter</span>
-                  </div>
-                  <div className="pkg-footer">
-                    <div className="pkg-price-block">
-                      <span className="price-label">Tariff Plan</span>
-                      <div className="price-reveal-wrap">
-                        <span className="price-amount blurred-price">
-                          Custom Tariff
-                        </span>
-                        <span className="revealing-soon-badge">On Request</span>
-                      </div>
-                    </div>
-                    <button
-                      className="btn btn-outline-gold view-pkg-details"
-                      data-pkg="grand-bharat-circuit"
-                    >
-                      <span>View Package</span>
-                      <span className="btn-arrow">→</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

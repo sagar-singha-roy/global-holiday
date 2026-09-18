@@ -286,25 +286,39 @@ export function renderPackageModal(data, modalBody) {
   }
   if (!modalBody || !data) return;
 
-  const itineraryHtml = data.itinerary
+  const rawItinerary = Array.isArray(data.itinerary)
+    ? data.itinerary
+    : Array.isArray(data.itineraryList)
+      ? data.itineraryList
+      : typeof data.itinerary === "string"
+        ? [
+            {
+              day: "Circuit",
+              title: data.destination || data.title,
+              desc: data.itinerary,
+            },
+          ]
+        : [];
+
+  const itineraryHtml = rawItinerary
     .map(
       (item) => `
     <div style="margin-bottom: 1.5rem; padding-left: 1.25rem; border-left: 2px solid var(--gold-light);">
-      <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em;">${item.day}</span>
-      <h4 style="font-size: 1.15rem; color: var(--text-primary); margin: 0.2rem 0 0.4rem;">${item.title}</h4>
-      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">${item.desc}</p>
+      <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em;">${item.day || "Day"}</span>
+      <h4 style="font-size: 1.15rem; color: var(--text-primary); margin: 0.2rem 0 0.4rem;">${item.title || ""}</h4>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">${item.desc || ""}</p>
     </div>
   `,
     )
     .join("");
 
-  const inclusionsHtml = data.inclusions
+  const inclusionsHtml = (data.inclusions || [])
     .map(
       (inc) =>
         `<li style="margin-bottom: 0.4rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f3c766" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>${inc}</span></li>`,
     )
     .join("");
-  const exclusionsHtml = data.exclusions
+  const exclusionsHtml = (data.exclusions || [])
     .map(
       (exc) =>
         `<li style="margin-bottom: 0.4rem; color: var(--text-muted); font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> <span>${exc}</span></li>`,
@@ -381,9 +395,11 @@ export function openPackageDetails(pkgId, destName) {
     else if (d.includes("himachal")) targetKey = "himachal-splendour";
     else if (d.includes("goa")) targetKey = "goa-escape";
     else if (d.includes("thailand")) targetKey = "thailand-gateway";
-    else if (d.includes("aizawl") || d.includes("mizoram")) targetKey = "aizawl-escape";
+    else if (d.includes("aizawl") || d.includes("mizoram"))
+      targetKey = "aizawl-escape";
     else if (d.includes("darjeeling")) targetKey = "darjeeling-escape";
-    else if (d.includes("bharat") || d.includes("varanasi")) targetKey = "grand-bharat-circuit";
+    else if (d.includes("bharat") || d.includes("varanasi"))
+      targetKey = "grand-bharat-circuit";
     else if (d.includes("delhi")) targetKey = "delhi-heritage";
     else if (d.includes("sikkim")) targetKey = "sikkim-grandeur";
     else if (d.includes("kashmir")) targetKey = "kashmir-paradise";
@@ -508,13 +524,19 @@ function initPackageFeatures() {
     if (!prevBtn._carouselBound) {
       prevBtn._carouselBound = true;
       prevBtn.addEventListener("click", () => {
-        track.parentElement.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        track.parentElement.scrollBy({
+          left: -scrollAmount,
+          behavior: "smooth",
+        });
       });
     }
     if (!nextBtn._carouselBound) {
       nextBtn._carouselBound = true;
       nextBtn.addEventListener("click", () => {
-        track.parentElement.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        track.parentElement.scrollBy({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
       });
     }
   }

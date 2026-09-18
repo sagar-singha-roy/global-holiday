@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaStar } from "react-icons/fa6";
 import Link from "next/link";
+import { useBackendPackages } from "@/lib/packagesApi";
 
 const ALL_PACKAGES = [
   {
@@ -14,11 +15,7 @@ const ALL_PACKAGES = [
     category: "pan-india",
     rating: "5.0 (New)",
     itinerary: "Katra • Srinagar • Gulmarg • Pahalgam • Sonamarg",
-    highlights: [
-      "Gulmarg Gondola",
-      "Dal Lake Shikara",
-      "Thajiwas Glacier",
-    ],
+    highlights: ["Gulmarg Gondola", "Dal Lake Shikara", "Thajiwas Glacier"],
     img: "/images/packages/kashmir-dal.jpg",
   },
   {
@@ -29,11 +26,7 @@ const ALL_PACKAGES = [
     category: "pan-india",
     rating: "5.0 (New)",
     itinerary: "Shimla • Kufri • Kasol • Manikaran • Manali • Solang Valley",
-    highlights: [
-      "Solang Valley Snow",
-      "Parvati River",
-      "Hadimba Temple",
-    ],
+    highlights: ["Solang Valley Snow", "Parvati River", "Hadimba Temple"],
     img: "/images/packages/manali-kasol.jpg",
   },
   {
@@ -44,11 +37,7 @@ const ALL_PACKAGES = [
     category: "pan-india",
     rating: "5.0 (New)",
     itinerary: "Vrindavan • Mathura • Barsana • Nandgaon • Govardhan",
-    highlights: [
-      "Govardhan Parikrama",
-      "Radha Rani Temple",
-      "Yamuna Aarti",
-    ],
+    highlights: ["Govardhan Parikrama", "Radha Rani Temple", "Yamuna Aarti"],
     img: "/images/packages/vrindavan.jpg",
   },
   {
@@ -249,6 +238,7 @@ const ALL_PACKAGES = [
 ];
 
 function PackagesContent() {
+  const { packages: allPackages } = useBackendPackages(ALL_PACKAGES);
   const [filter, setFilter] = useState("all");
   const searchParams = useSearchParams();
   const destParam = searchParams.get("dest");
@@ -258,7 +248,7 @@ function PackagesContent() {
     if (destParam || pkgParam) {
       if (destParam) {
         const d = destParam.toLowerCase();
-        const matched = ALL_PACKAGES.find(
+        const matched = allPackages.find(
           (p) =>
             p.dest.toLowerCase().includes(d) ||
             d.includes(p.dest.toLowerCase()) ||
@@ -275,12 +265,12 @@ function PackagesContent() {
       }, 150);
       return () => clearTimeout(timer);
     }
-  }, [destParam, pkgParam]);
+  }, [destParam, pkgParam, allPackages]);
 
   const filteredPackages =
     filter === "all"
-      ? ALL_PACKAGES
-      : ALL_PACKAGES.filter((pkg) => pkg.category === filter);
+      ? allPackages
+      : allPackages.filter((p) => p.category === filter);
 
   return (
     <>
@@ -373,12 +363,31 @@ function PackagesContent() {
                     <span className="rating-num">{pkg.rating}</span>
                   </div>
                   <h3 className="pkg-title">{pkg.title}</h3>
-                  <p className="pkg-itinerary-line">{pkg.itinerary}</p>
+                  <p className="pkg-itinerary-line">
+                    {typeof pkg.itinerary === "string"
+                      ? pkg.itinerary
+                      : Array.isArray(pkg.itinerary)
+                        ? pkg.itinerary
+                            .map((i) =>
+                              typeof i === "string"
+                                ? i
+                                : i?.title
+                                  ? i.title.split("—")[0].split("→")[0].trim()
+                                  : i?.day || "",
+                            )
+                            .filter(Boolean)
+                            .slice(0, 4)
+                            .join(" • ")
+                        : pkg.dest || pkg.destination || ""}
+                  </p>
                   <div className="pkg-highlights-pills">
-                    {pkg.highlights.map((h, i) => (
-                      <span key={i}>{h}</span>
+                    {(pkg.highlights || []).map((h, i) => (
+                      <span key={i}>
+                        {typeof h === "string" ? h : h?.title || ""}
+                      </span>
                     ))}
                   </div>
+
                   <div className="pkg-footer">
                     <div className="pkg-price-block">
                       <span className="price-label">Tariff Plan</span>
@@ -394,7 +403,10 @@ function PackagesContent() {
                       data-pkg={pkg.id}
                       type="button"
                       onClick={() => {
-                        if (typeof window !== "undefined" && window.openPackageDetails) {
+                        if (
+                          typeof window !== "undefined" &&
+                          window.openPackageDetails
+                        ) {
                           window.openPackageDetails(pkg.id);
                         }
                       }}

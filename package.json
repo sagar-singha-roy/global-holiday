@@ -1,19 +1,14 @@
 {
-  "name": "global-holidays-tour-and-travels",
-  "private": true,
+  "name": "global-holidays-workspace",
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
+  "description": "Global Holidays Monorepo: User site, Admin CRM, and Express Backend",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && rm -rf dist && cp -R out dist && find dist -name '.DS_Store' -delete",
-    "zip": "npm run build && rm -f dist.zip && zip -r -q dist.zip dist -x '*.DS_Store*'",
-    "start": "next start"
-  },
-  "dependencies": {
-    "lenis": "^1.3.26",
-    "next": "^16.3.4",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-icons": "^5.7.0"
+    "dev:user": "cd user && npm run dev",
+    "dev:admin": "cd admin && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build:user": "cd user && npm run build",
+    "build:admin": "cd admin && npm run build",
+    "seed:backend": "cd backend && npm run seed"
   }
 }
