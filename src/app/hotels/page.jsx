@@ -1,8 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Page() {
+  const [filter, setFilter] = useState("all");
+
+  const matchesFilter = (category) => {
+    if (filter === "all") return true;
+    return category.includes(filter);
+  };
+
   return (
     <>
       <section
@@ -34,19 +42,44 @@ export default function Page() {
             role="tablist"
             style={{ justifyContent: "center" }}
           >
-            <button className="filter-tab active" data-filter="all">
+            <button
+              className={`filter-tab ${filter === "all" ? "active" : ""}`}
+              data-filter="all"
+              onClick={() => setFilter("all")}
+              type="button"
+            >
               All Properties
             </button>
-            <button className="filter-tab" data-filter="heritage">
+            <button
+              className={`filter-tab ${filter === "heritage" ? "active" : ""}`}
+              data-filter="heritage"
+              onClick={() => setFilter("heritage")}
+              type="button"
+            >
               Heritage &amp; Tea Estates
             </button>
-            <button className="filter-tab" data-filter="eco">
+            <button
+              className={`filter-tab ${filter === "eco" ? "active" : ""}`}
+              data-filter="eco"
+              onClick={() => setFilter("eco")}
+              type="button"
+            >
               Eco &amp; Lake Retreats
             </button>
-            <button className="filter-tab" data-filter="mountain">
+            <button
+              className={`filter-tab ${filter === "mountain" ? "active" : ""}`}
+              data-filter="mountain"
+              onClick={() => setFilter("mountain")}
+              type="button"
+            >
               Mountain Chalets
             </button>
-            <button className="filter-tab" data-filter="luxury">
+            <button
+              className={`filter-tab ${filter === "luxury" ? "active" : ""}`}
+              data-filter="luxury"
+              onClick={() => setFilter("luxury")}
+              type="button"
+            >
               5-Star Luxury Suites
             </button>
           </div>
@@ -55,7 +88,7 @@ export default function Page() {
       <section className="section" style={{ paddingTop: "0" }}>
         <div className="container">
           <div className="hotels-grid" id="hotels-container">
-            <div className="hotel-card" data-category="heritage luxury">
+            <div className="hotel-card" data-category="heritage luxury" style={{ display: matchesFilter("heritage luxury") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">5-Star Heritage Luxury</span>
                 <span className="hotel-rating-badge">
@@ -68,7 +101,7 @@ export default function Page() {
                   alt="Mayfair Tea Resort &amp; Spa"
                   height="220"
                   loading="lazy"
-                  src="/images/india/darjeeling-west-bengal/darjeeling_3.jpeg"
+                  src="/images/hotels/mayfair-tea-resort/image.webp"
                   width="400"
                 />
               </div>
@@ -111,18 +144,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Mayfair+Tea+Resort"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="eco luxury">
+            <div className="hotel-card" data-category="eco luxury" style={{ display: matchesFilter("eco luxury") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">Eco Luxury Retreat</span>
                 <span className="hotel-rating-badge">
@@ -135,7 +168,7 @@ export default function Page() {
                   alt="Ri Kynjai Lake Resort"
                   height="220"
                   loading="lazy"
-                  src="/images/india/meghalaya/Meghalaya_2.jpeg"
+                  src="/images/hotels/ri-kynjai-meghalaya/image.webp"
                   width="400"
                 />
               </div>
@@ -180,18 +213,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Ri+Kynjai"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="heritage mountain">
+            <div className="hotel-card" data-category="heritage mountain" style={{ display: matchesFilter("heritage mountain") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">Royal Himalayan Heritage</span>
                 <span className="hotel-rating-badge">
@@ -204,7 +237,7 @@ export default function Page() {
                   alt="The Elgin Nor-Khill Gangtok"
                   height="220"
                   loading="lazy"
-                  src="/images/india/sikkim/Sikkim_2.jpeg"
+                  src="/images/hotels/the-elgin-nor-khill-sikkim/image.jpg"
                   width="400"
                 />
               </div>
@@ -249,18 +282,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Elgin+NorKhill"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="eco mountain">
+            <div className="hotel-card" data-category="eco mountain" style={{ display: matchesFilter("eco mountain") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">Cliff Edge Sanctuary</span>
                 <span className="hotel-rating-badge">
@@ -273,7 +306,7 @@ export default function Page() {
                   alt="Polo Orchid Cliff Haven"
                   height="220"
                   loading="lazy"
-                  src="/images/india/meghalaya/Meghalaya_3.jpeg"
+                  src="/images/hotels/polo-orchid-cherrapunji/image.webp"
                   width="400"
                 />
               </div>
@@ -316,18 +349,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Polo+Orchid"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="luxury">
+            <div className="hotel-card" data-category="luxury" style={{ display: matchesFilter("luxury") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">5-Star Urban Luxury</span>
                 <span className="hotel-rating-badge">
@@ -340,7 +373,7 @@ export default function Page() {
                   alt="Vivanta Meghalaya Shillong"
                   height="220"
                   loading="lazy"
-                  src="/images/india/meghalaya/Meghalaya_1.jpeg"
+                  src="/images/hotels/vivanta-meghalaya-shillong/image.webp"
                   width="400"
                 />
               </div>
@@ -383,18 +416,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Vivanta+Shillong"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="mountain luxury">
+            <div className="hotel-card" data-category="mountain luxury" style={{ display: matchesFilter("mountain luxury") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">Mountain Summit Haven</span>
                 <span className="hotel-rating-badge">
@@ -407,7 +440,7 @@ export default function Page() {
                   alt="Denzong Regency Mountain Resort"
                   height="220"
                   loading="lazy"
-                  src="/images/india/sikkim/Sikkim_1.jpeg"
+                  src="/images/hotels/denzong-regency-sikkim/image.webp"
                   width="400"
                 />
               </div>
@@ -450,18 +483,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Denzong+Regency"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="heritage">
+            <div className="hotel-card" data-category="heritage" style={{ display: matchesFilter("heritage") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">Royal Summer Retreat</span>
                 <span className="hotel-rating-badge">
@@ -474,7 +507,7 @@ export default function Page() {
                   alt="Heritage Club Tripura Castle"
                   height="220"
                   loading="lazy"
-                  src="/images/india/tripura/Tripura_2.jpeg"
+                  src="/images/hotels/heritage-club-tripura-castle/image.webp"
                   width="400"
                 />
               </div>
@@ -519,18 +552,18 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Tripura+Castle"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="hotel-card" data-category="luxury">
+            <div className="hotel-card" data-category="luxury" style={{ display: matchesFilter("luxury") ? "flex" : "none" }}>
               <div className="hotel-image-wrapper">
                 <span className="hotel-badge">5-Star Premier Luxury</span>
                 <span className="hotel-rating-badge">
@@ -543,7 +576,7 @@ export default function Page() {
                   alt="Hotel Polo Towers Agartala"
                   height="220"
                   loading="lazy"
-                  src="/images/india/tripura/Tripura_3.jpeg"
+                  src="/images/hotels/polo-towers-agartala/image.webp"
                   width="400"
                 />
               </div>
@@ -587,13 +620,13 @@ export default function Page() {
                       </span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
-                    href="/contact?subject=Hotel+Booking+Hotel+Polo+Towers+Agartala"
+                    href="/contact?subject=Hotel+Booking+Polo+Towers+Agartala"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

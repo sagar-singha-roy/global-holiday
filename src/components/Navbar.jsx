@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const pathname = usePathname() || "/";
   const [scrolled, setScrolled] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -21,6 +23,39 @@ export default function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setCompanyOpen(false);
+    setDrawerOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleDocClick = (e) => {
+      if (!e.target.closest(".nav-dropdown")) {
+        setCompanyOpen(false);
+      }
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setCompanyOpen(false);
+        setDrawerOpen(false);
+      }
+    };
+    document.addEventListener("click", handleDocClick);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("click", handleDocClick);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (drawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [drawerOpen]);
 
   const toggleTheme = (e) => {
     e?.preventDefault?.();
@@ -126,13 +161,14 @@ export default function Navbar() {
                   Gallery
                 </Link>
               </li>
-              <li className="nav-dropdown">
+              <li className={`nav-dropdown ${companyOpen ? "is-open" : ""}`}>
                 <button
-                  aria-expanded="false"
+                  aria-expanded={companyOpen}
                   aria-haspopup="true"
                   className={`dropdown-toggle ${isCompanyActive ? "active" : ""}`}
                   id="company-dropdown-btn"
                   type="button"
+                  onClick={() => setCompanyOpen((prev) => !prev)}
                 >
                   <span>Company</span>
                   <svg
@@ -157,6 +193,7 @@ export default function Navbar() {
                     <Link
                       className={`dropdown-item ${isActive("/about") ? "active" : ""}`}
                       href="/about"
+                      onClick={() => setCompanyOpen(false)}
                     >
                       <svg
                         fill="none"
@@ -177,6 +214,7 @@ export default function Navbar() {
                     <Link
                       className={`dropdown-item ${isActive("/legal") ? "active" : ""}`}
                       href="/legal"
+                      onClick={() => setCompanyOpen(false)}
                     >
                       <svg
                         fill="none"
@@ -195,6 +233,7 @@ export default function Navbar() {
                     <Link
                       className={`dropdown-item ${isActive("/contact") ? "active" : ""}`}
                       href="/contact"
+                      onClick={() => setCompanyOpen(false)}
                     >
                       <svg
                         fill="none"
@@ -260,29 +299,14 @@ export default function Navbar() {
                 </svg>
               </span>
             </button>
-            <a
-              className="btn btn-gold btn-magnetic"
-              href="/contact"
-              id="nav-cta-btn"
-            >
-              <span>Plan My Trip</span>
-              <svg
-                className="btn-arrow"
-                fill="none"
-                height="16"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                width="16"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+
             <button
-              aria-expanded="false"
+              aria-expanded={drawerOpen}
               aria-label="Toggle navigation menu"
-              className="menu-toggle"
+              className={`menu-toggle ${drawerOpen ? "active" : ""}`}
               id="menu-toggle-btn"
+              type="button"
+              onClick={() => setDrawerOpen((prev) => !prev)}
             >
               <span className="bar bar-1"></span>
               <span className="bar bar-2"></span>
@@ -291,10 +315,18 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-      <div aria-hidden="true" className="mobile-drawer" id="mobile-drawer">
+      <div
+        aria-hidden={!drawerOpen}
+        className={`mobile-drawer ${drawerOpen ? "open" : ""}`}
+        id="mobile-drawer"
+      >
         <div className="mobile-drawer-inner">
           <div className="mobile-drawer-header">
-            <a className="brand-logo" href="/">
+            <Link
+              className="brand-logo"
+              href="/"
+              onClick={() => setDrawerOpen(false)}
+            >
               <img
                 alt="Global Holidays Logo"
                 className="brand-logo-img"
@@ -310,7 +342,7 @@ export default function Navbar() {
                   TOUR &amp; TRAVELS
                 </span>
               </div>
-            </a>
+            </Link>
             <div
               style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}
             >
@@ -362,6 +394,8 @@ export default function Navbar() {
                 aria-label="Close menu"
                 className="drawer-close-btn"
                 id="drawer-close-btn"
+                type="button"
+                onClick={() => setDrawerOpen(false)}
               >
                 <svg
                   fill="none"
@@ -384,6 +418,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/") ? "active" : ""}`}
                 href="/"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Home</span>
                 <span className="nav-arrow">→</span>
@@ -393,6 +428,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/destinations") ? "active" : ""}`}
                 href="/destinations"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Destinations</span>
                 <span className="nav-arrow">→</span>
@@ -402,6 +438,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/packages") ? "active" : ""}`}
                 href="/packages"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Curated Packages</span>
                 <span className="nav-arrow">→</span>
@@ -411,6 +448,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/hotels") ? "active" : ""}`}
                 href="/hotels"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Luxury Hotels</span>
                 <span className="nav-arrow">→</span>
@@ -420,6 +458,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/deals") ? "active" : ""}`}
                 href="/deals"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Exclusive Deals</span>
                 <span className="nav-arrow">→</span>
@@ -429,6 +468,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/stories") ? "active" : ""}`}
                 href="/stories"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Travel Stories</span>
                 <span className="nav-arrow">→</span>
@@ -438,6 +478,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link ${isActive("/gallery") ? "active" : ""}`}
                 href="/gallery"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Gallery</span>
                 <span className="nav-arrow">→</span>
@@ -452,6 +493,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link mobile-sub-link ${isActive("/about") ? "active" : ""}`}
                 href="/about"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">About &amp; Mission</span>
                 <span className="nav-arrow">→</span>
@@ -461,6 +503,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link mobile-sub-link ${isActive("/legal") ? "active" : ""}`}
                 href="/legal"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Legal &amp; Accreditations</span>
                 <span className="nav-arrow">→</span>
@@ -470,6 +513,7 @@ export default function Navbar() {
               <Link
                 className={`mobile-nav-link mobile-sub-link ${isActive("/contact") ? "active" : ""}`}
                 href="/contact"
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="nav-label">Contact Concierge</span>
                 <span className="nav-arrow">→</span>
@@ -527,9 +571,13 @@ export default function Navbar() {
               >
                 <span>Email</span>
               </a>
-              <a className="drawer-action-btn" href="#contact">
+              <Link
+                className="drawer-action-btn"
+                href="/contact"
+                onClick={() => setDrawerOpen(false)}
+              >
                 <span>Visit Office</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

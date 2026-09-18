@@ -548,6 +548,9 @@ export default function Page() {
           <div
             className="hero-floating-card glass-panel fade-reveal delay-4"
             id="hero-floating-card"
+            role="button"
+            tabIndex={0}
+            aria-label="View package details for current destination"
           >
             <div className="floating-badge-thumb">
               <img
@@ -567,13 +570,12 @@ export default function Page() {
                 Shillong • Cherrapunji • Dawki • Mawlynnong
               </span>
             </div>
-            <a
+            <div
               aria-label="View signature packages"
               className="floating-arrow"
-              href="/packages"
             >
               →
-            </a>
+            </div>
           </div>
 
           <div
@@ -872,6 +874,139 @@ export default function Page() {
           <span className="scroll-label">Scroll to Explore</span>
         </a>
       </section>
+      {/* ── DUMBOOR DIARIES – Last Visited Trip ───────────────────── */}
+      <section className="section dumboor-section" id="dumboor-diaries">
+        <div className="container">
+          <div className="section-header-split">
+            <div>
+              <span className="section-eyebrow gold-text">
+                WANDERERS &amp; STRANGERS
+              </span>
+              <h2 className="section-heading">
+                Dumboor Diaries
+                <span className="serif-italic"> — Meet a Stranger Trip</span>
+              </h2>
+              <p className="section-desc">
+                A lake, a group of strangers, and memories that last a lifetime.
+                Our "Meet a Stranger" trip to Dumboor Lake, Tripura was pure
+                magic — laughter, sunsets, and bonds forged in the wild.
+              </p>
+            </div>
+          </div>
+
+          <div className="dumboor-grid" id="dumboor-grid">
+            {[
+              {
+                src: "/images/dumboor/dumboor_1.jpg",
+                caption: "Group photo at the viewpoint",
+                wide: true,
+              },
+              {
+                src: "/images/dumboor/dumboor_2.jpg",
+                caption: "Fun in the lake waters",
+              },
+              {
+                src: "/images/dumboor/dumboor_3.jpg",
+                caption: "Evening bonfire gathering",
+              },
+              {
+                src: "/images/dumboor/dumboor_4.jpg",
+                caption: "Banner group shot at the resort",
+              },
+            ].map((img, i) => (
+              <button
+                key={i}
+                className={`dumboor-photo-btn${img.wide ? " dumboor-wide" : ""}`}
+                aria-label={`Enlarge photo: ${img.caption}`}
+                onClick={(e) => {
+                  const overlay = document.getElementById("dumboor-lightbox");
+                  const lbImg = document.getElementById("dumboor-lb-img");
+                  const lbCaption =
+                    document.getElementById("dumboor-lb-caption");
+                  if (overlay && lbImg && lbCaption) {
+                    lbImg.src = img.src;
+                    lbCaption.textContent = img.caption;
+                    overlay.classList.add("active");
+                    document.body.style.overflow = "hidden";
+                  }
+                }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  className="dumboor-photo"
+                  loading="lazy"
+                />
+                <div className="dumboor-photo-overlay">
+                  <svg
+                    fill="none"
+                    height="28"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    viewBox="0 0 24 24"
+                    width="28"
+                  >
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                  </svg>
+                  <span>{img.caption}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Lightbox */}
+        <div
+          className="dumboor-lightbox"
+          id="dumboor-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Photo lightbox"
+          onClick={(e) => {
+            if (
+              e.target === e.currentTarget ||
+              e.target.closest(".dumboor-lb-close")
+            ) {
+              e.currentTarget.classList.remove("active");
+              document.body.style.overflow = "";
+            }
+          }}
+        >
+          <button
+            className="dumboor-lb-close"
+            aria-label="Close lightbox"
+            onClick={() => {
+              document
+                .getElementById("dumboor-lightbox")
+                .classList.remove("active");
+              document.body.style.overflow = "";
+            }}
+          >
+            <svg
+              fill="none"
+              height="22"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              viewBox="0 0 24 24"
+              width="22"
+            >
+              <line x1="18" x2="6" y1="6" y2="18" />
+              <line x1="6" x2="18" y1="6" y2="18" />
+            </svg>
+          </button>
+          <div className="dumboor-lb-inner">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              id="dumboor-lb-img"
+              src={null}
+              alt="Enlarged photo"
+              className="dumboor-lb-img"
+            />
+            <p id="dumboor-lb-caption" className="dumboor-lb-caption"></p>
+          </div>
+        </div>
+      </section>
+
       <section className="section experience-section" id="experience">
         <div className="container">
           <div className="editorial-grid">
@@ -1031,8 +1166,34 @@ export default function Page() {
           <div className="destinations-grid" id="destinations-container">
             <article
               className="destination-card large-card"
-              data-category="northeast"
+              data-category="pan-india"
             >
+              <div className="dest-media-wrapper">
+                <img
+                  alt="Kashmir Dal Lake Shikara and Mountains"
+                  loading="lazy"
+                  src="/images/india/kashmir/Kashmir.jpeg"
+                />
+                <div className="dest-overlay"></div>
+              </div>
+              <div className="dest-content">
+                <span className="dest-tag">Paradise on Earth</span>
+                <h3 className="dest-name">Kashmir</h3>
+                <p className="dest-desc">
+                  Opulent carved houseboats on Dal Lake, alpine meadow gondolas
+                  in Gulmarg, and saffron gardens of Pahalgam.
+                </p>
+                <button
+                  className="dest-btn open-pkg-filter"
+                  data-dest="Kashmir"
+                >
+                  <span>Explore Kashmir</span>
+                  <span className="arrow-icon">→</span>
+                </button>
+              </div>
+            </article>
+
+            <article className="destination-card" data-category="northeast">
               <div className="dest-media-wrapper">
                 <img
                   alt="Meghalaya Living Root Bridge &amp; Waterfalls"
@@ -1102,35 +1263,6 @@ export default function Page() {
                   data-dest="Darjeeling"
                 >
                   <span>Explore Darjeeling</span>
-                  <span className="arrow-icon">→</span>
-                </button>
-              </div>
-            </article>
-
-            <article
-              className="destination-card large-card"
-              data-category="pan-india"
-            >
-              <div className="dest-media-wrapper">
-                <img
-                  alt="Kashmir Dal Lake Shikara and Mountains"
-                  loading="lazy"
-                  src="/images/india/kashmir/Kashmir.jpeg"
-                />
-                <div className="dest-overlay"></div>
-              </div>
-              <div className="dest-content">
-                <span className="dest-tag">Paradise on Earth</span>
-                <h3 className="dest-name">Kashmir</h3>
-                <p className="dest-desc">
-                  Opulent carved houseboats on Dal Lake, alpine meadow gondolas
-                  in Gulmarg, and saffron gardens of Pahalgam.
-                </p>
-                <button
-                  className="dest-btn open-pkg-filter"
-                  data-dest="Kashmir"
-                >
-                  <span>Explore Kashmir</span>
                   <span className="arrow-icon">→</span>
                 </button>
               </div>
@@ -1324,6 +1456,161 @@ export default function Page() {
           </div>
           <div className="packages-carousel-wrapper">
             <div className="packages-track" id="packages-track">
+              <div className="pkg-card" data-pkg-id="jammu-kashmir-grand-tour">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Jammu Kashmir Grand Tour"
+                    loading="lazy"
+                    src="/images/packages/kashmir-dal.jpg"
+                  />
+                  <span className="pkg-duration-badge">7 Nights / 8 Days</span>
+                  <span className="pkg-dest-badge">Kashmir Grand Tour</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">5.0 (New)</span>
+                  </div>
+                  <h3 className="pkg-title">J&amp;K Grand Tour</h3>
+                  <p className="pkg-itinerary-line">
+                    Katra • Srinagar • Gulmarg • Pahalgam • Sonamarg
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Gulmarg Gondola</span>
+                    <span>Dal Lake Shikara</span>
+                    <span>Thajiwas Glacier</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="jammu-kashmir-grand-tour"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="manali-shimla-kasol">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Manali Shimla Kasol Himalayan Escape"
+                    loading="lazy"
+                    src="/images/packages/manali-kasol.jpg"
+                  />
+                  <span className="pkg-duration-badge">6 Nights / 7 Days</span>
+                  <span className="pkg-dest-badge">
+                    Manali • Shimla • Kasol
+                  </span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">5.0 (New)</span>
+                  </div>
+                  <h3 className="pkg-title">Himalayan Escape</h3>
+                  <p className="pkg-itinerary-line">
+                    Shimla • Kufri • Kasol • Manikaran • Manali • Solang Valley
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Solang Valley Snow</span>
+                    <span>Parvati River</span>
+                    <span>Hadimba Temple</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="manali-shimla-kasol"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pkg-card" data-pkg-id="vrindavan-braj-dham">
+                <div className="pkg-image-wrapper">
+                  <img
+                    alt="Vrindavan Mathura Braj Dham Spiritual Journey"
+                    loading="lazy"
+                    src="/images/packages/vrindavan.jpg"
+                  />
+                  <span className="pkg-duration-badge">5 Nights / 6 Days</span>
+                  <span className="pkg-dest-badge">Vrindavan • Mathura</span>
+                </div>
+                <div className="pkg-body">
+                  <div className="pkg-rating-row">
+                    <div className="stars-gold">
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </div>
+                    <span className="rating-num">5.0 (New)</span>
+                  </div>
+                  <h3 className="pkg-title">Braj Dham Spiritual Journey</h3>
+                  <p className="pkg-itinerary-line">
+                    Vrindavan • Mathura • Barsana • Nandgaon • Govardhan
+                  </p>
+                  <div className="pkg-highlights-pills">
+                    <span>Govardhan Parikrama</span>
+                    <span>Radha Rani Temple</span>
+                    <span>Yamuna Aarti</span>
+                  </div>
+                  <div className="pkg-footer">
+                    <div className="pkg-price-block">
+                      <span className="price-label">Tariff Plan</span>
+                      <div className="price-reveal-wrap">
+                        <span className="price-amount blurred-price">
+                          Custom Tariff
+                        </span>
+                        <span className="revealing-soon-badge">On Request</span>
+                      </div>
+                    </div>
+                    <button
+                      className="btn btn-outline-gold view-pkg-details"
+                      data-pkg="vrindavan-braj-dham"
+                    >
+                      <span>View Package</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <div className="pkg-card" data-pkg-id="meghalaya-escape">
                 <div className="pkg-image-wrapper">
                   <img
@@ -1984,7 +2271,7 @@ export default function Page() {
                   alt="Mayfair Tea Resort &amp; Spa"
                   height="220"
                   loading="lazy"
-                  src="/images/india/darjeeling-west-bengal/darjeeling_3.jpeg"
+                  src="/images/hotels/mayfair-tea-resort/image.webp"
                   width="400"
                 />
               </div>
@@ -2049,7 +2336,7 @@ export default function Page() {
                   alt="Ri Kynjai Lake Resort"
                   height="220"
                   loading="lazy"
-                  src="/images/india/meghalaya/Meghalaya_2.jpeg"
+                  src="/images/hotels/ri-kynjai-meghalaya/image.webp"
                   width="400"
                 />
               </div>
@@ -2114,7 +2401,7 @@ export default function Page() {
                   alt="The Elgin Nor-Khill Gangtok"
                   height="220"
                   loading="lazy"
-                  src="/images/india/sikkim/Sikkim_2.jpeg"
+                  src="/images/hotels/the-elgin-nor-khill-sikkim/image.jpg"
                   width="400"
                 />
               </div>
@@ -2181,7 +2468,7 @@ export default function Page() {
                   alt="Polo Orchid Cliff Haven"
                   height="220"
                   loading="lazy"
-                  src="/images/india/meghalaya/Meghalaya_3.jpeg"
+                  src="/images/hotels/polo-orchid-cherrapunji/image.webp"
                   width="400"
                 />
               </div>

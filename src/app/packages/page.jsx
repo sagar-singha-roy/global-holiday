@@ -1,10 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { FaStar } from "react-icons/fa6";
 import Link from "next/link";
 
 const ALL_PACKAGES = [
+  {
+    id: "jammu-kashmir-grand-tour",
+    title: "J&K Grand Tour",
+    duration: "8 Days / 7 Nights",
+    dest: "Jammu & Kashmir",
+    category: "pan-india",
+    rating: "5.0 (New)",
+    itinerary: "Katra • Srinagar • Gulmarg • Pahalgam • Sonamarg",
+    highlights: [
+      "Gulmarg Gondola",
+      "Dal Lake Shikara",
+      "Thajiwas Glacier",
+    ],
+    img: "/images/packages/kashmir-dal.jpg",
+  },
+  {
+    id: "manali-shimla-kasol",
+    title: "Himalayan Escape",
+    duration: "7 Days / 6 Nights",
+    dest: "Himachal Pradesh",
+    category: "pan-india",
+    rating: "5.0 (New)",
+    itinerary: "Shimla • Kufri • Kasol • Manikaran • Manali • Solang Valley",
+    highlights: [
+      "Solang Valley Snow",
+      "Parvati River",
+      "Hadimba Temple",
+    ],
+    img: "/images/packages/manali-kasol.jpg",
+  },
+  {
+    id: "vrindavan-braj-dham",
+    title: "Braj Dham Spiritual Journey",
+    duration: "6 Days / 5 Nights",
+    dest: "Uttar Pradesh",
+    category: "pan-india",
+    rating: "5.0 (New)",
+    itinerary: "Vrindavan • Mathura • Barsana • Nandgaon • Govardhan",
+    highlights: [
+      "Govardhan Parikrama",
+      "Radha Rani Temple",
+      "Yamuna Aarti",
+    ],
+    img: "/images/packages/vrindavan.jpg",
+  },
   {
     id: "meghalaya-escape",
     title: "Meghalaya Cloud Sanctuary",
@@ -202,8 +248,34 @@ const ALL_PACKAGES = [
   },
 ];
 
-export default function Page() {
+function PackagesContent() {
   const [filter, setFilter] = useState("all");
+  const searchParams = useSearchParams();
+  const destParam = searchParams.get("dest");
+  const pkgParam = searchParams.get("package");
+
+  useEffect(() => {
+    if (destParam || pkgParam) {
+      if (destParam) {
+        const d = destParam.toLowerCase();
+        const matched = ALL_PACKAGES.find(
+          (p) =>
+            p.dest.toLowerCase().includes(d) ||
+            d.includes(p.dest.toLowerCase()) ||
+            p.id.includes(d),
+        );
+        if (matched) {
+          setFilter(matched.category);
+        }
+      }
+      const timer = setTimeout(() => {
+        if (typeof window !== "undefined" && window.openPackageDetails) {
+          window.openPackageDetails(pkgParam, destParam);
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [destParam, pkgParam]);
 
   const filteredPackages =
     filter === "all"
@@ -321,6 +393,11 @@ export default function Page() {
                       className="btn btn-outline-gold view-pkg-details"
                       data-pkg={pkg.id}
                       type="button"
+                      onClick={() => {
+                        if (typeof window !== "undefined" && window.openPackageDetails) {
+                          window.openPackageDetails(pkg.id);
+                        }
+                      }}
                     >
                       <span>View Package</span>
                       <span className="btn-arrow">→</span>
@@ -518,5 +595,13 @@ export default function Page() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: "60vh" }}></div>}>
+      <PackagesContent />
+    </Suspense>
   );
 }

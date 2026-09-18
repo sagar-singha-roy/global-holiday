@@ -56,6 +56,7 @@ export default function GlobalShell() {
         id="back-to-top-btn"
         title="Back to Top"
         type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         <div className="top-btn-inner">
           <svg
@@ -86,7 +87,7 @@ export default function GlobalShell() {
           </svg>
           <span>Call Desk</span>
         </a>
-        <a className="mob-bar-btn mob-bar-plan" href="#planner">
+        <a className="mob-bar-btn mob-bar-plan" href="/contact">
           <span>Plan My Trip →</span>
         </a>
         <a
@@ -116,12 +117,21 @@ export default function GlobalShell() {
         data-closedby="any"
         data-lenis-prevent=""
         id="package-modal"
+        suppressHydrationWarning
+        onClick={(e) => {
+          if (e.target.id === "package-modal") {
+            e.currentTarget.close();
+          }
+        }}
       >
         <div className="modal-dialog-content">
           <button
             aria-label="Close dialog"
             className="modal-close-btn"
             id="close-pkg-modal"
+            type="button"
+            suppressHydrationWarning
+            onClick={() => document.getElementById("package-modal")?.close()}
           >
             <FaXmark />
           </button>
@@ -133,12 +143,21 @@ export default function GlobalShell() {
         data-closedby="any"
         data-lenis-prevent=""
         id="lightbox-modal"
+        suppressHydrationWarning
+        onClick={(e) => {
+          if (e.target.id === "lightbox-modal") {
+            e.currentTarget.close();
+          }
+        }}
       >
         <div className="lightbox-wrapper">
           <button
             aria-label="Close image viewer"
             className="lightbox-close"
             id="close-lightbox"
+            type="button"
+            suppressHydrationWarning
+            onClick={() => document.getElementById("lightbox-modal")?.close()}
           >
             <FaXmark />
           </button>
@@ -146,6 +165,9 @@ export default function GlobalShell() {
             aria-label="Previous image"
             className="lightbox-nav lightbox-prev"
             id="lightbox-prev-btn"
+            type="button"
+            suppressHydrationWarning
+            onClick={() => window.stepLightbox?.(-1)}
           >
             <svg
               fill="none"
@@ -175,6 +197,9 @@ export default function GlobalShell() {
             aria-label="Next image"
             className="lightbox-nav lightbox-next"
             id="lightbox-next-btn"
+            type="button"
+            suppressHydrationWarning
+            onClick={() => window.stepLightbox?.(1)}
           >
             <svg
               fill="none"

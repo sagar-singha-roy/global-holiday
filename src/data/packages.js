@@ -702,6 +702,65 @@ export const PACKAGE_DATA = {
     ],
     exclusions: ["Airfare", "Personal items", "Tips"],
   },
+
+  "vrindavan-braj-dham": {
+    title:
+      "Vrindavan • Mathura • Barsana • Govardhan — Braj Dham Spiritual Journey",
+    duration: "5 Nights / 6 Days",
+    destination:
+      "Kolkata → Mathura / Vrindavan → Barsana → Nandgaon → Govardhan → Kolkata",
+    price: "Tariff on Request",
+    rating: "5.0 ★★★★★",
+    heroImg: "/images/packages/vrindavan.jpg",
+    overview:
+      "Walk the sacred paths of Braj — where every lane carries the fragrance of devotion and the echo of Krishna's flute. This complete 6-day spiritual circuit from Kolkata covers Vrindavan's legendary temples, Mathura's holy ghats, Barsana's Radha Rani Mandir, Govardhan Parikrama, and the serene Radha Kund. Organised by Global Holidays Tour & Travels with full end-to-end care.",
+    itinerary: [
+      {
+        day: "Day 01",
+        title: "Kolkata → Mathura / Vrindavan — Overnight Train Journey",
+        desc: "Assemble at Kolkata Railway Station and board the train for Mathura. Overnight journey in comfortable train berths. Upon arrival at Mathura, transfer to hotel in Vrindavan. Check-in and freshening up. Evening Yamuna Aarti at the sacred Vishram Ghat. Dinner and overnight stay in Vrindavan.",
+      },
+      {
+        day: "Day 02",
+        title: "Complete Vrindavan Darshan",
+        desc: "After a wholesome breakfast, embark on a full-day temple circuit: Banke Bihari Temple • Radha Raman Temple • Radha Vallabh Temple • Madan Mohan Temple • Nidhivan • Seva Kunj • ISKCON Vrindavan • Krishna Balaram Mandir. Evening — witness the magnificent illuminated Prem Mandir. Dinner and overnight stay in Vrindavan.",
+      },
+      {
+        day: "Day 03",
+        title: "Mathura Darshan + Vrindavan Evening",
+        desc: "After breakfast, drive to Mathura for sacred darshan: Shri Krishna Janmabhoomi • Dwarkadhish Temple • Potara Kunda • Vishram Ghat • Yamuna Riverfront stroll. Return to Vrindavan. Evening free for personal temple darshan, shopping for prasad and traditional crafts. Dinner and overnight stay.",
+      },
+      {
+        day: "Day 04",
+        title: "Barsana + Nandgaon — Braj Village Exploration",
+        desc: "After breakfast, drive to Barsana — the village of Radha Rani: Radha Rani Temple (Lathmar Holi fame) • Maan Mandir • Barsana Hills • Sanketha Kund. Drive to Nandgaon — Krishna's childhood home: Nand Bhavan / Nand Baba Temple. Explore authentic Braj villages and their timeless traditions. Return to Vrindavan. Dinner and overnight stay.",
+      },
+      {
+        day: "Day 05",
+        title: "Govardhan Parikrama + Radha Kund → Departure Train",
+        desc: "After breakfast, proceed to Govardhan Hill — the sacred mount lifted by Lord Krishna: Daan Ghati Temple • Mansi Ganga • Radha Kund • Shyam Kund • Kusum Sarovar • Govardhan Mukharvind. Govardhan Parikrama (full or partial as per group preference). Return to hotel. Dinner. Transfer to Mathura Railway Station. Board overnight train back to Kolkata.",
+      },
+      {
+        day: "Day 06",
+        title: "Arrival Kolkata — Tour Concludes",
+        desc: "Arrive at Kolkata Railway Station with the blessings of Radha-Krishna and a heart full of divine memories. Tour concludes. ❤️ Radhe Radhe!",
+      },
+    ],
+    inclusions: [
+      "Kolkata – Mathura – Kolkata train travel (class as per chosen package)",
+      "4 Nights hotel accommodation in Vrindavan",
+      "Daily Breakfast, Lunch & Dinner",
+      "Local sightseeing transportation (AC vehicle)",
+      "Mathura, Vrindavan, Barsana, Nandgaon & Govardhan sightseeing",
+      "Dedicated trip coordinator throughout the journey",
+      "Pickup and drop between railway station and hotel",
+    ],
+    exclusions: [
+      "Train class upgrade charges (if opted above base package)",
+      "Personal expenses, tips & donations at temples",
+      "Anything not explicitly mentioned in inclusions",
+    ],
+  },
 };
 
 // Aliases for seamless compatibility
@@ -709,3 +768,138 @@ PACKAGE_DATA["kashmir-paradise"] = PACKAGE_DATA["kashmir-odyssey"];
 PACKAGE_DATA["andaman-luxury"] = PACKAGE_DATA["andaman-azure"];
 PACKAGE_DATA["rajasthan-royal"] = PACKAGE_DATA["rajasthan-splendour"];
 PACKAGE_DATA["tripura-royal"] = PACKAGE_DATA["tripura-heritage"];
+
+PACKAGE_DATA["manali-shimla-kasol"] = {
+  title: "Manali • Shimla • Kasol — Himalayan Escape",
+  duration: "6 Nights / 7 Days",
+  destination:
+    "Kolkata → Chandigarh → Shimla → Kasol → Manali → Chandigarh → Kolkata",
+  price: "Tariff on Request",
+  rating: "5.0 ★★★★★",
+  heroImg: "/images/packages/manali-kasol.jpg",
+  overview:
+    "The ultimate Himachal trifecta — colonial Shimla, the mystical Parvati Valley at Kasol, and the snow-crowned adventure capital of Manali. Starting from Kolkata with a flight or train to Chandigarh, this 7-day private circuit covers iconic high-altitude experiences, serene river valleys, spiritual temples, and mountain markets. Organised end-to-end by Global Holidays Tour & Travels with private AC vehicles throughout Himachal.",
+  itinerary: [
+    {
+      day: "Day 01",
+      title: "Kolkata ✒️ Chandigarh → Shimla — Gateway to the Hills",
+      desc: "Pickup from Kolkata. Flight or train to Chandigarh. Private vehicle pickup at Chandigarh airport/station. Scenic drive to Shimla (approx. 4–5 hrs). Hotel check-in. Evening stroll along the iconic Mall Road, the Ridge, and a visit to the colonial Christ Church. Overnight in Shimla.",
+    },
+    {
+      day: "Day 02",
+      title: "Shimla Sightseeing — Kufri & City Tour",
+      desc: "Full-day Shimla exploration: Kufri • Green Valley viewpoint • Himalayan Nature Park • Jakhoo Temple (Hanuman statue) • Viceregal Lodge (Rashtrapati Niwas) • Mall Road & Lakkar Bazaar. Evening leisure. Overnight in Shimla.",
+    },
+    {
+      day: "Day 03",
+      title: "Shimla → Kasol — Parvati Valley",
+      desc: "Breakfast and checkout. Drive through Mandi, Pandoh Dam, and Bhuntar into the enchanting Kullu Valley. Arrive Kasol — the mini-Israel of India. Explore Kasol Market, walk along the Parvati River bank. Bonfire evening. Overnight in Kasol.",
+    },
+    {
+      day: "Day 04",
+      title: "Kasol → Manikaran Sahib → Kasol",
+      desc: "Day excursion to sacred Manikaran Sahib Gurudwara • miraculous Hot Springs • Ram Temple. Return via Parvati Riverfront. Explore the charming Kasol village. Optional walk to the hippie hamlet of Chalal across the suspension bridge. Overnight in Kasol.",
+    },
+    {
+      day: "Day 05",
+      title: "Kasol → Manali — Adventure Capital",
+      desc: "Breakfast and checkout. Scenic drive through Kullu Valley. Stop at Kullu handicraft and shawl centre. Visit Vaishno Devi Temple. Arrive Manali — check-in. Evening on Mall Road, Tibetan Monastery, and local market. Overnight in Manali.",
+    },
+    {
+      day: "Day 06",
+      title: "Manali Full-Day Sightseeing — Solang • Sissu • Hadimba",
+      desc: "Full-day Manali circuit: Solang Valley (snow/adventure activities in season) • Atal Tunnel • Sissu viewpoint (weather & road permitting) • Hadimba Devi Temple (ancient deodar forest) • Manu Temple • Vashisht Temple & Natural Hot Springs. Evening free on Mall Road. Overnight in Manali.",
+    },
+    {
+      day: "Day 07",
+      title: "Manali → Chandigarh → Kolkata — Tour Ends",
+      desc: "Breakfast and checkout. Long drive back to Chandigarh (approx. 8–9 hrs). Drop at Chandigarh Airport or Railway Station for onward journey to Kolkata. Arrive Kolkata with memories of snow peaks, pine forests, and flowing rivers. Tour concludes.",
+    },
+  ],
+  inclusions: [
+    "Kolkata – Chandigarh – Kolkata travel (flight or train as per chosen package)",
+    "2 Nights hotel in Shimla + 2 Nights in Kasol + 2 Nights in Manali",
+    "Daily Breakfast & Dinner (Lunch on Day 3, 4, 5, 6)",
+    "Private AC vehicle for all Himachal transfers and sightseeing",
+    "Shimla, Kufri, Kasol, Manikaran, Kullu, and Manali sightseeing",
+    "Dedicated trip coordinator throughout the journey",
+    "Chandigarh airport/station pickup and drop",
+  ],
+  exclusions: [
+    "Airfare/train fare surcharges above package tier",
+    "Personal expenses, adventure sports charges at Solang Valley",
+    "Sissu/Rohtang Pass permit charges (if applicable by season)",
+    "Anything not explicitly mentioned in inclusions",
+  ],
+};
+
+PACKAGE_DATA["jammu-kashmir-grand-tour"] = {
+  title:
+    "Jammu & Kashmir Grand Tour — Katra • Srinagar • Gulmarg • Pahalgam • Sonamarg",
+  duration: "7 Nights / 8 Days",
+  destination:
+    "Jammu → Katra → Srinagar → Gulmarg → Pahalgam → Sonamarg → Srinagar",
+  price: "Tariff on Request",
+  rating: "5.0 ★★★★★",
+  heroImg: "/images/packages/kashmir-dal.jpg",
+  overview:
+    "The perfect first-time Kashmir itinerary — covering every iconic destination without rushing. From the sacred Vaishno Devi in Katra and the timeless Mughal gardens of Srinagar, to the snow-swept meadows of Gulmarg, the cinematic valleys of Pahalgam, and the glacier-touched Sonamarg, this 8-day grand circuit is Kashmir at its most complete. Organised end-to-end by Global Holidays Tour & Travels.",
+  itinerary: [
+    {
+      day: "Day 01",
+      title: "Arrival Jammu → Katra — Gateway to Vaishno Devi",
+      desc: "Pickup from Jammu Airport or Railway Station. Transfer to Katra (approx. 50 km). Hotel check-in. Explore Katra Market. Evening at leisure. Optional: Vaishno Devi Darshan (yatra tickets to be arranged). Overnight stay in Katra.",
+    },
+    {
+      day: "Day 02",
+      title: "Katra → Jammu → Srinagar — Himalayan Drive",
+      desc: "Early breakfast. Drive towards Srinagar via the scenic Himalayan highway. En-route sightseeing around Qazigund. Arrival in Srinagar. Check-in to hotel or heritage houseboat on Dal Lake. Evening magical Dal Lake Shikara ride through the floating market. Overnight stay in Srinagar.",
+    },
+    {
+      day: "Day 03",
+      title: "Srinagar Local Sightseeing — Mughal Gardens & Shrines",
+      desc: "After breakfast, full-day Srinagar city tour: Nishat Bagh (Garden of Pleasure) • Shalimar Bagh (Abode of Love) • Chashme Shahi (Royal Spring) • Pari Mahal (Palace of Fairies) • Hazratbal Shrine (sacred hair relic of Prophet) • Shankaracharya Temple (hilltop Hindu shrine). Evening free for Kashmiri handicraft and shawl shopping. Overnight in Srinagar.",
+    },
+    {
+      day: "Day 04",
+      title: "Srinagar → Gulmarg → Srinagar — Meadow of Flowers",
+      desc: "After breakfast, full-day excursion to Gulmarg (56 km from Srinagar). Experience the world’s highest operating cable car — Gulmarg Gondola to Apharwat Peak (13,780 ft). Explore Khilanmarg meadows and the famous Gulmarg Golf Course (world’s highest). Snow activities in winter season. Return to Srinagar. Overnight stay.",
+    },
+    {
+      day: "Day 05",
+      title: "Srinagar → Pahalgam — Valley of Shepherds",
+      desc: "After breakfast, scenic drive to Pahalgam (95 km). En-route: Pampore saffron fields (seasonal) • Awantipora ruins • lush apple orchards. Arrive Pahalgam. Explore the Lidder River banks and Pahalgam Valley. Evening at local market for Kashmiri dry fruits and handicrafts. Overnight stay in Pahalgam.",
+    },
+    {
+      day: "Day 06",
+      title: "Pahalgam Sightseeing — Aru • Betaab • Chandanwari",
+      desc: "Full day in the Pahalgam valley: Aru Valley (stunning alpine meadows, 11 km from Pahalgam) • Betaab Valley (Bollywood’s favourite backdrop, lush green) • Chandanwari (start point of Amarnath Yatra, snow bridge). Optional pony rides and short trek options available. Evening leisure by Lidder River. Overnight in Pahalgam.",
+    },
+    {
+      day: "Day 07",
+      title: "Pahalgam → Sonamarg → Srinagar — Gold Meadows",
+      desc: "After breakfast, drive to Sonamarg — the Meadow of Gold (87 km from Srinagar). Explore the Sindh River valley, Thajiwas Glacier (season/weather dependent via pony/walk), and Zero Point (road conditions permitting). Snow activities in season. Continue back to Srinagar. Overnight stay in Srinagar.",
+    },
+    {
+      day: "Day 08",
+      title: "Srinagar Departure — Tour Concludes",
+      desc: "Breakfast and hotel checkout. Transfer to Srinagar Airport. Tour ends with unforgettable memories of the Valley of Paradise ❤️.",
+    },
+  ],
+  inclusions: [
+    "Pickup and drop at Jammu Airport/Station and Srinagar Airport",
+    "1 Night Katra + 4 Nights Srinagar + 2 Nights Pahalgam accommodation",
+    "Daily Breakfast & Dinner",
+    "Private AC vehicle for all transfers and sightseeing throughout the tour",
+    "Dal Lake Shikara ride",
+    "Srinagar, Gulmarg, Pahalgam (Aru, Betaab, Chandanwari) & Sonamarg sightseeing",
+    "Dedicated trip coordinator",
+  ],
+  exclusions: [
+    "Airfare or train fare to Jammu / from Srinagar",
+    "Gulmarg Gondola tickets (paid separately)",
+    "Vaishno Devi yatra charges and helicopter (if availed)",
+    "Pony rides, snow activities, and personal expenses",
+    "Anything not explicitly mentioned in inclusions",
+  ],
+};

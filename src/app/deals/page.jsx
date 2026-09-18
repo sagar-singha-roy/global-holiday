@@ -1,8 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function Page() {
+  const [filter, setFilter] = useState('all');
+
+  const matchesFilter = (category) => {
+    if (filter === 'all') return true;
+    return category.includes(filter);
+  };
+
   return (
     <>
 <section className="section text-center" style={{'paddingBottom': '2rem'}}>
@@ -16,21 +24,46 @@ export default function Page() {
           </p>
 
 <div className="filter-tabs" id="deal-filters" role="tablist" style={{'justifyContent': 'center'}}>
-<button className="filter-tab active" data-filter="all">
-              All Offers
-            </button>
-<button className="filter-tab" data-filter="early-bird">
-              Early Bird Specials
-            </button>
-<button className="filter-tab" data-filter="seasonal">
-              Seasonal Escapes
-            </button>
-<button className="filter-tab" data-filter="luxury">
-              Luxury Upgrades
-            </button>
-<button className="filter-tab" data-filter="weekend">
-              Weekend Circuits
-            </button>
+<button
+  className={`filter-tab ${filter === 'all' ? 'active' : ''}`}
+  data-filter="all"
+  onClick={() => setFilter('all')}
+  type="button"
+>
+  All Offers
+</button>
+<button
+  className={`filter-tab ${filter === 'early-bird' ? 'active' : ''}`}
+  data-filter="early-bird"
+  onClick={() => setFilter('early-bird')}
+  type="button"
+>
+  Early Bird Specials
+</button>
+<button
+  className={`filter-tab ${filter === 'seasonal' ? 'active' : ''}`}
+  data-filter="seasonal"
+  onClick={() => setFilter('seasonal')}
+  type="button"
+>
+  Seasonal Escapes
+</button>
+<button
+  className={`filter-tab ${filter === 'luxury' ? 'active' : ''}`}
+  data-filter="luxury"
+  onClick={() => setFilter('luxury')}
+  type="button"
+>
+  Luxury Upgrades
+</button>
+<button
+  className={`filter-tab ${filter === 'weekend' ? 'active' : ''}`}
+  data-filter="weekend"
+  onClick={() => setFilter('weekend')}
+  type="button"
+>
+  Weekend Circuits
+</button>
 </div>
 </div>
 </section>
@@ -38,7 +71,7 @@ export default function Page() {
 <div className="container">
 <div className="deals-grid" id="deals-container">
 
-<div className="deal-card" data-category="early-bird seasonal">
+<div className="deal-card" data-category="early-bird seasonal" style={{ display: matchesFilter('early-bird seasonal') ? 'flex' : 'none' }}>
 <span className="deal-badge-ribbon">25% OFF EARLY BIRD</span>
 <span className="deal-validity-badge">Valid until April 30, 2026</span>
 <div className="deal-image-wrapper">
@@ -73,15 +106,15 @@ export default function Page() {
 <span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Spring+Himalayan">
+<Link className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Spring+Himalayan">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
 
-<div className="deal-card" data-category="seasonal luxury">
+<div className="deal-card" data-category="seasonal luxury" style={{ display: matchesFilter('seasonal luxury') ? 'flex' : 'none' }}>
 <span className="deal-badge-ribbon">COMPLIMENTARY SPA &amp; CRUISE</span>
 <span className="deal-validity-badge">Limited Seasonal Slots</span>
 <div className="deal-image-wrapper">
@@ -116,15 +149,15 @@ export default function Page() {
 <span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Cloud+Realm">
+<Link className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Cloud+Realm">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
 
-<div className="deal-card" data-category="weekend luxury">
+<div className="deal-card" data-category="weekend luxury" style={{ display: matchesFilter('weekend luxury') ? 'flex' : 'none' }}>
 <span className="deal-badge-ribbon">ROYAL CONCIERGE SPECIAL</span>
 <span className="deal-validity-badge">Year-Round Exclusive</span>
 <div className="deal-image-wrapper">
@@ -159,15 +192,15 @@ export default function Page() {
 <span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Royal+Tripura">
+<Link className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Royal+Tripura">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
 
-<div className="deal-card" data-category="early-bird seasonal">
+<div className="deal-card" data-category="early-bird seasonal" style={{ display: matchesFilter('early-bird seasonal') ? 'flex' : 'none' }}>
 <span className="deal-badge-ribbon">20% OFF HONEYMOON SPECIAL</span>
 <span className="deal-validity-badge">Valid for May &amp; June</span>
 <div className="deal-image-wrapper">
@@ -202,15 +235,15 @@ export default function Page() {
 <span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Kashmir+Paradise">
+<Link className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Kashmir+Paradise">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
 
-<div className="deal-card" data-category="luxury seasonal">
+<div className="deal-card" data-category="luxury seasonal" style={{ display: matchesFilter('luxury seasonal') ? 'flex' : 'none' }}>
 <span className="deal-badge-ribbon">FREE SCUBA &amp; GLAMPING</span>
 <span className="deal-validity-badge">Limited Island Slots</span>
 <div className="deal-image-wrapper">
@@ -245,15 +278,15 @@ export default function Page() {
 <span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Andaman+Azure">
+<Link className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Andaman+Azure">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
 
-<div className="deal-card" data-category="early-bird weekend">
+<div className="deal-card" data-category="early-bird weekend" style={{ display: matchesFilter('early-bird weekend') ? 'flex' : 'none' }}>
 <span className="deal-badge-ribbon">FREE 4X4 SUV UPGRADE</span>
 <span className="deal-validity-badge">Winter &amp; Autumn Early Bird</span>
 <div className="deal-image-wrapper">
@@ -288,10 +321,10 @@ export default function Page() {
 <span className="revealing-soon-badge">On Request</span>
 </div>
 </div>
-<a className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Tawang+Monastic">
+<Link className="btn btn-sm btn-gold" href="/contact?subject=Claim+Deal+Tawang+Monastic">
 <span>Claim Deal</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 </div>
 </div>
 </div>

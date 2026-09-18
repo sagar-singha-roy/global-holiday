@@ -48,8 +48,8 @@ function initCustomCursor() {
       "a, button, input, select, textarea, .destination-card, .gallery-item, .pkg-card, .split-panel",
     );
     interactiveEls.forEach((el) => {
-      if (el.dataset.cursorHoverAttached) return;
-      el.dataset.cursorHoverAttached = "true";
+      if (el._cursorHoverAttached) return;
+      el._cursorHoverAttached = true;
       el.addEventListener("mouseenter", () => cursor.classList.add("hovering"));
       el.addEventListener("mouseleave", () =>
         cursor.classList.remove("hovering"),
@@ -61,11 +61,11 @@ function initCustomCursor() {
   bindHover();
 
   // If already tracking mouse, do not duplicate listeners or RAF loops
-  if (cursor.dataset.cursorReady === "true") return;
+  if (cursor._cursorReady) return;
 
   // Only enable on desktop pointer devices
   if (window.matchMedia("(pointer: fine)").matches) {
-    cursor.dataset.cursorReady = "true";
+    cursor._cursorReady = true;
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -238,15 +238,17 @@ function initMobileDrawer() {
 }
 
 // ========================================================
-// 6. DESTINATION FILTER SYSTEM
+// 6. DESTINATION FILTER SYSTEM (HOMEPAGE)
 // ========================================================
 function initDestinationFilters() {
+  if (typeof window !== "undefined" && window.location.pathname !== "/") return;
   const filterTabs = document.querySelectorAll(
     "#destination-filters .filter-tab",
   );
   const destCards = document.querySelectorAll(
     "#destinations-container .destination-card",
   );
+  if (!filterTabs.length || !destCards.length) return;
 
   filterTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -276,255 +278,253 @@ function initDestinationFilters() {
 }
 
 // ========================================================
-// 6b. HOTEL, DEAL, AND GALLERY FILTER SYSTEMS
-// ========================================================
-function initHotelFilters() {
-  const filterTabs = document.querySelectorAll("#hotel-filters .filter-tab");
-  const cards = document.querySelectorAll("#hotels-container .hotel-card");
-  if (!filterTabs.length || !cards.length) return;
-
-  filterTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      filterTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      const filterValue = tab.getAttribute("data-filter");
-
-      cards.forEach((card) => {
-        const category = card.getAttribute("data-category") || "";
-        if (filterValue === "all" || category.includes(filterValue)) {
-          card.style.display = "flex";
-          setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "scale(1)";
-          }, 30);
-        } else {
-          card.style.opacity = "0";
-          card.style.transform = "scale(0.96)";
-          setTimeout(() => {
-            card.style.display = "none";
-          }, 250);
-        }
-      });
-    });
-  });
-}
-
-function initDealFilters() {
-  const filterTabs = document.querySelectorAll("#deal-filters .filter-tab");
-  const cards = document.querySelectorAll("#deals-container .deal-card");
-  if (!filterTabs.length || !cards.length) return;
-
-  filterTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      filterTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      const filterValue = tab.getAttribute("data-filter");
-
-      cards.forEach((card) => {
-        const category = card.getAttribute("data-category") || "";
-        if (filterValue === "all" || category.includes(filterValue)) {
-          card.style.display = "flex";
-          setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "scale(1)";
-          }, 30);
-        } else {
-          card.style.opacity = "0";
-          card.style.transform = "scale(0.96)";
-          setTimeout(() => {
-            card.style.display = "none";
-          }, 250);
-        }
-      });
-    });
-  });
-}
-
-function initGalleryFilters() {
-  const filterTabs = document.querySelectorAll("#gallery-filters .filter-tab");
-  const items = document.querySelectorAll("#masonry-gallery .gallery-item");
-  if (!filterTabs.length || !items.length) return;
-
-  filterTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      filterTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      const filterValue = tab.getAttribute("data-filter");
-
-      items.forEach((item) => {
-        const category = item.getAttribute("data-category") || "";
-        if (filterValue === "all" || category.includes(filterValue)) {
-          item.style.display = "block";
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          }, 30);
-        } else {
-          item.style.opacity = "0";
-          item.style.transform = "scale(0.96)";
-          setTimeout(() => {
-            item.style.display = "none";
-          }, 250);
-        }
-      });
-    });
-  });
-}
-
-// ========================================================
 // 7. CURATED PACKAGES CAROUSEL & MODAL INSPECTOR
 // ========================================================
+export function renderPackageModal(data, modalBody) {
+  if (!modalBody) {
+    modalBody = document.getElementById("pkg-modal-content");
+  }
+  if (!modalBody || !data) return;
+
+  const itineraryHtml = data.itinerary
+    .map(
+      (item) => `
+    <div style="margin-bottom: 1.5rem; padding-left: 1.25rem; border-left: 2px solid var(--gold-light);">
+      <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em;">${item.day}</span>
+      <h4 style="font-size: 1.15rem; color: var(--text-primary); margin: 0.2rem 0 0.4rem;">${item.title}</h4>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">${item.desc}</p>
+    </div>
+  `,
+    )
+    .join("");
+
+  const inclusionsHtml = data.inclusions
+    .map(
+      (inc) =>
+        `<li style="margin-bottom: 0.4rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f3c766" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>${inc}</span></li>`,
+    )
+    .join("");
+  const exclusionsHtml = data.exclusions
+    .map(
+      (exc) =>
+        `<li style="margin-bottom: 0.4rem; color: var(--text-muted); font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> <span>${exc}</span></li>`,
+    )
+    .join("");
+
+  const waText = encodeURIComponent(
+    `Hello Global Holidays Agartala, I am interested in booking the "${data.title}" (${data.duration}). Please share custom pricing and availability.`,
+  );
+
+  modalBody.innerHTML = `
+    <div style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; border: 1px solid var(--border-gold);">
+      <img src="${data.heroImg}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover;" />
+      <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(6,17,16,0.88); padding: 0.45rem 1.1rem; border-radius: var(--radius-pill); font-size: 0.82rem; font-weight: 700; color: #f3c766; border: 1px solid var(--border-gold); text-shadow: 0 1px 4px rgba(0,0,0,0.6); display: flex; align-items: center; gap: 0.5rem;">
+        <span>${data.duration}</span>
+        <span>•</span>
+        <div class="price-reveal-wrap">
+          <span class="blurred-price" style="font-size: 0.82rem;">${data.price}</span>
+          <span class="revealing-soon-badge" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">On Request</span>
+        </div>
+      </div>
+    </div>
+    <span style="font-size: 0.75rem; color: var(--text-gold); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700;">Global Holidays Curated Circuit</span>
+    <h2 style="font-size: 2.2rem; font-family: var(--font-serif); margin: 0.3rem 0 0.75rem; line-height: 1.2; color: var(--text-primary);">${data.title}</h2>
+    <p style="color: var(--accent-teal); font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem;">${data.destination}</p>
+    <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">${data.overview}</p>
+
+    <h3 style="font-size: 1.4rem; font-family: var(--font-serif); margin-bottom: 1.25rem; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">Detailed Day-by-Day Itinerary</h3>
+    <div style="margin-bottom: 2.5rem;">
+      ${itineraryHtml}
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; background: var(--bg-surface-elevated); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+      <div>
+        <h4 style="color: var(--text-gold); margin-bottom: 0.75rem; font-size: 1rem; font-weight: 700;">Package Inclusions</h4>
+        <ul style="list-style: none; padding: 0;">${inclusionsHtml}</ul>
+      </div>
+      <div>
+        <h4 style="color: var(--text-muted); margin-bottom: 0.75rem; font-size: 1rem; font-weight: 700;">Exclusions</h4>
+        <ul style="list-style: none; padding: 0;">${exclusionsHtml}</ul>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+      <div>
+        <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Tariff Plan</span>
+        <div class="price-reveal-wrap" style="margin-top: 0.25rem;">
+          <div class="blurred-price" style="font-size: 1.25rem; font-weight: 700; color: var(--text-gold);">${data.price}</div>
+          <span class="revealing-soon-badge">On Request</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="https://wa.me/918731010676?text=${waText}" target="_blank" rel="noopener" class="btn btn-gold">
+          <span>Inquire on WhatsApp</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"/></svg>
+        </a>
+        <a href="/contact" onclick="document.getElementById('package-modal')?.close()" class="btn btn-outline-glass">
+          <span>Direct Inquiry Form</span>
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+export function openPackageDetails(pkgId, destName) {
+  let targetKey = pkgId;
+  let packageData = null;
+
+  if (targetKey && PACKAGE_DATA[targetKey]) {
+    packageData = PACKAGE_DATA[targetKey];
+  } else if (destName) {
+    const d = destName.toLowerCase();
+    if (d.includes("meghalaya")) targetKey = "meghalaya-escape";
+    else if (d.includes("himachal")) targetKey = "himachal-splendour";
+    else if (d.includes("goa")) targetKey = "goa-escape";
+    else if (d.includes("thailand")) targetKey = "thailand-gateway";
+    else if (d.includes("aizawl") || d.includes("mizoram")) targetKey = "aizawl-escape";
+    else if (d.includes("darjeeling")) targetKey = "darjeeling-escape";
+    else if (d.includes("bharat") || d.includes("varanasi")) targetKey = "grand-bharat-circuit";
+    else if (d.includes("delhi")) targetKey = "delhi-heritage";
+    else if (d.includes("sikkim")) targetKey = "sikkim-grandeur";
+    else if (d.includes("kashmir")) targetKey = "kashmir-paradise";
+    else if (d.includes("andaman")) targetKey = "andaman-luxury";
+    else if (d.includes("rajasthan")) targetKey = "rajasthan-royal";
+    else if (d.includes("tripura")) targetKey = "tripura-heritage";
+
+    if (targetKey && PACKAGE_DATA[targetKey]) {
+      packageData = PACKAGE_DATA[targetKey];
+    } else {
+      const slide = document.querySelector(
+        `#hero-carousel .hero-slide[data-dest*="${destName}"]`,
+      );
+      const heroImg =
+        slide?.getAttribute("data-thumb") ||
+        slide?.querySelector("img")?.src ||
+        "/images/india/meghalaya/Meghalaya.jpeg";
+      const routeDesc =
+        slide?.getAttribute("data-route") ||
+        "Premium Boutique Resorts • Scenic Transfers • Private Guided Tours";
+
+      packageData = {
+        title: `${destName} Luxury Curated Circuit`,
+        duration: "6 Days / 5 Nights",
+        destination: `${destName} (${routeDesc})`,
+        price: "Tariff on Request",
+        rating: "5.0 ★★★★★ (Signature Circuit)",
+        heroImg: heroImg,
+        overview: `Experience the finest boutique accommodations, private chauffeur escorts, and authentic cultural expeditions in majestic ${destName}, curated exclusively by Global Holidays Agartala.`,
+        itinerary: [
+          {
+            day: "Day 01",
+            title: `Arrival & VIP Reception in ${destName}`,
+            desc: "Private chauffeur transfer from airport/station to luxury boutique resort. Evening welcome dinner and itinerary briefing with your dedicated travel designer.",
+          },
+          {
+            day: "Day 02",
+            title: "Historic Landmarks & Cultural Highlights",
+            desc: "Private guided tour of renowned regional landmarks, cultural heritage sights, and panoramic sunset viewpoints.",
+          },
+          {
+            day: "Day 03",
+            title: "Scenic Excursions & Heritage Trails",
+            desc: "Full-day curated expedition through signature valleys, heritage trails, local craft centers, and gourmet regional tastings.",
+          },
+          {
+            day: "Day 04",
+            title: "Bespoke Countryside Leisure Tour",
+            desc: "Exclusive excursion to pristine surrounding natural attractions and viewpoints with dedicated vehicle and local guide.",
+          },
+          {
+            day: "Day 05",
+            title: "Artisanal Souvenir Walks & Farewell Banquet",
+            desc: "Leisurely morning, artisanal shopping for authentic regional specialties, and evening celebratory dinner overlooking scenic vistas.",
+          },
+          {
+            day: "Day 06",
+            title: "Farewell Transfer with Everlasting Memories",
+            desc: "Breakfast at resort and private executive transfer to airport/station for onward flight.",
+          },
+        ],
+        inclusions: [
+          "Dedicated private luxury vehicle throughout the tour",
+          "5 Nights accommodation in handpicked 4/5-star boutique resorts",
+          "Daily curated breakfast & gourmet dinner",
+          "All state entry permits, toll fees, parking, and driver allowances",
+          "Dedicated 24x7 Global Holidays tour concierge coordinator",
+        ],
+        exclusions: [
+          "Airfare / Train tickets",
+          "Personal expenses and optional adventure sports",
+          "Anything not explicitly stated in package inclusions",
+        ],
+      };
+    }
+  } else {
+    targetKey = "meghalaya-escape";
+    packageData = PACKAGE_DATA[targetKey];
+  }
+
+  const modal = document.getElementById("package-modal");
+  const modalBody = document.getElementById("pkg-modal-content");
+
+  if (packageData && modalBody) {
+    renderPackageModal(packageData, modalBody);
+    if (modal) {
+      if (typeof modal.showModal === "function") {
+        if (!modal.open) modal.showModal();
+      } else {
+        modal.setAttribute("open", "true");
+      }
+    }
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.renderPackageModal = renderPackageModal;
+  window.openPackageDetails = openPackageDetails;
+  if (!window._pkgDelegationAttached) {
+    window._pkgDelegationAttached = true;
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".view-pkg-details, .open-pkg-filter");
+      if (!btn) return;
+      e.preventDefault();
+      const pkgId = btn.getAttribute("data-pkg");
+      const destName = btn.getAttribute("data-dest");
+      openPackageDetails(pkgId, destName);
+    });
+  }
+}
+
 function initPackageFeatures() {
   const track = document.getElementById("packages-track");
   const prevBtn = document.getElementById("pkg-prev-btn");
   const nextBtn = document.getElementById("pkg-next-btn");
   const modal = document.getElementById("package-modal");
-  const modalBody = document.getElementById("pkg-modal-content");
   const closeModalBtn = document.getElementById("close-pkg-modal");
 
   // Carousel Next/Prev Controls
   if (track && prevBtn && nextBtn) {
     const scrollAmount = 400;
-    nextBtn.addEventListener("click", () => {
-      track.parentElement.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
-    prevBtn.addEventListener("click", () => {
-      track.parentElement.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
+    if (!prevBtn._carouselBound) {
+      prevBtn._carouselBound = true;
+      prevBtn.addEventListener("click", () => {
+        track.parentElement.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+    }
+    if (!nextBtn._carouselBound) {
+      nextBtn._carouselBound = true;
+      nextBtn.addEventListener("click", () => {
+        track.parentElement.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+    }
   }
 
-  // Open Package Modal Handler
-  document
-    .querySelectorAll(".view-pkg-details, .open-pkg-filter")
-    .forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const pkgId = btn.getAttribute("data-pkg");
-        const destName = btn.getAttribute("data-dest");
-
-        let targetKey = pkgId;
-        if (!targetKey && destName) {
-          // Find matching package key
-          if (destName.includes("Meghalaya")) targetKey = "meghalaya-escape";
-          else if (destName.includes("Himachal"))
-            targetKey = "himachal-splendour";
-          else if (destName.includes("Goa")) targetKey = "goa-escape";
-          else if (destName.includes("Thailand"))
-            targetKey = "thailand-gateway";
-          else if (destName.includes("Aizawl") || destName.includes("Mizoram"))
-            targetKey = "aizawl-escape";
-          else if (destName.includes("Darjeeling"))
-            targetKey = "darjeeling-escape";
-          else if (destName.includes("Bharat") || destName.includes("Varanasi"))
-            targetKey = "grand-bharat-circuit";
-          else if (destName.includes("Delhi")) targetKey = "delhi-heritage";
-          else if (destName.includes("Sikkim")) targetKey = "sikkim-grandeur";
-          else if (destName.includes("Kashmir")) targetKey = "kashmir-paradise";
-          else if (destName.includes("Andaman")) targetKey = "andaman-luxury";
-          else if (destName.includes("Rajasthan"))
-            targetKey = "rajasthan-royal";
-          else if (destName.includes("Tripura")) targetKey = "tripura-heritage";
-          else targetKey = "meghalaya-escape";
-        }
-
-        if (targetKey && PACKAGE_DATA[targetKey]) {
-          renderPackageModal(PACKAGE_DATA[targetKey]);
-          if (modal) modal.showModal();
-        }
-      });
-    });
-
-  if (closeModalBtn && modal) {
+  if (closeModalBtn && modal && !closeModalBtn._closeBound) {
+    closeModalBtn._closeBound = true;
     closeModalBtn.addEventListener("click", () => modal.close());
-    // Light dismiss on backdrop click
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.close();
     });
-  }
-
-  function renderPackageModal(data) {
-    if (!modalBody) return;
-
-    const itineraryHtml = data.itinerary
-      .map(
-        (item) => `
-      <div style="margin-bottom: 1.5rem; padding-left: 1.25rem; border-left: 2px solid var(--gold-light);">
-        <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em;">${item.day}</span>
-        <h4 style="font-size: 1.15rem; color: var(--text-primary); margin: 0.2rem 0 0.4rem;">${item.title}</h4>
-        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">${item.desc}</p>
-      </div>
-    `,
-      )
-      .join("");
-
-    const inclusionsHtml = data.inclusions
-      .map(
-        (inc) =>
-          `<li style="margin-bottom: 0.4rem; color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f3c766" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>${inc}</span></li>`,
-      )
-      .join("");
-    const exclusionsHtml = data.exclusions
-      .map(
-        (exc) =>
-          `<li style="margin-bottom: 0.4rem; color: var(--text-muted); font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> <span>${exc}</span></li>`,
-      )
-      .join("");
-
-    const waText = encodeURIComponent(
-      `Hello Global Holidays Agartala, I am interested in booking the "${data.title}" (${data.duration}). Please share custom pricing and availability.`,
-    );
-
-    modalBody.innerHTML = `
-      <div style="position: relative; height: 260px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.75rem; border: 1px solid var(--border-gold);">
-        <img src="${data.heroImg}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover;" />
-        <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(6,17,16,0.88); padding: 0.45rem 1.1rem; border-radius: var(--radius-pill); font-size: 0.82rem; font-weight: 700; color: #f3c766; border: 1px solid var(--border-gold); text-shadow: 0 1px 4px rgba(0,0,0,0.6); display: flex; align-items: center; gap: 0.5rem;">
-          <span>${data.duration}</span>
-          <span>•</span>
-          <div class="price-reveal-wrap">
-            <span class="blurred-price" style="font-size: 0.82rem;">${data.price}</span>
-            <span class="revealing-soon-badge" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">On Request</span>
-          </div>
-        </div>
-      </div>
-      <span style="font-size: 0.75rem; color: var(--text-gold); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700;">Global Holidays Curated Circuit</span>
-      <h2 style="font-size: 2.2rem; font-family: var(--font-serif); margin: 0.3rem 0 0.75rem; line-height: 1.2; color: var(--text-primary);">${data.title}</h2>
-      <p style="color: var(--accent-teal); font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem;">${data.destination}</p>
-      <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">${data.overview}</p>
-
-      <h3 style="font-size: 1.4rem; font-family: var(--font-serif); margin-bottom: 1.25rem; color: var(--text-primary); border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">Detailed Day-by-Day Itinerary</h3>
-      <div style="margin-bottom: 2.5rem;">
-        ${itineraryHtml}
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; background: var(--bg-surface-elevated); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-        <div>
-          <h4 style="color: var(--text-gold); margin-bottom: 0.75rem; font-size: 1rem; font-weight: 700;">Package Inclusions</h4>
-          <ul style="list-style: none; padding: 0;">${inclusionsHtml}</ul>
-        </div>
-        <div>
-          <h4 style="color: var(--text-muted); margin-bottom: 0.75rem; font-size: 1rem; font-weight: 700;">Exclusions</h4>
-          <ul style="list-style: none; padding: 0;">${exclusionsHtml}</ul>
-        </div>
-      </div>
-
-      <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
-        <div>
-          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Tariff Plan</span>
-          <div class="price-reveal-wrap" style="margin-top: 0.25rem;">
-            <div class="blurred-price" style="font-size: 1.25rem; font-weight: 700; color: var(--text-gold);">${data.price}</div>
-            <span class="revealing-soon-badge">On Request</span>
-          </div>
-        </div>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <a href="https://wa.me/918731010676?text=${waText}" target="_blank" rel="noopener" class="btn btn-gold">
-            <span>Inquire on WhatsApp</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.83-3.05-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.76 2.69 4.26 3.77.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.12-.23-.19-.48-.31z"/></svg>
-          </a>
-          <a href="#contact" onclick="document.getElementById('package-modal').close()" class="btn btn-outline-glass">
-            <span>Direct Inquiry Form</span>
-          </a>
-        </div>
-      </div>
-    `;
   }
 }
 
@@ -654,71 +654,116 @@ function initStatsCounters() {
 // ========================================================
 // 10. FULLSCREEN GALLERY LIGHTBOX
 // ========================================================
-function initGalleryLightbox() {
-  const galleryItems = document.querySelectorAll(".gallery-item");
+let currentLightboxIndex = 0;
+
+export function openLightboxIndex(index) {
+  const allClickableItems = Array.from(
+    document.querySelectorAll(
+      ".gallery-item, .legal-preview-container, .legal-btn-view",
+    ),
+  );
+  if (allClickableItems.length === 0) return;
+
+  const itemsData = allClickableItems.map((item) => ({
+    img: item.getAttribute("data-img"),
+    caption: item.getAttribute("data-caption"),
+    author: item.getAttribute("data-author"),
+  }));
+
+  if (index < 0) index = itemsData.length - 1;
+  if (index >= itemsData.length) index = 0;
+  currentLightboxIndex = index;
+
+  const data = itemsData[currentLightboxIndex];
+  if (!data) return;
+
   const lightbox = document.getElementById("lightbox-modal");
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxSub = document.getElementById("lightbox-sub");
+
+  if (!lightbox) return;
+
+  if (lightboxImg && data.img) lightboxImg.src = data.img;
+  if (lightboxTitle && data.caption) lightboxTitle.textContent = data.caption;
+  if (lightboxSub)
+    lightboxSub.textContent = data.author || "Global Holidays Verification";
+
+  if (!lightbox.open) {
+    if (typeof lightbox.showModal === "function") {
+      lightbox.showModal();
+    } else {
+      lightbox.setAttribute("open", "true");
+    }
+  }
+}
+
+export function stepLightbox(delta) {
+  openLightboxIndex(currentLightboxIndex + delta);
+}
+
+if (typeof window !== "undefined") {
+  window.openLightboxIndex = openLightboxIndex;
+  window.stepLightbox = stepLightbox;
+
+  if (!window._lightboxDelegationAttached) {
+    window._lightboxDelegationAttached = true;
+    document.addEventListener("click", (e) => {
+      const item = e.target.closest(
+        ".gallery-item, .legal-preview-container, .legal-btn-view",
+      );
+      if (!item) return;
+
+      const allClickableItems = Array.from(
+        document.querySelectorAll(
+          ".gallery-item, .legal-preview-container, .legal-btn-view",
+        ),
+      );
+      const idx = allClickableItems.indexOf(item);
+      if (idx !== -1) {
+        e.preventDefault();
+        openLightboxIndex(idx);
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      const lightbox = document.getElementById("lightbox-modal");
+      if (lightbox && lightbox.open) {
+        if (e.key === "ArrowLeft") stepLightbox(-1);
+        if (e.key === "ArrowRight") stepLightbox(1);
+        if (e.key === "Escape") lightbox.close();
+      }
+    });
+  }
+}
+
+function initGalleryLightbox() {
+  const lightbox = document.getElementById("lightbox-modal");
   const closeBtn = document.getElementById("close-lightbox");
   const prevBtn = document.getElementById("lightbox-prev-btn");
   const nextBtn = document.getElementById("lightbox-next-btn");
 
   if (!lightbox) return;
 
-  const allClickableItems = document.querySelectorAll(
-    ".gallery-item, .legal-preview-container, .legal-btn-view",
-  );
-  if (allClickableItems.length === 0) return;
-
-  let currentIndex = 0;
-  const itemsData = Array.from(allClickableItems).map((item) => ({
-    img: item.getAttribute("data-img"),
-    caption: item.getAttribute("data-caption"),
-    author: item.getAttribute("data-author"),
-  }));
-
-  function showLightboxIndex(index) {
-    if (index < 0) index = itemsData.length - 1;
-    if (index >= itemsData.length) index = 0;
-    currentIndex = index;
-
-    const data = itemsData[currentIndex];
-    if (lightboxImg && data.img) lightboxImg.src = data.img;
-    if (lightboxTitle && data.caption) lightboxTitle.textContent = data.caption;
-    if (lightboxSub)
-      lightboxSub.textContent = data.author || "Global Holidays Verification";
+  if (closeBtn && !closeBtn._bound) {
+    closeBtn._bound = true;
+    closeBtn.addEventListener("click", () => lightbox.close());
+  }
+  if (prevBtn && !prevBtn._bound) {
+    prevBtn._bound = true;
+    prevBtn.addEventListener("click", () => stepLightbox(-1));
+  }
+  if (nextBtn && !nextBtn._bound) {
+    nextBtn._bound = true;
+    nextBtn.addEventListener("click", () => stepLightbox(1));
   }
 
-  allClickableItems.forEach((item, idx) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      showLightboxIndex(idx);
-      lightbox.showModal();
+  if (!lightbox._backdropBound) {
+    lightbox._backdropBound = true;
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.close();
     });
-  });
-
-  if (closeBtn) closeBtn.addEventListener("click", () => lightbox.close());
-  if (prevBtn)
-    prevBtn.addEventListener("click", () =>
-      showLightboxIndex(currentIndex - 1),
-    );
-  if (nextBtn)
-    nextBtn.addEventListener("click", () =>
-      showLightboxIndex(currentIndex + 1),
-    );
-
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) lightbox.close();
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (lightbox.open) {
-      if (e.key === "ArrowLeft") showLightboxIndex(currentIndex - 1);
-      if (e.key === "ArrowRight") showLightboxIndex(currentIndex + 1);
-      if (e.key === "Escape") lightbox.close();
-    }
-  });
+  }
 }
 
 // ========================================================
@@ -918,16 +963,35 @@ function initHeroCarousel() {
     });
   }
 
+  const floatingCard = document.getElementById("hero-floating-card");
+  if (floatingCard && !floatingCard._bound) {
+    floatingCard._bound = true;
+    const handleFloatingClick = (e) => {
+      e.preventDefault();
+      const currentSlide = slides[currentIndex];
+      const dest =
+        currentSlide?.getAttribute("data-dest") ||
+        badgeTitle?.textContent ||
+        "Meghalaya";
+      window.location.href = `/packages?dest=${encodeURIComponent(dest)}`;
+    };
+    floatingCard.addEventListener("click", handleFloatingClick);
+    floatingCard.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        handleFloatingClick(e);
+      }
+    });
+  }
+
   indicators.forEach((ind) => {
     ind.addEventListener("click", () => {
       const idx = parseInt(ind.getAttribute("data-index"), 10);
-      const indRegion = ind.getAttribute("data-region");
-      if (indRegion && indRegion !== currentRegion) {
-        setRegion(indRegion, idx);
-      } else {
-        goToSlide(idx);
-      }
-      startAutoPlay();
+      const currentSlide = slides[idx];
+      const dest =
+        currentSlide?.getAttribute("data-dest") ||
+        ind.querySelector(".ind-label")?.textContent ||
+        ind.textContent.trim();
+      window.location.href = `/packages?dest=${encodeURIComponent(dest)}`;
     });
   });
 
@@ -1009,9 +1073,6 @@ export function initApp() {
   initMobileDrawer();
   initBackToTop();
   initDestinationFilters();
-  initHotelFilters();
-  initDealFilters();
-  initGalleryFilters();
   initPackageFeatures();
   initTripPlanner();
   initStatsCounters();
