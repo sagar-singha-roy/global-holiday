@@ -3,6 +3,7 @@
 import { FaEarthAsia, FaPlane, FaStar } from "react-icons/fa6";
 
 import Link from "next/link";
+import DumboorSlider from "@/components/DumboorSlider";
 
 export default function Page() {
   return (
@@ -874,138 +875,8 @@ export default function Page() {
           <span className="scroll-label">Scroll to Explore</span>
         </a>
       </section>
-      {/* ── DUMBOOR DIARIES – Last Visited Trip ───────────────────── */}
-      <section className="section dumboor-section" id="dumboor-diaries">
-        <div className="container">
-          <div className="section-header-split">
-            <div>
-              <span className="section-eyebrow gold-text">
-                WANDERERS &amp; STRANGERS
-              </span>
-              <h2 className="section-heading">
-                Dumboor Diaries
-                <span className="serif-italic"> — Meet a Stranger Trip</span>
-              </h2>
-              <p className="section-desc">
-                A lake, a group of strangers, and memories that last a lifetime.
-                Our "Meet a Stranger" trip to Dumboor Lake, Tripura was pure
-                magic — laughter, sunsets, and bonds forged in the wild.
-              </p>
-            </div>
-          </div>
-
-          <div className="dumboor-grid" id="dumboor-grid">
-            {[
-              {
-                src: "/images/dumboor/dumboor_1.jpg",
-                caption: "Group photo at the viewpoint",
-                wide: true,
-              },
-              {
-                src: "/images/dumboor/dumboor_2.jpg",
-                caption: "Fun in the lake waters",
-              },
-              {
-                src: "/images/dumboor/dumboor_3.jpg",
-                caption: "Evening bonfire gathering",
-              },
-              {
-                src: "/images/dumboor/dumboor_4.jpg",
-                caption: "Banner group shot at the resort",
-              },
-            ].map((img, i) => (
-              <button
-                key={i}
-                className={`dumboor-photo-btn${img.wide ? " dumboor-wide" : ""}`}
-                aria-label={`Enlarge photo: ${img.caption}`}
-                onClick={(e) => {
-                  const overlay = document.getElementById("dumboor-lightbox");
-                  const lbImg = document.getElementById("dumboor-lb-img");
-                  const lbCaption =
-                    document.getElementById("dumboor-lb-caption");
-                  if (overlay && lbImg && lbCaption) {
-                    lbImg.src = img.src;
-                    lbCaption.textContent = img.caption;
-                    overlay.classList.add("active");
-                    document.body.style.overflow = "hidden";
-                  }
-                }}
-              >
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  className="dumboor-photo"
-                  loading="lazy"
-                />
-                <div className="dumboor-photo-overlay">
-                  <svg
-                    fill="none"
-                    height="28"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                    width="28"
-                  >
-                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                  </svg>
-                  <span>{img.caption}</span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Lightbox */}
-        <div
-          className="dumboor-lightbox"
-          id="dumboor-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Photo lightbox"
-          onClick={(e) => {
-            if (
-              e.target === e.currentTarget ||
-              e.target.closest(".dumboor-lb-close")
-            ) {
-              e.currentTarget.classList.remove("active");
-              document.body.style.overflow = "";
-            }
-          }}
-        >
-          <button
-            className="dumboor-lb-close"
-            aria-label="Close lightbox"
-            onClick={() => {
-              document
-                .getElementById("dumboor-lightbox")
-                .classList.remove("active");
-              document.body.style.overflow = "";
-            }}
-          >
-            <svg
-              fill="none"
-              height="22"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              viewBox="0 0 24 24"
-              width="22"
-            >
-              <line x1="18" x2="6" y1="6" y2="18" />
-              <line x1="6" x2="18" y1="6" y2="18" />
-            </svg>
-          </button>
-          <div className="dumboor-lb-inner">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              id="dumboor-lb-img"
-              src={null}
-              alt="Enlarged photo"
-              className="dumboor-lb-img"
-            />
-            <p id="dumboor-lb-caption" className="dumboor-lb-caption"></p>
-          </div>
-        </div>
-      </section>
+      {/* ── DUMBOOR DIARIES – Last Visited Trip Slider ───────────── */}
+      <DumboorSlider />
 
       <section className="section experience-section" id="experience">
         <div className="container">
