@@ -2312,13 +2312,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Mayfair+Tea+Resort"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -2377,13 +2377,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Ri+Kynjai"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -2444,13 +2444,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Elgin+NorKhill"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -2509,13 +2509,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-outline-gold"
                     href="/contact?subject=Hotel+Booking+Polo+Orchid"
                   >
                     <span>Reserve Stay</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -2621,13 +2621,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-gold"
                     href="/contact?subject=Claim+Deal+Spring+Himalayan"
                   >
                     <span>Claim Deal</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -2713,13 +2713,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-gold"
                     href="/contact?subject=Claim+Deal+Cloud+Realm"
                   >
                     <span>Claim Deal</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -2804,13 +2804,13 @@ export default function Page() {
                       <span className="revealing-soon-badge">On Request</span>
                     </div>
                   </div>
-                  <a
+                  <Link
                     className="btn btn-sm btn-gold"
                     href="/contact?subject=Claim+Deal+Royal+Tripura"
                   >
                     <span>Claim Deal</span>
                     <span className="btn-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

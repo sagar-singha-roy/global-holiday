@@ -333,10 +333,10 @@ export default function Page() {
               Speak directly with our Agartala team to design a bespoke holiday with verified comfort, luxury accommodations, and guaranteed peace of mind.
             </p>
 <div style={{'display': 'flex', 'justifyContent': 'center', 'gap': '1rem', 'flexWrap': 'wrap'}}>
-<a className="btn btn-gold btn-large" href="/contact">
+<Link className="btn btn-gold btn-large" href="/contact">
 <span>Contact Concierge Desk</span>
 <span className="btn-arrow">→</span>
-</a>
+</Link>
 <a className="btn btn-outline-glass btn-large" href="https://wa.me/918731010676" rel="noopener" target="_blank">
 <span>Chat on WhatsApp</span>
 </a>

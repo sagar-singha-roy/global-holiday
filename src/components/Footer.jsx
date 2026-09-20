@@ -210,11 +210,11 @@ export default function Footer() {
             © 2026 Global Holidays Tour &amp; Travels. All rights reserved.
           </p>
           <div className="footer-legal-links">
-            <a href="/legal">Government Registrations &amp; GST</a>
+            <Link href="/legal">Government Registrations &amp; GST</Link>
             <span>•</span>
-            <a href="/contact">Privacy Policy</a>
+            <Link href="/contact">Privacy Policy</Link>
             <span>•</span>
-            <a href="/contact">Terms of Service</a>
+            <Link href="/contact">Terms of Service</Link>
           </div>
           <p className="footer-powered-by">
             Powered by{" "}
