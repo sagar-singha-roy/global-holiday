@@ -520,7 +520,7 @@ export default function Page() {
             forever.
           </p>
           <div className="hero-cta-group fade-reveal delay-3">
-            <a
+            <Link
               className="btn btn-gold btn-large btn-magnetic"
               href="/destinations"
             >
@@ -536,13 +536,13 @@ export default function Page() {
               >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </a>
-            <a
+            </Link>
+            <Link
               className="btn btn-outline-glass btn-large btn-magnetic"
               href="/contact"
             >
               <span>Plan My Trip</span>
-            </a>
+            </Link>
           </div>
 
           <div
@@ -2252,10 +2252,10 @@ export default function Page() {
                 comfort, safety, and bespoke culinary mastery.
               </p>
             </div>
-            <a className="btn btn-outline-glass" href="/hotels">
+            <Link className="btn btn-outline-glass" href="/hotels">
               <span>View All Hotels</span>
               <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
           <div className="hotels-grid">
             <div className="hotel-card">
@@ -2538,10 +2538,10 @@ export default function Page() {
                 our verified travel network.
               </p>
             </div>
-            <a className="btn btn-outline-glass" href="/deals">
+            <Link className="btn btn-outline-glass" href="/deals">
               <span>Explore All Deals</span>
               <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
           <div className="deals-grid">
             <div className="deal-card">
@@ -3448,10 +3448,10 @@ export default function Page() {
               </p>
             </div>
             <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-              <a className="btn btn-gold" href="/gallery">
+              <Link className="btn btn-gold" href="/gallery">
                 <span>View Full Gallery</span>
                 <span className="btn-arrow">→</span>
-              </a>
+              </Link>
               <a
                 className="btn btn-outline-glass"
                 href="https://www.facebook.com/profile.php?id=61587740006818"

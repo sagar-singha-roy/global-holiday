@@ -44,31 +44,31 @@ export default function Footer() {
             <h4 className="footer-heading">Navigation</h4>
             <ul className="footer-links">
               <li>
-                <a href="/">Home</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <a href="/destinations">Destinations</a>
+                <Link href="/destinations">Destinations</Link>
               </li>
               <li>
-                <a href="/packages">Curated Packages</a>
+                <Link href="/packages">Curated Packages</Link>
               </li>
               <li>
-                <a href="/about">About &amp; Heritage</a>
+                <Link href="/about">About &amp; Heritage</Link>
               </li>
               <li>
-                <a href="/about#mission-vision">Mission &amp; Vision</a>
+                <Link href="/about#mission-vision">Mission &amp; Vision</Link>
               </li>
               <li>
-                <a href="/stories">Travel Stories</a>
+                <Link href="/stories">Travel Stories</Link>
               </li>
               <li>
-                <a href="/#faq">Frequently Asked Questions</a>
+                <Link href="/#faq">Frequently Asked Questions</Link>
               </li>
               <li>
-                <a href="/legal">Legal &amp; Accreditations</a>
+                <Link href="/legal">Legal &amp; Accreditations</Link>
               </li>
               <li>
-                <a href="/contact">Contact Concierge</a>
+                <Link href="/contact">Contact Concierge</Link>
               </li>
             </ul>
           </div>

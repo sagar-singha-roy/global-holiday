@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { FaCheck, FaXmark } from "react-icons/fa6";
+import Link from "next/link";
 
 import AppController from "@/components/AppController";
 import OfferPopup from "@/components/OfferPopup";
@@ -87,9 +88,9 @@ export default function GlobalShell() {
           </svg>
           <span>Call Desk</span>
         </a>
-        <a className="mob-bar-btn mob-bar-plan" href="/contact">
+        <Link className="mob-bar-btn mob-bar-plan" href="/contact">
           <span>Plan My Trip →</span>
-        </a>
+        </Link>
         <a
           aria-label="Chat on WhatsApp"
           className="mob-bar-btn mob-bar-wa"
