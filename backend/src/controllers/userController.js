@@ -6,13 +6,29 @@ const Package = require('../models/Package');
 // @access  Private (Admin only)
 exports.getUsers = async (req, res, next) => {
   try {
-    const users = await User.find()
+    const limit = req.query.limit !== undefined ? parseInt(req.query.limit, 10) : 0;
+    const skip = req.query.skip !== undefined ? parseInt(req.query.skip, 10) : 0;
+
+    const total = await User.countDocuments();
+    let userQuery = User.find()
       .populate('assignedPackages', 'title slug destination duration category')
       .sort({ createdAt: -1 });
+
+    if (skip > 0) {
+      userQuery = userQuery.skip(skip);
+    }
+    if (limit > 0) {
+      userQuery = userQuery.limit(limit);
+    }
+
+    const users = await userQuery;
 
     res.status(200).json({
       success: true,
       count: users.length,
+      total,
+      limit: limit > 0 ? limit : total,
+      skip,
       data: users,
     });
   } catch (err) {
@@ -48,8 +64,16 @@ exports.getUser = async (req, res, next) => {
 // @access  Private (Admin only)
 exports.createUser = async (req, res, next) => {
   try {
-    const { name, email, password, role, assignedPackages, assignedDestinations, phone } =
-      req.body;
+    const {
+      name,
+      email,
+      password,
+      role,
+      assignedPackages,
+      assignedDestinations,
+      phone,
+      permissions,
+    } = req.body;
 
     // Check if user already exists
     const userExists = await User.findOne({ email: email.toLowerCase() });
@@ -60,11 +84,17 @@ exports.createUser = async (req, res, next) => {
       });
     }
 
+    const defaultPerms =
+      role === 'admin'
+        ? ['dashboard', 'packages', 'leads', 'users', 'settings']
+        : ['dashboard', 'packages', 'leads', 'settings'];
+
     const user = await User.create({
       name,
       email: email.toLowerCase(),
       password,
       role: role || 'sales',
+      permissions: permissions && permissions.length > 0 ? permissions : defaultPerms,
       assignedPackages: assignedPackages || [],
       assignedDestinations: assignedDestinations || [],
       phone: phone || '',
@@ -77,6 +107,7 @@ exports.createUser = async (req, res, next) => {
         name: user.name,
         email: user.email,
         role: user.role,
+        permissions: user.permissions,
         assignedPackages: user.assignedPackages,
         assignedDestinations: user.assignedDestinations,
         phone: user.phone,
@@ -93,7 +124,16 @@ exports.createUser = async (req, res, next) => {
 // @access  Private (Admin only)
 exports.updateUser = async (req, res, next) => {
   try {
-    const { name, email, role, phone, isActive, assignedPackages, assignedDestinations } = req.body;
+    const {
+      name,
+      email,
+      role,
+      phone,
+      permissions,
+      isActive,
+      assignedPackages,
+      assignedDestinations,
+    } = req.body;
 
     const user = await User.findById(req.params.id);
     if (!user) {
@@ -107,6 +147,7 @@ exports.updateUser = async (req, res, next) => {
     if (email) user.email = email.toLowerCase();
     if (role) user.role = role;
     if (phone !== undefined) user.phone = phone;
+    if (permissions !== undefined) user.permissions = permissions;
     if (isActive !== undefined) user.isActive = isActive;
     if (assignedPackages !== undefined) user.assignedPackages = assignedPackages;
     if (assignedDestinations !== undefined) user.assignedDestinations = assignedDestinations;

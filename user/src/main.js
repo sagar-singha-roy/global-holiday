@@ -7,6 +7,8 @@
  */
 
 import { PACKAGE_DATA } from "./data/packages.js";
+import { submitLead } from "./lib/leadsApi.js";
+import { showSuccessModal } from "./components/SuccessModal.jsx";
 
 // ========================================================
 // 1. DATA REPOSITORIES (PACKAGES & ITINERARIES)
@@ -617,16 +619,166 @@ function initTripPlanner() {
   }
 
   if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+    const setFieldError = (inputEl, message) => {
+      if (!inputEl) return;
+      const fieldContainer = inputEl.closest(".form-field") || inputEl.parentElement;
+      if (fieldContainer) {
+        fieldContainer.classList.add("has-error");
+        let hint = fieldContainer.querySelector(".field-error-hint");
+        if (!hint) {
+          hint = document.createElement("span");
+          hint.className = "field-error-hint";
+          fieldContainer.appendChild(hint);
+        }
+        hint.textContent = message;
+      }
+      const clearError = () => {
+        if (fieldContainer) {
+          fieldContainer.classList.remove("has-error");
+          const hint = fieldContainer.querySelector(".field-error-hint");
+          if (hint) hint.remove();
+        }
+        inputEl.removeEventListener("input", clearError);
+        inputEl.removeEventListener("change", clearError);
+      };
+      inputEl.addEventListener("input", clearError);
+      inputEl.addEventListener("change", clearError);
+    };
+
+    const clearAllErrors = (container) => {
+      if (!container) return;
+      container.querySelectorAll(".form-field.has-error").forEach((f) => {
+        f.classList.remove("has-error");
+        const hint = f.querySelector(".field-error-hint");
+        if (hint) hint.remove();
+      });
+    };
+
+    const handlePlannerSubmit = async (e) => {
+      if (e) e.preventDefault();
+      clearAllErrors(form);
+
+      const name = nameInput ? nameInput.value.trim() : "";
+      const phone = phoneInput ? phoneInput.value.trim() : "";
+      const email = emailInput ? emailInput.value.trim() : "";
+      const dest = destSelect ? destSelect.value || "" : "";
+      const date = dateInput ? dateInput.value || "" : "";
+      const travelers = travelersSelect ? travelersSelect.value : "";
+      const budget = budgetSelect ? budgetSelect.value : "";
+
+      // Strict validation for required fields
+      if (!dest || dest === "" || dest === "Choose destination") {
+        setFieldError(destSelect, "Please select your desired destination");
+        showToast("Destination Required", "Please choose a target destination for your trip.");
+        if (destSelect) {
+          destSelect.focus();
+          destSelect.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+
+      if (!name || name.length < 2) {
+        setFieldError(nameInput, "Please enter your full name (at least 2 characters)");
+        showToast("Name Required", "Please enter your full name so our concierge can address you.");
+        if (nameInput) {
+          nameInput.focus();
+          nameInput.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+
+      if (!phone) {
+        setFieldError(phoneInput, "Contact phone / WhatsApp number is required");
+        showToast("Phone Required", "Please provide a valid phone or WhatsApp number.");
+        if (phoneInput) {
+          phoneInput.focus();
+          phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+
+      const cleanPhone = phone.replace(/\D/g, "");
+      if (cleanPhone.length < 7) {
+        setFieldError(phoneInput, "Please enter a valid phone number (at least 7 digits)");
+        showToast("Invalid Phone Number", "Please enter a valid phone number with country/area code.");
+        if (phoneInput) {
+          phoneInput.focus();
+          phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setFieldError(emailInput, "Please enter a valid email address (e.g. name@example.com)");
+        showToast("Invalid Email", "Please provide a valid email format or leave empty.");
+        if (emailInput) {
+          emailInput.focus();
+          emailInput.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        return;
+      }
+
+      const submitBtn = document.getElementById("submit-custom-plan-btn");
+      const originalText = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "<span>Sending to Concierge...</span>";
+      }
+
+      const leadPayload = {
+        name,
+        phone,
+        email,
+        destination: dest,
+        packageInterest: `${selectedVibe} Tour - ${dest || "Custom Circuit"}`,
+        travelDates: date,
+        budget,
+        message: `Travel Style: ${selectedVibe} | Travellers: ${travelers} | Comfort Tier: ${budget}`,
+        source: "website",
+      };
+
+      try {
+        const res = await submitLead(leadPayload);
+        if (res && res.success === false && res.message) {
+          showToast("Submission Note", res.message);
+        }
+      } catch (err) {
+        console.error("Lead submission error:", err);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }
+
+      // Show celebratory dialog with animated confetti & summary
+      showSuccessModal(
+        `Inquiry Registered, ${name}! 🎉`,
+        `Your personalized luxury trip request for ${dest} has been registered into our CRM. Our senior Agartala travel concierge is reviewing your request.`,
+        { destination: dest, phone }
+      );
+
       showToast(
-        "Custom Trip Request Received!",
+        "Inquiry Successfully Submitted!",
         "Our Agartala travel designer will contact you within 2 hours with a bespoke proposal.",
       );
+
       form.reset();
+      clearAllErrors(form);
       if (summaryDest) summaryDest.textContent = "Select above";
       if (summaryVibe) summaryVibe.textContent = "Honeymoon";
-    });
+    };
+
+    form.addEventListener("submit", handlePlannerSubmit);
+
+    // Also support direct click on submit button
+    const submitBtn = document.getElementById("submit-custom-plan-btn");
+    if (submitBtn) {
+      submitBtn.addEventListener("click", (e) => {
+        // If form.reportValidity is supported, let our custom handler execute
+        handlePlannerSubmit(e);
+      });
+    }
   }
 }
 
@@ -814,15 +966,140 @@ function initEnquiryForm() {
   const form = document.getElementById("direct-enquiry-form");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  const setFieldError = (inputEl, message) => {
+    if (!inputEl) return;
+    const fieldContainer = inputEl.closest(".form-field") || inputEl.parentElement;
+    if (fieldContainer) {
+      fieldContainer.classList.add("has-error");
+      let hint = fieldContainer.querySelector(".field-error-hint");
+      if (!hint) {
+        hint = document.createElement("span");
+        hint.className = "field-error-hint";
+        fieldContainer.appendChild(hint);
+      }
+      hint.textContent = message;
+    }
+    const clearError = () => {
+      if (fieldContainer) {
+        fieldContainer.classList.remove("has-error");
+        const hint = fieldContainer.querySelector(".field-error-hint");
+        if (hint) hint.remove();
+      }
+      inputEl.removeEventListener("input", clearError);
+      inputEl.removeEventListener("change", clearError);
+    };
+    inputEl.addEventListener("input", clearError);
+    inputEl.addEventListener("change", clearError);
+  };
+
+  const clearAllErrors = (container) => {
+    if (!container) return;
+    container.querySelectorAll(".form-field.has-error").forEach((f) => {
+      f.classList.remove("has-error");
+      const hint = f.querySelector(".field-error-hint");
+      if (hint) hint.remove();
+    });
+  };
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const name = document.getElementById("contact-name")?.value || "Guest";
-    const destination =
-      document.getElementById("contact-dest")?.value || "your destination";
+    clearAllErrors(form);
+
+    const nameInput = document.getElementById("contact-name");
+    const phoneInput = document.getElementById("contact-phone");
+    const emailInput = document.getElementById("contact-email");
+    const destInput = document.getElementById("contact-dest");
+    const dateInput = document.getElementById("contact-date");
+    const travelersInput = document.getElementById("contact-travelers");
+    const msgInput = document.getElementById("contact-msg");
+
+    const name = nameInput ? nameInput.value.trim() : "";
+    const phone = phoneInput ? phoneInput.value.trim() : "";
+    const email = emailInput ? emailInput.value.trim() : "";
+    const destination = destInput ? destInput.value.trim() : "";
+    const travelDate = dateInput ? dateInput.value : "";
+    const travelers = travelersInput ? travelersInput.value : 2;
+    const message = msgInput ? msgInput.value.trim() : "";
+
+    // Validation checks
+    if (!name || name.length < 2) {
+      setFieldError(nameInput, "Please enter your full name (at least 2 characters)");
+      showToast("Name Required", "Please enter your full name.");
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    if (!phone) {
+      setFieldError(phoneInput, "Contact phone / WhatsApp number is required");
+      showToast("Phone Number Required", "Please provide a valid phone or WhatsApp number.");
+      if (phoneInput) phoneInput.focus();
+      return;
+    }
+
+    if (phone.replace(/\D/g, "").length < 7) {
+      setFieldError(phoneInput, "Please enter a valid phone number with at least 7 digits");
+      showToast("Invalid Phone Number", "Please enter a valid phone number with at least 7 digits.");
+      if (phoneInput) phoneInput.focus();
+      return;
+    }
+
+    if (!destination) {
+      setFieldError(destInput, "Please enter your preferred destination");
+      showToast("Destination Required", "Please enter your preferred destination.");
+      if (destInput) destInput.focus();
+      return;
+    }
+
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setFieldError(emailInput, "Please enter a valid email address");
+      showToast("Invalid Email", "Please provide a valid email format.");
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    const submitBtn = document.getElementById("send-enquiry-btn");
+    const originalText = submitBtn ? submitBtn.innerHTML : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "<span>Submitting Inquiry...</span>";
+    }
+
+    const leadPayload = {
+      name,
+      phone,
+      email,
+      destination,
+      packageInterest: `Direct Inquiry: ${destination}`,
+      travelDates: travelDate,
+      travellers: Number(travelers) || 2,
+      message,
+      source: "website",
+    };
+
+    try {
+      const res = await submitLead(leadPayload);
+      if (res && res.success === false && res.message) {
+        showToast("Submission Note", res.message);
+      }
+    } catch (err) {
+      console.error("Direct enquiry submission error:", err);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    }
+
+    // Celebratory dialog with confetti
+    showSuccessModal(
+      `Inquiry Sent Successfully! 🎉`,
+      `Thank you, ${name}! Your consultation request for ${destination} is registered into our CRM. Our Agartala desk will contact you within 24 hours.`,
+      { destination, phone }
+    );
 
     showToast(
       `Thank You, ${name}!`,
-      `Your consultation request for ${destination} is registered. Our Agartala desk will contact you within 24 hours.`,
+      `Your consultation request for ${destination} is registered in our CRM. Our Agartala desk will contact you within 24 hours.`,
     );
     form.reset();
   });

@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import AppController from "@/components/AppController";
 import OfferPopup from "@/components/OfferPopup";
+import SuccessModal from "@/components/SuccessModal";
 
 export default function GlobalShell() {
   const [mounted, setMounted] = useState(false);
@@ -232,6 +233,7 @@ export default function GlobalShell() {
         </div>
       </div>
       <OfferPopup />
+      <SuccessModal />
       <AppController />
     </>
   );

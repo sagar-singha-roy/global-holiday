@@ -68,6 +68,13 @@ export const AuthProvider = ({ children }) => {
   const isManager = user?.role === 'manager';
   const isSales = user?.role === 'sales';
 
+  const hasAccess = (moduleKey) => {
+    if (!user) return false;
+    if (user.role === 'admin') return true;
+    const perms = user.permissions || ['dashboard', 'packages', 'leads', 'settings'];
+    return perms.includes(moduleKey);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -80,6 +87,7 @@ export const AuthProvider = ({ children }) => {
         isAdmin,
         isManager,
         isSales,
+        hasAccess,
       }}
     >
       {children}

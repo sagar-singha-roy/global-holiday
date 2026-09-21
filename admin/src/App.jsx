@@ -1,23 +1,54 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import Sidebar from './components/Sidebar';
-import Topbar from './components/Topbar';
-import LoginPage from './pages/LoginPage';
-import DashboardPage from './pages/DashboardPage';
-import PackagesPage from './pages/PackagesPage';
-import LeadsPage from './pages/LeadsPage';
-import UsersPage from './pages/UsersPage';
-import SettingsPage from './pages/SettingsPage';
+import React, { useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+import LoginPage from "./pages/LoginPage";
+import DashboardPage from "./pages/DashboardPage";
+import PackagesPage from "./pages/PackagesPage";
+import LeadsPage from "./pages/LeadsPage";
+import UsersPage from "./pages/UsersPage";
+import SettingsPage from "./pages/SettingsPage";
 
-const AppLayout = ({ children }) => {
+const AppLayout = () => {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem("gh_admin_sidebar_collapsed") === "true";
+    } catch (_) {
+      return false;
+    }
+  });
+
+  const toggleSidebar = () => {
+    setSidebarCollapsed((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem("gh_admin_sidebar_collapsed", String(next));
+      } catch (_) {}
+      return next;
+    });
+  };
+
   return (
-    <div className="app-container">
-      <Sidebar />
+    <div
+      className={`app-container ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}
+    >
+      <Sidebar collapsed={sidebarCollapsed} onToggle={toggleSidebar} />
       <div className="main-content">
-        <Topbar />
-        <main className="page-body">{children}</main>
+        <Topbar
+          onToggleSidebar={toggleSidebar}
+          sidebarCollapsed={sidebarCollapsed}
+        />
+        <main className="page-body">
+          <Outlet />
+        </main>
       </div>
     </div>
   );
@@ -31,59 +62,53 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
 
           <Route
-            path="/"
             element={
               <ProtectedRoute>
-                <AppLayout>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute module="dashboard">
                   <DashboardPage />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/packages"
-            element={
-              <ProtectedRoute>
-                <AppLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/packages"
+              element={
+                <ProtectedRoute module="packages">
                   <PackagesPage />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/leads"
-            element={
-              <ProtectedRoute>
-                <AppLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/leads"
+              element={
+                <ProtectedRoute module="leads">
                   <LeadsPage />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/users"
-            element={
-              <ProtectedRoute allowedRoles={['admin']}>
-                <AppLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/users"
+              element={
+                <ProtectedRoute module="users">
                   <UsersPage />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/settings"
-            element={
-              <ProtectedRoute>
-                <AppLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute module="settings">
                   <SettingsPage />
-                </AppLayout>
-              </ProtectedRoute>
-            }
-          />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

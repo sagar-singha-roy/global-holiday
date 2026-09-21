@@ -34,6 +34,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: '',
     },
+    permissions: {
+      type: [String],
+      default: ['dashboard', 'packages', 'leads', 'settings'],
+    },
     assignedPackages: [
       {
         type: mongoose.Schema.Types.ObjectId,

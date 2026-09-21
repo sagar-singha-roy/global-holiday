@@ -1,1 +1,2 @@
 @AGENTS.md
+@NEXT_STEPS.md

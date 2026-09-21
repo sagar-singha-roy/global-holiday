@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { showToast } from "@/components/Toast";
+import { showSuccessModal } from "@/components/SuccessModal";
+import { submitLead } from "@/lib/leadsApi";
 
 export default function TripPlannerForm() {
   const [vibe, setVibe] = useState("Honeymoon");
@@ -12,6 +14,8 @@ export default function TripPlannerForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const vibes = [
     "Honeymoon",
@@ -41,13 +45,57 @@ export default function TripPlannerForm() {
     window.open(buildWhatsAppUrl(), "_blank");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    showToast(
-      "Concierge Request Received",
-      "Our senior travel designer will reach out within 2 hours with your curated plan.",
-    );
-    window.open(buildWhatsAppUrl(), "_blank");
+
+    const newErrors = {};
+    if (!dest) newErrors.dest = "Please choose your dream destination";
+    if (!name || name.trim().length < 2) newErrors.name = "Please enter your full name";
+    if (!phone) newErrors.phone = "Phone or WhatsApp number is required";
+    else if (phone.replace(/\D/g, "").length < 7) newErrors.phone = "At least 7 digits required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      showToast("Required Fields Missing", "Please complete all highlighted required fields.");
+      return;
+    }
+    setErrors({});
+    setSubmitting(true);
+
+    try {
+      await submitLead({
+        name: name.trim(),
+        phone: phone.trim(),
+        email: email.trim(),
+        destination: dest,
+        packageInterest: `${vibe} Tour - ${dest || "Custom Circuit"}`,
+        travelDates: date,
+        budget,
+        message: `Travel Style: ${vibe} | Travellers: ${travelers} | Comfort Tier: ${budget}`,
+        source: "website",
+      });
+
+      showSuccessModal(
+        `Inquiry Registered, ${name}! 🎉`,
+        `Your personalized luxury trip request for ${dest} has been registered into our CRM. Our senior Agartala travel concierge is reviewing your request.`,
+        { destination: dest, phone }
+      );
+
+      showToast(
+        "Concierge Request Received",
+        "Your inquiry has been submitted to our CRM. Our senior travel designer will reach out shortly.",
+      );
+
+      setName("");
+      setPhone("");
+      setEmail("");
+      setDest("");
+    } catch (err) {
+      console.error("Failed to submit lead:", err);
+      showToast("Submission Error", "Could not submit inquiry. Please try again or WhatsApp us.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -255,8 +303,12 @@ export default function TripPlannerForm() {
           >
             <span>Direct WhatsApp Quote</span>
           </button>
-          <button type="submit" className="btn btn-gold">
-            <span>Send Concierge Request</span>
+          <button
+            type="submit"
+            className="btn btn-gold"
+            disabled={submitting}
+          >
+            <span>{submitting ? "Sending to CRM..." : "Send Concierge Request"}</span>
           </button>
         </div>
       </div>

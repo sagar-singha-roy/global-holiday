@@ -200,9 +200,9 @@ export default function Page() {
                 <div className="planner-inputs-grid">
                   <div className="form-field">
                     <label htmlFor="plan-destination">
-                      Desired Destination
+                      Desired Destination <span className="required-star">*</span>
                     </label>
-                    <select defaultValue="" id="plan-destination" required="">
+                    <select defaultValue="" id="plan-destination">
                       <option disabled="" value="">
                         Choose destination
                       </option>
@@ -243,13 +243,12 @@ export default function Page() {
                     <input
                       id="plan-date"
                       min="2026-08-22"
-                      required=""
                       type="date"
                     />
                   </div>
                   <div className="form-field">
                     <label htmlFor="plan-travelers">Number of Travellers</label>
-                    <select id="plan-travelers" required="">
+                    <select id="plan-travelers">
                       <option value="2 Adults (Couple)">
                         2 Adults (Couple)
                       </option>
@@ -269,7 +268,7 @@ export default function Page() {
                   </div>
                   <div className="form-field">
                     <label htmlFor="plan-budget">Preferred Comfort Tier</label>
-                    <select id="plan-budget" required="">
+                    <select id="plan-budget">
                       <option value="Luxury Boutique (4-Star - 5-Star Handpicked)">
                         Luxury Boutique (4-Star - 5-Star Handpicked)
                       </option>
@@ -293,29 +292,32 @@ export default function Page() {
                 </label>
                 <div className="planner-inputs-grid-3">
                   <div className="form-field">
-                    <label htmlFor="plan-name">Your Full Name</label>
+                    <label htmlFor="plan-name">
+                      Your Full Name <span className="required-star">*</span>
+                    </label>
                     <input
                       id="plan-name"
                       placeholder="e.g. Debabrata Roy"
-                      required=""
                       type="text"
                     />
                   </div>
                   <div className="form-field">
-                    <label htmlFor="plan-phone">Phone / WhatsApp Number</label>
+                    <label htmlFor="plan-phone">
+                      Phone / WhatsApp Number <span className="required-star">*</span>
+                    </label>
                     <input
                       id="plan-phone"
                       placeholder="e.g. +91 87310 10676"
-                      required=""
                       type="tel"
                     />
                   </div>
                   <div className="form-field">
-                    <label htmlFor="plan-email">Email Address</label>
+                    <label htmlFor="plan-email">
+                      Email Address <span className="req-subtle">(Optional)</span>
+                    </label>
                     <input
                       id="plan-email"
                       placeholder="e.g. name@example.com"
-                      required=""
                       type="email"
                     />
                   </div>

@@ -34,11 +34,27 @@ exports.getPackages = async (req, res, next) => {
       ];
     }
 
-    const packages = await Package.find(query).sort({ featuredOrder: 1, createdAt: -1 });
+    const limit = req.query.limit !== undefined ? parseInt(req.query.limit, 10) : 0;
+    const skip = req.query.skip !== undefined ? parseInt(req.query.skip, 10) : 0;
+
+    const total = await Package.countDocuments(query);
+    let pkgQuery = Package.find(query).sort({ featuredOrder: 1, createdAt: -1 });
+
+    if (skip > 0) {
+      pkgQuery = pkgQuery.skip(skip);
+    }
+    if (limit > 0) {
+      pkgQuery = pkgQuery.limit(limit);
+    }
+
+    const packages = await pkgQuery;
 
     res.status(200).json({
       success: true,
       count: packages.length,
+      total,
+      limit: limit > 0 ? limit : total,
+      skip,
       data: packages,
     });
   } catch (err) {

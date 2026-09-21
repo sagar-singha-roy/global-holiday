@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import api from "../api/client";
+import Pagination from "../components/Pagination";
 import {
   Plus,
   Search,
@@ -23,6 +24,11 @@ const LeadsPage = () => {
   const [packages, setPackages] = useState([]);
   const [usersList, setUsersList] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Pagination
+  const [limit, setLimit] = useState(10);
+  const [skip, setSkip] = useState(0);
+  const [total, setTotal] = useState(0);
 
   // Filters
   const [search, setSearch] = useState("");
@@ -49,25 +55,40 @@ const LeadsPage = () => {
     source: "admin",
   });
 
-  const fetchLeads = async () => {
+  const fetchLeads = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await api.get("/leads");
+      const params = {
+        limit,
+        skip,
+      };
+      if (statusFilter !== "all") {
+        params.status = statusFilter;
+      }
+      if (search.trim()) {
+        params.search = search.trim();
+      }
+      const res = await api.get("/leads", { params });
       if (res.data.success) {
         setLeads(res.data.data);
+        setTotal(
+          res.data.total !== undefined ? res.data.total : res.data.data.length,
+        );
       }
     } catch (err) {
       console.error("Failed to load leads:", err);
     } finally {
       setLoading(false);
     }
-  };
+  }, [limit, skip, statusFilter, search]);
 
   const fetchDependencies = async () => {
     try {
       const [pkgRes, usrRes] = await Promise.all([
-        api.get("/packages"),
-        isAdmin ? api.get("/users") : Promise.resolve({ data: { data: [] } }),
+        api.get("/packages?limit=0"),
+        isAdmin
+          ? api.get("/users?limit=0")
+          : Promise.resolve({ data: { data: [] } }),
       ]);
       if (pkgRes.data.success) setPackages(pkgRes.data.data);
       if (usrRes.data?.success) setUsersList(usrRes.data.data);
@@ -77,9 +98,15 @@ const LeadsPage = () => {
   };
 
   useEffect(() => {
-    fetchLeads();
     fetchDependencies();
   }, [isAdmin]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fetchLeads();
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [fetchLeads]);
 
   const handleCreateLead = async (e) => {
     e.preventDefault();
@@ -148,18 +175,7 @@ const LeadsPage = () => {
     }
   };
 
-  const filteredLeads = leads.filter((lead) => {
-    const matchesSearch =
-      lead.name.toLowerCase().includes(search.toLowerCase()) ||
-      lead.phone.includes(search) ||
-      (lead.email && lead.email.toLowerCase().includes(search.toLowerCase())) ||
-      (lead.packageInterest &&
-        lead.packageInterest.toLowerCase().includes(search.toLowerCase()));
-
-    const matchesStatus =
-      statusFilter === "all" || lead.status === statusFilter;
-    return matchesSearch && matchesStatus;
-  });
+  const displayLeads = leads;
 
   return (
     <div>
@@ -197,7 +213,10 @@ const LeadsPage = () => {
             className="input"
             placeholder="Search leads by customer name, phone, or package..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setSkip(0);
+            }}
             style={{ paddingLeft: "2.5rem" }}
           />
           <Search
@@ -217,7 +236,10 @@ const LeadsPage = () => {
             (st) => (
               <button
                 key={st}
-                onClick={() => setStatusFilter(st)}
+                onClick={() => {
+                  setStatusFilter(st);
+                  setSkip(0);
+                }}
                 className="btn btn-secondary"
                 style={{
                   fontSize: "0.75rem",
@@ -250,7 +272,7 @@ const LeadsPage = () => {
             >
               Loading inquiries...
             </div>
-          ) : filteredLeads.length === 0 ? (
+          ) : displayLeads.length === 0 ? (
             <div
               className="card"
               style={{ textAlign: "center", padding: "3rem" }}
@@ -272,113 +294,129 @@ const LeadsPage = () => {
               </p>
             </div>
           ) : (
-            <div className="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Customer</th>
-                    <th>Package of Interest</th>
-                    <th>Dates / Guests</th>
-                    <th>Status</th>
-                    <th>Assigned To</th>
-                    <th style={{ textAlign: "right" }}>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredLeads.map((lead) => (
-                    <tr
-                      key={lead._id}
-                      style={{
-                        backgroundColor:
-                          selectedLead?._id === lead._id
-                            ? "rgba(245, 158, 11, 0.05)"
-                            : undefined,
-                        cursor: "pointer",
-                      }}
-                      onClick={() => setSelectedLead(lead)}
-                    >
-                      <td>
-                        <div style={{ fontWeight: 700, color: "#0b2230" }}>
-                          {lead.name}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: "0.75rem",
-                            color: "#9CA3AF",
-                            display: "flex",
-                            gap: "0.5rem",
-                            marginTop: "0.2rem",
-                          }}
-                        >
-                          <span>{lead.phone}</span>
-                          {lead.email && <span>• {lead.email}</span>}
-                        </div>
-                      </td>
-                      <td>
-                        <div style={{ color: "#F59E0B", fontWeight: 600 }}>
-                          {lead.packageInterest ||
-                            lead.packageId?.title ||
-                            "General Custom Package"}
-                        </div>
-                        <div style={{ fontSize: "0.75rem", color: "#6B7280" }}>
-                          Source: {lead.source}
-                        </div>
-                      </td>
-                      <td style={{ fontSize: "0.825rem", color: "#2c495e" }}>
-                        <div>{lead.travelDates || "Flexible"}</div>
-                        <div style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>
-                          {lead.travellers} travellers{" "}
-                          {lead.budget ? `• ${lead.budget}` : ""}
-                        </div>
-                      </td>
-                      <td>
-                        <select
-                          className="select"
-                          value={lead.status}
-                          onClick={(e) => e.stopPropagation()}
-                          onChange={(e) =>
-                            handleStatusChange(lead._id, e.target.value)
-                          }
-                          style={{
-                            fontSize: "0.75rem",
-                            padding: "0.25rem 0.5rem",
-                            width: "auto",
-                          }}
-                        >
-                          <option value="new">New</option>
-                          <option value="contacted">Contacted</option>
-                          <option value="quoted">Quoted</option>
-                          <option value="converted">Converted</option>
-                          <option value="lost">Lost</option>
-                        </select>
-                      </td>
-                      <td>
-                        <span
-                          style={{ fontSize: "0.825rem", color: "#2c495e" }}
-                        >
-                          {lead.assignedTo?.name || "Unassigned"}
-                        </span>
-                      </td>
-                      <td style={{ textAlign: "right" }}>
-                        {isAdmin && (
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleDeleteLead(lead._id);
-                            }}
-                            className="btn btn-danger"
-                            style={{ padding: "0.35rem 0.5rem" }}
-                            title="Delete Lead"
-                          >
-                            <Trash2 size={13} />
-                          </button>
-                        )}
-                      </td>
+            <>
+              <div className="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Customer</th>
+                      <th>Package of Interest</th>
+                      <th>Dates / Guests</th>
+                      <th>Status</th>
+                      <th>Assigned To</th>
+                      <th style={{ textAlign: "right" }}>Actions</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {displayLeads.map((lead) => (
+                      <tr
+                        key={lead._id}
+                        style={{
+                          backgroundColor:
+                            selectedLead?._id === lead._id
+                              ? "rgba(245, 158, 11, 0.05)"
+                              : undefined,
+                          cursor: "pointer",
+                        }}
+                        onClick={() => setSelectedLead(lead)}
+                      >
+                        <td>
+                          <div style={{ fontWeight: 700, color: "#0b2230" }}>
+                            {lead.name}
+                          </div>
+                          <div
+                            style={{
+                              fontSize: "0.75rem",
+                              color: "#9CA3AF",
+                              display: "flex",
+                              gap: "0.5rem",
+                              marginTop: "0.2rem",
+                            }}
+                          >
+                            <span>{lead.phone}</span>
+                            {lead.email && <span>• {lead.email}</span>}
+                          </div>
+                        </td>
+                        <td>
+                          <div style={{ color: "#F59E0B", fontWeight: 600 }}>
+                            {lead.packageInterest ||
+                              lead.packageId?.title ||
+                              "General Custom Package"}
+                          </div>
+                          <div
+                            style={{ fontSize: "0.75rem", color: "#6B7280" }}
+                          >
+                            Source: {lead.source}
+                          </div>
+                        </td>
+                        <td style={{ fontSize: "0.825rem", color: "#2c495e" }}>
+                          <div>{lead.travelDates || "Flexible"}</div>
+                          <div
+                            style={{ fontSize: "0.75rem", color: "#9CA3AF" }}
+                          >
+                            {lead.travellers} travellers{" "}
+                            {lead.budget ? `• ${lead.budget}` : ""}
+                          </div>
+                        </td>
+                        <td>
+                          <select
+                            className="select"
+                            value={lead.status}
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) =>
+                              handleStatusChange(lead._id, e.target.value)
+                            }
+                            style={{
+                              fontSize: "0.75rem",
+                              padding: "0.25rem 0.5rem",
+                              width: "auto",
+                            }}
+                          >
+                            <option value="new">New</option>
+                            <option value="contacted">Contacted</option>
+                            <option value="quoted">Quoted</option>
+                            <option value="converted">Converted</option>
+                            <option value="lost">Lost</option>
+                          </select>
+                        </td>
+                        <td>
+                          <span
+                            style={{ fontSize: "0.825rem", color: "#2c495e" }}
+                          >
+                            {lead.assignedTo?.name || "Unassigned"}
+                          </span>
+                        </td>
+                        <td style={{ textAlign: "right" }}>
+                          {isAdmin && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleDeleteLead(lead._id);
+                              }}
+                              className="btn btn-danger"
+                              style={{ padding: "0.35rem 0.5rem" }}
+                              title="Delete Lead"
+                            >
+                              <Trash2 size={13} />
+                            </button>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <Pagination
+                total={total}
+                limit={limit}
+                skip={skip}
+                onLimitChange={(newLimit) => {
+                  setLimit(newLimit);
+                  setSkip(0);
+                }}
+                onSkipChange={(newSkip) => setSkip(newSkip)}
+              />
+            </>
           )}
         </div>
 

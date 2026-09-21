@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import api from "../api/client";
+import Pagination from "../components/Pagination";
 import {
   Plus,
   Search,
@@ -15,12 +16,16 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 
-
 const PackagesPage = () => {
   const { user, isAdmin } = useAuth();
   const [packages, setPackages] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+
+  // Pagination
+  const [limit, setLimit] = useState(10);
+  const [skip, setSkip] = useState(0);
+  const [total, setTotal] = useState(0);
 
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,15 +33,15 @@ const PackagesPage = () => {
   const [selectedPkg, setSelectedPkg] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [formData, setFormData] = useState({
-    title: '',
-    slug: '',
-    duration: '',
-    destination: '',
-    price: 'Tariff on Request',
-    category: 'domestic',
-    rating: '5.0 ★★★★★',
-    heroImg: '/images/hero-bg.jpg',
-    overview: '',
+    title: "",
+    slug: "",
+    duration: "",
+    destination: "",
+    price: "Tariff on Request",
+    category: "domestic",
+    rating: "5.0 ★★★★★",
+    heroImg: "/images/hero-bg.jpg",
+    overview: "",
   });
 
   const handleImageUpload = async (e) => {
@@ -44,13 +49,13 @@ const PackagesPage = () => {
     if (!file) return;
 
     const data = new FormData();
-    data.append('image', file);
+    data.append("image", file);
 
     setUploading(true);
     try {
-      const res = await api.post('/upload', data, {
+      const res = await api.post("/upload", data, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
 
@@ -61,29 +66,39 @@ const PackagesPage = () => {
         }));
       }
     } catch (err) {
-      alert(err.response?.data?.message || 'Failed to upload image');
+      alert(err.response?.data?.message || "Failed to upload image");
     } finally {
       setUploading(false);
     }
   };
 
-  const fetchPackages = async () => {
+  const fetchPackages = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await api.get("/packages");
+      const params = { limit, skip };
+      if (search.trim()) {
+        params.search = search.trim();
+      }
+      const res = await api.get("/packages", { params });
       if (res.data.success) {
         setPackages(res.data.data);
+        setTotal(
+          res.data.total !== undefined ? res.data.total : res.data.data.length,
+        );
       }
     } catch (err) {
       console.error("Failed to load packages:", err);
     } finally {
       setLoading(false);
     }
-  };
+  }, [limit, skip, search]);
 
   useEffect(() => {
-    fetchPackages();
-  }, []);
+    const timer = setTimeout(() => {
+      fetchPackages();
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [fetchPackages]);
 
   const handleOpenCreate = () => {
     setSelectedPkg(null);
@@ -148,11 +163,7 @@ const PackagesPage = () => {
     }
   };
 
-  const filteredPackages = packages.filter(
-    (pkg) =>
-      pkg.title.toLowerCase().includes(search.toLowerCase()) ||
-      pkg.destination.toLowerCase().includes(search.toLowerCase()),
-  );
+  const displayPackages = packages;
 
   return (
     <div>
@@ -183,7 +194,10 @@ const PackagesPage = () => {
             className="input"
             placeholder="Search by package name or destination..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setSkip(0);
+            }}
             style={{ paddingLeft: "2.5rem" }}
           />
           <Search
@@ -204,7 +218,7 @@ const PackagesPage = () => {
         <div style={{ textAlign: "center", padding: "3rem", color: "#9CA3AF" }}>
           Loading packages...
         </div>
-      ) : filteredPackages.length === 0 ? (
+      ) : displayPackages.length === 0 ? (
         <div className="card" style={{ textAlign: "center", padding: "3rem" }}>
           <Compass
             size={36}
@@ -225,132 +239,146 @@ const PackagesPage = () => {
           </p>
         </div>
       ) : (
-        <div className="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Package Title</th>
-                <th>Destination</th>
-                <th>Duration</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Status</th>
-                <th style={{ textAlign: "right" }}>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredPackages.map((pkg) => (
-                <tr key={pkg._id}>
-                  <td>
-                    <div style={{ fontWeight: 700, color: "#0b2230" }}>
-                      {pkg.title}
-                    </div>
-                    <div style={{ fontSize: "0.75rem", color: "#F59E0B" }}>
-                      Slug: /{pkg.slug}
-                    </div>
-                  </td>
-                  <td style={{ color: "#2c495e" }}>{pkg.destination}</td>
-                  <td>
-                    <span style={{ fontSize: "0.825rem", color: "#2c495e" }}>
-                      {pkg.duration}
-                    </span>
-                  </td>
-                  <td>
-                    <span
-                      style={{
-                        padding: "0.2rem 0.5rem",
-                        borderRadius: "4px",
-                        fontSize: "0.75rem",
-                        fontWeight: 600,
-                        backgroundColor: "rgba(245, 158, 11, 0.1)",
-                        color: "#F59E0B",
-                        textTransform: "capitalize",
-                      }}
-                    >
-                      {pkg.category}
-                    </span>
-                  </td>
-                  <td style={{ color: "#9CA3AF", fontSize: "0.825rem" }}>
-                    {pkg.price || "Tariff on Request"}
-                  </td>
-                  <td>
-                    <span
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.25rem",
-                        fontSize: "0.75rem",
-                        color: pkg.isActive ? "#10B981" : "#6B7280",
-                      }}
-                    >
+        <>
+          <div className="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Package Title</th>
+                  <th>Destination</th>
+                  <th>Duration</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th style={{ textAlign: "right" }}>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {displayPackages.map((pkg) => (
+                  <tr key={pkg._id}>
+                    <td>
+                      <div style={{ fontWeight: 700, color: "#0b2230" }}>
+                        {pkg.title}
+                      </div>
+                      <div style={{ fontSize: "0.75rem", color: "#F59E0B" }}>
+                        Slug: /{pkg.slug}
+                      </div>
+                    </td>
+                    <td style={{ color: "#2c495e" }}>{pkg.destination}</td>
+                    <td>
+                      <span style={{ fontSize: "0.825rem", color: "#2c495e" }}>
+                        {pkg.duration}
+                      </span>
+                    </td>
+                    <td>
                       <span
                         style={{
-                          width: "6px",
-                          height: "6px",
-                          borderRadius: "50%",
-                          backgroundColor: pkg.isActive ? "#10B981" : "#6B7280",
+                          padding: "0.2rem 0.5rem",
+                          borderRadius: "4px",
+                          fontSize: "0.75rem",
+                          fontWeight: 600,
+                          backgroundColor: "rgba(245, 158, 11, 0.1)",
+                          color: "#F59E0B",
+                          textTransform: "capitalize",
                         }}
-                      />
-                      {pkg.isActive ? "Active" : "Draft"}
-                    </span>
-                  </td>
-                  <td style={{ textAlign: "right" }}>
-                    <div
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                      }}
-                    >
-                      <button
-                        onClick={() => handleOpenView(pkg)}
-                        className="btn btn-secondary"
-                        style={{ padding: "0.4rem 0.6rem" }}
-                        title="View Details"
                       >
-                        <Eye size={14} />
-                      </button>
-
-                      {isAdmin ? (
-                        <>
-                          <button
-                            onClick={() => handleOpenEdit(pkg)}
-                            className="btn btn-secondary"
-                            style={{ padding: "0.4rem 0.6rem" }}
-                            title="Edit Package"
-                          >
-                            <Edit2 size={14} />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(pkg._id)}
-                            className="btn btn-danger"
-                            style={{ padding: "0.4rem 0.6rem" }}
-                            title="Delete Package"
-                          >
-                            <Trash2 size={14} />
-                          </button>
-                        </>
-                      ) : (
+                        {pkg.category}
+                      </span>
+                    </td>
+                    <td style={{ color: "#9CA3AF", fontSize: "0.825rem" }}>
+                      {pkg.price || "Tariff on Request"}
+                    </td>
+                    <td>
+                      <span
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.25rem",
+                          fontSize: "0.75rem",
+                          color: pkg.isActive ? "#10B981" : "#6B7280",
+                        }}
+                      >
                         <span
                           style={{
-                            fontSize: "0.75rem",
-                            color: "#6B7280",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.25rem",
+                            width: "6px",
+                            height: "6px",
+                            borderRadius: "50%",
+                            backgroundColor: pkg.isActive
+                              ? "#10B981"
+                              : "#6B7280",
                           }}
-                          title="View only mode"
+                        />
+                        {pkg.isActive ? "Active" : "Draft"}
+                      </span>
+                    </td>
+                    <td style={{ textAlign: "right" }}>
+                      <div
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                        }}
+                      >
+                        <button
+                          onClick={() => handleOpenView(pkg)}
+                          className="btn btn-secondary"
+                          style={{ padding: "0.4rem 0.6rem" }}
+                          title="View Details"
                         >
-                          <Lock size={12} /> View Only
-                        </span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                          <Eye size={14} />
+                        </button>
+
+                        {isAdmin ? (
+                          <>
+                            <button
+                              onClick={() => handleOpenEdit(pkg)}
+                              className="btn btn-secondary"
+                              style={{ padding: "0.4rem 0.6rem" }}
+                              title="Edit Package"
+                            >
+                              <Edit2 size={14} />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(pkg._id)}
+                              className="btn btn-danger"
+                              style={{ padding: "0.4rem 0.6rem" }}
+                              title="Delete Package"
+                            >
+                              <Trash2 size={14} />
+                            </button>
+                          </>
+                        ) : (
+                          <span
+                            style={{
+                              fontSize: "0.75rem",
+                              color: "#6B7280",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "0.25rem",
+                            }}
+                            title="View only mode"
+                          >
+                            <Lock size={12} /> View Only
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <Pagination
+            total={total}
+            limit={limit}
+            skip={skip}
+            onLimitChange={(newLimit) => {
+              setLimit(newLimit);
+              setSkip(0);
+            }}
+            onSkipChange={(newSkip) => setSkip(newSkip)}
+          />
+        </>
       )}
 
       {/* Edit / Create Modal (Admin Only) */}
@@ -474,8 +502,16 @@ const PackagesPage = () => {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Hero Image (Upload or URL)</label>
-                  <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                  <label className="form-label">
+                    Hero Image (Upload or URL)
+                  </label>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.75rem",
+                      alignItems: "center",
+                    }}
+                  >
                     <input
                       type="text"
                       className="input"
@@ -489,51 +525,51 @@ const PackagesPage = () => {
                     <label
                       className="btn btn-secondary"
                       style={{
-                        cursor: uploading ? 'not-allowed' : 'pointer',
-                        padding: '0.625rem 1rem',
-                        whiteSpace: 'nowrap',
+                        cursor: uploading ? "not-allowed" : "pointer",
+                        padding: "0.625rem 1rem",
+                        whiteSpace: "nowrap",
                         margin: 0,
                       }}
                     >
                       <Upload size={15} />
-                      <span>{uploading ? 'Uploading...' : 'Upload Image'}</span>
+                      <span>{uploading ? "Uploading..." : "Upload Image"}</span>
                       <input
                         type="file"
                         accept="image/jpeg,image/png,image/webp,image/jpg"
                         onChange={handleImageUpload}
                         disabled={uploading}
-                        style={{ display: 'none' }}
+                        style={{ display: "none" }}
                       />
                     </label>
                   </div>
                   {formData.heroImg && (
                     <div
                       style={{
-                        marginTop: '0.5rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
+                        marginTop: "0.5rem",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
                       }}
                     >
                       <img
                         src={
-                          formData.heroImg.startsWith('/uploads')
+                          formData.heroImg.startsWith("/uploads")
                             ? `http://localhost:5001${formData.heroImg}`
                             : formData.heroImg
                         }
                         alt="Preview"
                         style={{
-                          width: '48px',
-                          height: '32px',
-                          objectFit: 'cover',
-                          borderRadius: '4px',
-                          border: '1px solid rgba(255,255,255,0.2)',
+                          width: "48px",
+                          height: "32px",
+                          objectFit: "cover",
+                          borderRadius: "4px",
+                          border: "1px solid rgba(255,255,255,0.2)",
                         }}
                         onError={(e) => {
-                          e.target.style.display = 'none';
+                          e.target.style.display = "none";
                         }}
                       />
-                      <span style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>
+                      <span style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>
                         Image path: {formData.heroImg}
                       </span>
                     </div>
