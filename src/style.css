@@ -5676,15 +5676,11 @@ dialog {
 
 .promo-popup-card {
   position: relative;
-  width: 95%;
-  max-width: 600px;
-  max-height: 94vh;
-  background: #0b1418;
-  border: 1px solid rgba(212, 163, 115, 0.45);
-  border-radius: 20px;
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.95),
-    0 0 35px rgba(212, 163, 115, 0.2);
+  width: 92%;
+  max-width: 450px;
+  max-height: 92vh;
+  max-height: 92dvh;
+  background: transparent;
   overflow: visible;
   display: flex;
   flex-direction: column;
@@ -5702,15 +5698,29 @@ dialog {
   }
 }
 
+.promo-popup-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  max-height: 90dvh;
+  background: #0b1418;
+  border: 1px solid rgba(212, 163, 115, 0.45);
+  border-radius: 20px;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(212, 163, 115, 0.2);
+  overflow: hidden;
+}
+
 .promo-popup-close {
   position: absolute;
-  top: -16px;
-  right: -16px;
+  top: -14px;
+  right: -14px;
   z-index: 50;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(10, 24, 28, 0.92);
+  background: rgba(10, 24, 28, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.95);
@@ -5721,12 +5731,12 @@ dialog {
   font-size: 1.15rem;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
 }
 
 .promo-popup-close svg {
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   display: block;
 }
 
@@ -5746,19 +5756,23 @@ dialog {
 .promo-popup-img-wrap {
   display: block;
   width: 100%;
+  flex: 1 1 auto;
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  border-radius: 19px 19px 0 0;
+  background: #04080a;
   cursor: pointer;
 }
 
 .promo-popup-img {
   width: 100%;
+  max-height: calc(88vh - 110px);
+  max-height: calc(88dvh - 110px);
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.4s ease;
+  margin: 0 auto;
 }
 
 .promo-popup-img-wrap:hover .promo-popup-img {
@@ -5766,14 +5780,14 @@ dialog {
 }
 
 .promo-popup-footer {
-  padding: 1rem 1.25rem 1.25rem;
+  flex-shrink: 0;
+  padding: 0.85rem 1.25rem 1rem;
   background: linear-gradient(180deg, #0b1418 0%, #060b0e 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
   border-top: 1px solid rgba(212, 163, 115, 0.2);
-  border-radius: 0 0 19px 19px;
 }
 
 .promo-popup-cta {
@@ -5782,8 +5796,8 @@ dialog {
   justify-content: center;
   gap: 0.65rem;
   width: 100%;
-  max-width: 480px;
-  padding: 0.95rem 1.5rem;
+  max-width: 400px;
+  padding: 0.85rem 1.5rem;
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
   color: #ffffff !important;
   font-family: "Outfit", sans-serif;
@@ -5807,7 +5821,7 @@ dialog {
 }
 
 .promo-popup-subtext {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #9cb1c0;
   text-align: center;
   letter-spacing: 0.01em;
@@ -5818,25 +5832,27 @@ dialog {
     padding: 0.75rem;
   }
   .promo-popup-card {
-    border-radius: 16px;
     max-width: 100%;
   }
+  .promo-popup-inner {
+    border-radius: 16px;
+  }
   .promo-popup-close {
-    top: -12px;
-    right: -8px;
-    width: 38px;
-    height: 38px;
-    font-size: 1.05rem;
+    top: -10px;
+    right: -6px;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
   .promo-popup-footer {
-    padding: 0.85rem 1rem 1rem;
+    padding: 0.75rem 0.9rem 0.85rem;
   }
   .promo-popup-cta {
     font-size: 0.95rem;
-    padding: 0.85rem 1.25rem;
+    padding: 0.8rem 1.25rem;
   }
   .promo-popup-subtext {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
   }
 }
 

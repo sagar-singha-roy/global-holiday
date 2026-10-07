@@ -4,7 +4,10 @@ import { useState, useEffect } from "react";
 import { FaXmark, FaWhatsapp } from "react-icons/fa6";
 
 const WHATSAPP_URL =
-  "https://wa.me/918731010676?text=Hello%20Global%20Holidays%20Tour%20%26%20Travels,%20I%20would%20like%20to%20book%20the%20Jampui%20Hills%20Tripura%20tour%20package%20(1%20Night%202%20Days)%20with%20the%20website%20exclusive%2010%25%20discount.";
+  "https://wa.me/918731010676?text=" +
+  encodeURIComponent(
+    "Hello Global Holidays Tour & Travels, I would like to get more info about the Night Gala Party."
+  );
 
 export default function OfferPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +46,7 @@ export default function OfferPopup() {
       }}
       role="dialog"
       aria-modal="true"
-      aria-label="Exclusive Tour Offer Popup"
+      aria-label="Night Gala Party Event Details"
     >
       <div className="promo-popup-card">
         {/* Top Right Close Button */}
@@ -51,41 +54,44 @@ export default function OfferPopup() {
           type="button"
           className="promo-popup-close"
           onClick={() => setIsOpen(false)}
-          aria-label="Close offer popup"
+          aria-label="Close popup"
         >
           <FaXmark />
         </button>
 
-        {/* Clickable Image linking to WhatsApp */}
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="promo-popup-img-wrap"
-          title="Click to book Jampui Hills tour on WhatsApp"
-        >
-          <img
-            src="/images/jampui-hills-offer.jpg"
-            alt="Meet a stranger trip - Jampui Hills Tripura 1 Night 2 Days Website Exclusive Extra 10% Off"
-            className="promo-popup-img"
-          />
-        </a>
-
-        {/* Action button */}
-        <div className="promo-popup-footer">
+        <div className="promo-popup-inner">
+          {/* Clickable Image linking to WhatsApp */}
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="promo-popup-cta"
-            id="popup-whatsapp-book-btn"
+            className="promo-popup-img-wrap"
+            title="Click for more info on WhatsApp"
           >
-            <FaWhatsapp className="promo-wa-icon" />
-            <span>Book Now on WhatsApp</span>
+            <img
+              src="/images/night-gala-party.jpg"
+              alt="Global Holidays Tour & Travels - Night Gala Party"
+              className="promo-popup-img"
+            />
           </a>
-          <span className="promo-popup-subtext">
-            Special 10% Website Discount • Limited Seats Available
-          </span>
+
+          {/* Action button */}
+          <div className="promo-popup-footer">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="promo-popup-cta"
+              id="popup-more-info-btn"
+              title="More Info on WhatsApp"
+            >
+              <FaWhatsapp className="promo-wa-icon" />
+              <span>More Info</span>
+            </a>
+            <span className="promo-popup-subtext">
+              Luxury • Comfort • Trust • Live Music & Dining
+            </span>
+          </div>
         </div>
       </div>
     </div>

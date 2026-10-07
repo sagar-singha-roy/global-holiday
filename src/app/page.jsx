@@ -4,6 +4,7 @@ import { FaEarthAsia, FaPlane, FaStar } from "react-icons/fa6";
 
 import Link from "next/link";
 import DumboorSlider from "@/components/DumboorSlider";
+import JampuiSlider from "@/components/JampuiSlider";
 
 export default function Page() {
   return (
@@ -875,6 +876,9 @@ export default function Page() {
           <span className="scroll-label">Scroll to Explore</span>
         </a>
       </section>
+      {/* ── JAMPUI DIARIES – Meet A Stranger Trip Slider ─────────── */}
+      <JampuiSlider />
+
       {/* ── DUMBOOR DIARIES – Last Visited Trip Slider ───────────── */}
       <DumboorSlider />
 
